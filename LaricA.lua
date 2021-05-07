@@ -4560,8 +4560,10 @@ return false
 end
 local link = database:get(bot_id.."LaricA:Private:Group:Link"..msg.chat_id_)            
 if link then                              
-send(msg.chat_id_,msg.id_,"• LinK GrOup : \n ["..link.."]")                          
+send(msg.chat_id_,msg.id_,"• LinK GrOup : \n ['..ta.title_..']('..link..')')                          
 else                
+local linkgpp = json:decode(https.request('https://api.telegram.org/bot'..token..'/exportChatInviteLink?chat_id='..msg.chat_id_))
+else
 send(msg.chat_id_, msg.id_,"• لا يوجد رابط ارسل ضع رابط")              
 end            
 end
@@ -8643,13 +8645,6 @@ end
 if text == "حذف كت تويت" and DevBot(msg) then
 database:del(bot_id.."gamebot:List:Manager")
 return send(msg.chat_id_, msg.id_,"تم حذف الاسئله")
-end
-if text and text:match("^(.*)$") then
-if database:get(bot_id.."gamebot:Set:Manager:rd"..msg.sender_user_id_..":"..msg.chat_id_) == "true" then
-send(msg.chat_id_, msg.id_, '\nتم حفظ السؤال بنجاح')
-database:set(bot_id.."gamebot:Set:Manager:rd"..msg.sender_user_id_..":"..msg.chat_id_,"true1uu")
-database:sadd(bot_id.."gamebot:List:Manager", text)
-return false end
 end
 if text == 'تفعيل' and DevBot(msg) then 
 if msg.can_be_deleted_ == false then 
