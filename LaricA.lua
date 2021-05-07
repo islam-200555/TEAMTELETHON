@@ -8367,7 +8367,7 @@ Text = [[
 • م4 ↺ لعرض اوامر المنشئين
 • م5 ↺ لعرض اوامر المطورين
 
-[𝗧𝗲𝗮𝗠 𝗫- 𝗠𝗮𝘁𝗿𝗶𝘅 .𓃕](t.me/LARICATEAM)
+[ٰTِE𝖺ِ𝗆 ٰᒪِᗩِ𝗋𝗂ِ𝖼ِ𝖺 ◟ٰ 🎀 ٰ◞](t.me/LARICATEAM)
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
@@ -8392,7 +8392,7 @@ Text = [[
 • رفع منظف - تنزيل منظف
 • المنظفين - مسح المنظفين
 — — — —― — — — — ― — — — —
-[𝗧𝗲𝗮𝗠 𝗫- 𝗠𝗮𝘁𝗿𝗶𝘅 .𓃕](t.me/LARICATEAM)
+[ٰTِE𝖺ِ𝗆 ٰᒪِᗩِ𝗋𝗂ِ𝖼ِ𝖺 ◟ٰ 🎀 ٰ◞](t.me/LARICATEAM)
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
@@ -8439,7 +8439,7 @@ Text = [[
 • الكلايش
 • السيلفي
   - - - - - - - - -
-[𝗧𝗲𝗮𝗠 𝗫- 𝗠𝗮𝘁𝗿𝗶𝘅 .𓃕](t.me/LARICATEAM)
+[ٰTِE𝖺ِ𝗆 ٰᒪِᗩِ𝗋𝗂ِ𝖼ِ𝖺 ◟ٰ 🎀 ٰ◞](t.me/LARICATEAM)
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
@@ -8511,7 +8511,7 @@ Text = [[
 • مسح الصلاحيات
 • مسح الرابط
   - - - - - - - - -
-[𝗧𝗲𝗮𝗠 𝗫- 𝗠𝗮𝘁𝗿𝗶𝘅 .𓃕](t.me/LARICATEAM)
+[ٰTِE𝖺ِ𝗆 ٰᒪِᗩِ𝗋𝗂ِ𝖼ِ𝖺 ◟ٰ 🎀 ٰ◞](t.me/LARICATEAM)
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
@@ -8558,7 +8558,7 @@ Text = [[
 • تفعيل/تعطيل اوامر التحشيش
 • تفعيل/تعطيل الرابط/جلب الرابط
   - - - - - - - - -
-[𝗧𝗲𝗮𝗠 𝗫- 𝗠𝗮𝘁𝗿𝗶𝘅 .𓃕](t.me/LARICATEAM)
+[ٰTِE𝖺ِ𝗆 ٰᒪِᗩِ𝗋𝗂ِ𝖼ِ𝖺 ◟ٰ 🎀 ٰ◞](t.me/LARICATEAM)
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
@@ -8594,7 +8594,7 @@ Text = [[
 • اضف رسائل + العدد بالرد
 • اضف مجوهرات + العدد بالرد
   - - - - - - - - -
-[𝗧𝗲𝗮𝗠 𝗫- 𝗠𝗮𝘁𝗿𝗶𝘅 .𓃕](t.me/LARICATEAM)
+[ٰTِE𝖺ِ𝗆 ٰᒪِᗩِ𝗋𝗂ِ𝖼ِ𝖺 ◟ٰ 🎀 ٰ◞](t.me/LARICATEAM)
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
@@ -8644,7 +8644,7 @@ Text = [[
 • رفع/تنزيل منشئ اساسي
 • مسح المنشئين الاساسين
   - - - - - - - - -
-[𝗧𝗲𝗮𝗠 𝗫- 𝗠𝗮𝘁𝗿𝗶𝘅 .𓃕](t.me/LARICATEAM)
+[ٰTِE𝖺ِ𝗆 ٰᒪِᗩِ𝗋𝗂ِ𝖼ِ𝖺 ◟ٰ 🎀 ٰ◞](t.me/LARICATEAM)
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
