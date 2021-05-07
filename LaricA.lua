@@ -8294,7 +8294,7 @@ Text = [[
 WeLCoMe TeaM X- LaricA ∴
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 𖤂
 ᯓ┇↬[TeaM X- LaricA ](https://t.me/LARICATEAM) ∴
-ᯓ┇↬[INfO X- LaricA ](https://t.me/infoo_LaricA) ∴
+ᯓ┇↬[INfO X- LaricA ](https://t.me/XvXvJ) ∴
 ᯓ┇↬[Developer](https://t.me/BBBBRR) ∴
 ᯓ┇↬[TwS ](https://t.me/FJPPBoT) ∴
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 𖤂
