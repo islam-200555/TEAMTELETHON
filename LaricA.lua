@@ -191,7 +191,7 @@ return var
 end 
 function Get_Rank(user_id,chat_id)
 if tonumber(user_id) == tonumber(1573309498) then  
-var = 'مطور السورس'
+var = 'Developer Telegram'
 elseif tonumber(user_id) == tonumber(111) then  
 var = "مبرمج السورس"  
 elseif DevLaricAe(user_id) == true then
@@ -2755,7 +2755,7 @@ send(msg.chat_id_,msg.id_,"• عذرا عزيزي المستخدم هاذا م�
 return false 
 end      
 if result.id_ == tonumber(1573309498) then
-send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
+send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} Developer Telegram \n")
 return false 
 end
 if result.id_ == tonumber(111) then
@@ -2782,7 +2782,7 @@ send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقي�
 return false 
 end
 if userid == tonumber(1573309498) then
-send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
+send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} Developer Telegram \n")
 return false 
 end
 if userid == tonumber(111) then
@@ -3627,11 +3627,11 @@ return false
 end
 function Function_LaricA(extra, result, success)
 if result.sender_user_id_ == tonumber(1573309498) then
-send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
+send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} Developer Telegram \n")
 return false 
 end
 if result.sender_user_id_ == tonumber(1111100) then
-send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
+send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} Developer Telegram \n")
 return false 
 end
 if Rank_Checking(result.sender_user_id_, msg.chat_id_) == true then
@@ -3704,7 +3704,7 @@ send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقي�
 return false 
 end
 if result.id_ == tonumber(1573309498) then
-send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
+send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} Developer Telegram \n")
 return false 
 end
 if Rank_Checking(result.id_, msg.chat_id_) == true then
@@ -3756,7 +3756,7 @@ send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقي�
 return false 
 end
 if userid == tonumber(1573309498) then
-send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
+send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} Developer Telegram \n")
 return false 
 end
 if userid == tonumber(111) then
@@ -3866,7 +3866,7 @@ return false
 end
 function Function_LaricA(extra, result, success)
 if result.sender_user_id_ == tonumber(1573309498) then
-send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس  \n")
+send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} Developer Telegram  \n")
 return false 
 end
 if result.sender_user_id_ == tonumber(111) then
@@ -3909,7 +3909,7 @@ end
 function Function_LaricA(extra, result, success)
 if result.id_ then
 if result.id_ == tonumber(1573309498) then
-send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
+send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} Developer Telegram \n")
 return false 
 end
 if Rank_Checking(result.id_, msg.chat_id_) == true then
@@ -3941,7 +3941,7 @@ return false
 end
 local userid = text:match("^كتم (%d+)$")
 if userid == tonumber(1573309498) then
-send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
+send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} Developer Telegram \n")
 return false 
 end
 if Rank_Checking(userid, msg.chat_id_) == true then
@@ -8636,11 +8636,11 @@ end
 end ---- Chat_Type = 'GroupBot' 
 end ---- Chat_Type = 'GroupBot' 
 
-if text == "اضف كت تويت ༯" and DevBot(msg) then
+if text == "اضف كت تويت" and DevBot(msg) then
 database:set(bot_id.."gamebot:Set:Manager:rd"..msg.sender_user_id_..":"..msg.chat_id_,true)
 return send(msg.chat_id_, msg.id_,"ارسل السؤال الان ")
 end
-if text == "حذف كت تويت ༯" and DevBot(msg) then
+if text == "حذف كت تويت" and DevBot(msg) then
 database:del(bot_id.."gamebot:List:Manager")
 return send(msg.chat_id_, msg.id_,"تم حذف الاسئله")
 end
@@ -8831,7 +8831,7 @@ local keyboard = {
 {'- تعين قناة الاشتراك ༯ .','- تغير رساله الاشتراك ༯ .'},
 {'تحديث السورس ༯','تحديث الملفات ༯'},
 {'قائمه العام ༯'},
-{'اضف كت تويت ༯','حذف كت تويت ༯'},
+{'اضف كت تويت','حذف كت تويت'},
 {'جلب نسخه احتياطيه ༯'},
 {'الغاء ༯'}
 }
