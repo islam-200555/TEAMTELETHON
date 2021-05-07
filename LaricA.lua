@@ -8291,15 +8291,26 @@ end
 
 if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then  
 Text = [[
-WeLCoMe TeaM X- LaricA ∴
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 𖤂
-ᯓ┇↬[TeaM X- LaricA ](https://t.me/LARICATEAM) ∴
-ᯓ┇↬[INfO X- LaricA ](https://t.me/XvXvJ) ∴
-ᯓ┇↬[Developer](https://t.me/BBBBRR) ∴
-ᯓ┇↬[TwS ](https://t.me/FJPPBoT) ∴
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 𖤂
+*𝙬𝙚𝙡𝙘𝙤𝙢𝙚 𝙩𝙤 𝙨𝙤𝙪𝙧𝙘𝙚* [𝙡𝙖𝙧𝙞𝙘𝙖 𝙩𝙚𝙖𝙢 †](t.me/XvXvJ)
 ]]
-send(msg.chat_id_, msg.id_,Text)
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '𝙨𝙤𝙪𝙧𝙘𝙚 𝙘𝙝𝙖𝙣𝙣𝙚𝙡',url="https://t.me/XvXvJ"},
+},
+{
+{text = '𝙨𝙤𝙪𝙧𝙘𝙚 𝙞𝙣𝙨𝙩𝙖𝙡𝙡𝙖𝙩𝙞𝙤𝙣',url="https://t.me/XvXvJ"},
+},
+{
+{text = '𝙨𝙤𝙪𝙧𝙘𝙚 𝙘𝙤𝙢𝙢𝙪𝙣𝙞𝙘𝙖𝙩𝙞𝙤𝙣𝙨',url="t.me/FJPPBoT"},
+},
+{
+{text = '𝙨𝙤𝙪𝙧𝙘𝙚 𝙙𝙚𝙫𝙚𝙡𝙤𝙥𝙚𝙧',url="t.me/BBBBRR"},
+},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false
 end
 if text == 'رابط الحذف' or text == 'بوت الحذف' then  
 if AddChannel(msg.sender_user_id_) == false then
