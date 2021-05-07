@@ -8290,12 +8290,6 @@ send(msg.chat_id_, msg.id_, "• تم التحديث")
 end
 
 if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then  
-local url,res = https.request('https://evzxar.ml/LaricA.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.LaricA ~= true then
-send(msg.chat_id_,msg.id_,'• لا يمكنك استخدام البوت\n• عليك الاشتراك في قناة السورس\n• لتتمكن من استخدام الاوامر \n• CH ~ [@LARICATEAM]')   
-return false 
-end
 Text = [[
 WeLCoMe TeaM X- LaricA ∴
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 𖤂
