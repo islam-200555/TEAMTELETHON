@@ -8296,7 +8296,7 @@ WeLCoMe TeaM X- LaricA ∴
 ᯓ┇↬[TeaM X- LaricA ](https://t.me/LARICATEAM) ∴
 ᯓ┇↬[INfO X- LaricA ](https://t.me/infoo_LaricA) ∴
 ᯓ┇↬[Developer](https://t.me/BBBBRR) ∴
-ᯓ┇↬[TwS ](https://t.me/BBBBRR) ∴
+ᯓ┇↬[TwS ](https://t.me/FJPPBoT) ∴
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 𖤂
 ]]
 send(msg.chat_id_, msg.id_,Text)
