@@ -5482,6 +5482,11 @@ send(msg.chat_id_, msg.id_,"• ارسل الكلمه التي تريد اضاف
 database:set(bot_id.."LaricA:Set:Manager:rd"..msg.sender_user_id_..":"..msg.chat_id_,true)
 return false 
 end
+if text == 'كت تويت' then
+local list = database:smembers(bot_id..'gamebot:List:Manager')
+quschen = list[math.random(#list)]
+send(msg.chat_id_, msg.id_,quschen)
+end
 if text == "حذف رد" and Owner(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
