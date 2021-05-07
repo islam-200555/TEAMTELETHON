@@ -8338,7 +8338,7 @@ end
 Text = [[
 • هناك {5} اوامر لعرضها
 
- • م0 ↺ لعرض اوامر المنظفين
+• م0 ↺ لعرض اوامر المنظفين
 • م1 ↺ لعرض اوامر الحمايه
 • م2 ↺ لعرض اوامر الادمنيه
 • م3 ↺ لعرض اوامر المدراء
@@ -8631,6 +8631,14 @@ end
 end ---- Chat_Type = 'GroupBot' 
 end ---- Chat_Type = 'GroupBot' 
 
+if text == "اضف كت تويت ༯" and DevBot(msg) then
+database:set(bot_id.."gamebot:Set:Manager:rd"..msg.sender_user_id_..":"..msg.chat_id_,true)
+return send(msg.chat_id_, msg.id_,"ارسل السؤال الان ")
+end
+if text == "حذف كت تويت ༯" and DevBot(msg) then
+database:del(bot_id.."gamebot:List:Manager")
+return send(msg.chat_id_, msg.id_,"تم حذف الاسئله")
+end
 if text == 'تفعيل' and DevBot(msg) then 
 if msg.can_be_deleted_ == false then 
 send(msg.chat_id_, msg.id_,'• البوت ليس ادمن يرجى ترقيتي !') 
@@ -8818,6 +8826,7 @@ local keyboard = {
 {'- تعين قناة الاشتراك ༯ .','- تغير رساله الاشتراك ༯ .'},
 {'تحديث السورس ༯','تحديث الملفات ༯'},
 {'قائمه العام ༯'},
+{'اضف كت تويت ༯','حذف كت تويت ༯'},
 {'جلب نسخه احتياطيه ༯'},
 {'الغاء ༯'}
 }
