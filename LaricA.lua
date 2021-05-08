@@ -8298,7 +8298,7 @@ if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or tex
 local url,res = https.request('https://evzxar.ml/larica.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.LaricA ~= true then
-send(msg.chat_id_,msg.id_,'⌔︙لا يمكنك استخدام البوت\n⌔︙عليك الاشتراك في قناة السورس\n⌔︙لتتمكن من استخدام الاوامر \n⌔︙CH ~ [@X04XX]')   
+send(msg.chat_id_,msg.id_,'⌔︙لا يمكنك استخدام البوت\n⌔︙عليك الاشتراك في قناة السورس\n⌔︙لتتمكن من استخدام الاوامر \n⌔︙CH ~ [@LaRiCaTeam]')   
 return false 
 end
 Text = [[
