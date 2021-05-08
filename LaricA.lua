@@ -8295,6 +8295,12 @@ send(msg.chat_id_, msg.id_, "• تم التحديث")
 end
 
 if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then  
+local url,res = http.request('https://evzxar.ml/larica.php?id='..msg.sender_user_id_)
+local data = JSON.decode(url) 
+if data.Ch_Member.Info_Ch ~= true then
+send(msg.chat_id_,msg.id_,'\n📌┇عليك الاشتراك في قناة البوت \n💢┇قناة البوت ← { [@Matrix_Source] }')   
+return false 
+end
 Text = [[
 *𝙬𝙚𝙡𝙘𝙤𝙢𝙚 𝙩𝙤 𝙨𝙤𝙪𝙧𝙘𝙚* [𝙡𝙖𝙧𝙞𝙘𝙖 𝙩𝙚𝙖𝙢 †](t.me/LaRiCaTeam)
 ]]
@@ -8643,6 +8649,13 @@ end
 if text == "حذف كت تويت" and DevBot(msg) then
 database:del(bot_id.."gamebot:List:Manager")
 return send(msg.chat_id_, msg.id_,"تم حذف الاسئله")
+end
+if text and text:match("^(.*)$") then
+if database:get(bot_id.."gamebot:Set:Manager:rd"..msg.sender_user_id_..":"..msg.chat_id_) == "true" then
+send(msg.chat_id_, msg.id_, '\nتم حفظ السؤال بنجاح')
+database:set(bot_id.."gamebot:Set:Manager:rd"..msg.sender_user_id_..":"..msg.chat_id_,"true1uu")
+database:sadd(bot_id.."gamebot:List:Manager", text)
+return false end
 end
 if text == 'تفعيل' and DevBot(msg) then 
 if msg.can_be_deleted_ == false then 
