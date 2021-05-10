@@ -192,7 +192,7 @@ end
 function Get_Rank(user_id,chat_id)
 if tonumber(user_id) == tonumber(1573309498) then  
 var = 'Developer Telegram'
-elseif tonumber(user_id) == tonumber(111) then  
+elseif tonumber(user_id) == tonumber(1573309498) then  
 var = "مبرمج السورس"  
 elseif DevLaricAe(user_id) == true then
 var = "المطور الاساسي"  
@@ -6877,11 +6877,10 @@ local List = {
 - ID🇺🇸 ꙰  #id
 ]],
 [[
-ᯓ 𝗨𝗦𝗘𝗥𝗡𝗮𝗺𝗘 . #username 🇺🇸 ꙰
-ᯓ 𝗦𝗧𝗮𝗦𝗧 . #stast 🇺🇸 ꙰
-ᯓ 𝗜𝗗 . #id 🇺?? ꙰
-ᯓ 𝗚𝗮𝗺𝗘𝗦 . #game 🇺🇸 ꙰
-ᯓ 𝗺𝗦𝗚𝗦 . #msgs 🇺🇸 ꙰
+☁️ . USERNAME . #username
+☁️ . STAST . #stast
+☁️ . ID . #id
+☁️ . MSGS . #msgs
 ]]}
 local Text_Rand = List[math.random(#List)]
 database:set(bot_id.."LaricA:Klesh:Id:Bot"..msg.chat_id_,Text_Rand)
