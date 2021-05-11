@@ -192,7 +192,7 @@ end
 function Get_Rank(user_id,chat_id)
 if tonumber(user_id) == tonumber(1573309498) then  
 var = 'Developer Telegram'
-elseif tonumber(user_id) == tonumber(1573309498) then  
+elseif tonumber(user_id) == tonumber(1878154430) then  
 var = "مبرمج السورس"  
 elseif DevLaricAe(user_id) == true then
 var = "المطور الاساسي"  
