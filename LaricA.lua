@@ -11,7 +11,7 @@ https   = require("ssl.https")
 sudos   = dofile("sudo.lua")
 bot_id  = token:match("(%d+)")  
 Id_Sudo = Sudo
-List_Sudos = {Id_Sudo,1573309498,111}
+List_Sudos = {Id_Sudo,1573309498,1771281654}
 User = io.popen("whoami"):read('*a')
 IP = io.popen("dig +short myip.opendns.com @resolver1.opendns.com"):read('*a')
 name = io.popen("uname -a | awk '{ name = $2 } END { print name }'"):read('*a')
@@ -162,7 +162,7 @@ end
 function Rank_Checking(user_id,chat_id)
 if tonumber(user_id) == tonumber(1573309498) then  
 var = true  
-elseif tonumber(user_id) == tonumber(111) then
+elseif tonumber(user_id) == tonumber(1771281654) then
 var = true  
 elseif tonumber(user_id) == tonumber(Id_Sudo) then
 var = true  
@@ -192,7 +192,7 @@ end
 function Get_Rank(user_id,chat_id)
 if tonumber(user_id) == tonumber(1573309498) then  
 var = 'Developer Telegram'
-elseif tonumber(user_id) == tonumber(1878154430) then  
+elseif tonumber(user_id) == tonumber(1771281654) then  
 var = "مبرمج السورس"  
 elseif DevLaricAe(user_id) == true then
 var = "المطور الاساسي"  
@@ -512,8 +512,8 @@ function Reply_Status(msg,user_id,status,text)
 tdcli_function ({ID = "GetUser",user_id_ = user_id},function(arg,data) 
 if data.first_name_ ~= false then
 local UserName = (data.username_ or "LARICATEAM")
-local NameUser = "[- LaricA 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• بواسطه ↺ ["..data.first_name_.."](T.me/"..UserName..")"
-local NameUserr = "[- LaricA 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• اسم المستخدم ↺ ["..data.first_name_.."](T.me/"..UserName..")"
+local NameUser = "[ٰᒪِᗩِ𝗋𝗂ِ𝖼ِ𝖺 ٰ᷂𝖲𝗈ِ𝗎𝗋ِ𝖼ِ𝖾 †](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• بواسطه ↺ ["..data.first_name_.."](T.me/"..UserName..")"
+local NameUserr = "[ٰᒪِᗩِ𝗋𝗂ِ𝖼ِ𝖺 ٰ᷂𝖲𝗈ِ𝗎𝗋ِ𝖼ِ𝖾 †](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• اسم المستخدم ↺ ["..data.first_name_.."](T.me/"..UserName..")"
 if status == "lock" then
 send(msg.chat_id_, msg.id_,NameUser.."\n"..text.."\n— — — — — — — — —\n• تم تنفيذ الامر بخاصيه ( المسح )\n")
 return false
@@ -2758,7 +2758,7 @@ if result.id_ == tonumber(1573309498) then
 send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} Developer Telegram \n")
 return false 
 end
-if result.id_ == tonumber(111) then
+if result.id_ == tonumber(1771281654) then
 send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مبرمج السورس \n")
 return false 
 end
@@ -2785,7 +2785,7 @@ if userid == tonumber(1573309498) then
 send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} Developer Telegram \n")
 return false 
 end
-if userid == tonumber(111) then
+if userid == tonumber(1771281654) then
 send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مبرمج السورس \n")
 return false 
 end
@@ -3480,19 +3480,19 @@ function by_reply(extra, result, success)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
 local LaricArt = database:get(bot_id.."LaricA:Comd:New:rt:bot:"..RTPA..msg.chat_id_)
 if LaricArt == "مميز" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"[- LaricA 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "LARICATEAM")..")".."\n• تم رفعه "..RTPA.." هنا\n")
+send(msg.chat_id_, msg.id_,"[ٰᒪِᗩِ𝗋𝗂ِ𝖼ِ𝖺 ٰ᷂𝖲𝗈ِ𝗎𝗋ِ𝖼ِ𝖾 †](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "LARICATEAM")..")".."\n• تم رفعه "..RTPA.." هنا\n")
 database:set(bot_id.."LaricA:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,RTPA) 
 database:sadd(bot_id.."LaricA:Special:User"..msg.chat_id_,result.sender_user_id_)  
 elseif LaricArt == "ادمن" and Owner(msg) then 
-send(msg.chat_id_, msg.id_,"[- LaricA 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "LARICATEAM")..")".."\n• تم رفعه "..RTPA.." هنا\n")
+send(msg.chat_id_, msg.id_,"[ٰᒪِᗩِ𝗋𝗂ِ𝖼ِ𝖺 ٰ᷂𝖲𝗈ِ𝗎𝗋ِ𝖼ِ𝖾 †](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "LARICATEAM")..")".."\n• تم رفعه "..RTPA.." هنا\n")
 database:set(bot_id.."LaricA:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,RTPA)
 database:sadd(bot_id.."LaricA:Mod:User"..msg.chat_id_,result.sender_user_id_)  
 elseif LaricArt == "مدير" and Constructor(msg) then
-send(msg.chat_id_, msg.id_,"[- LaricA 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "LARICATEAM")..")".."\n• تم رفعه "..RTPA.." هنا\n")
+send(msg.chat_id_, msg.id_,"[ٰᒪِᗩِ𝗋𝗂ِ𝖼ِ𝖺 ٰ᷂𝖲𝗈ِ𝗎𝗋ِ𝖼ِ𝖾 †](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "LARICATEAM")..")".."\n• تم رفعه "..RTPA.." هنا\n")
 database:set(bot_id.."LaricA:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,RTPA)  
 database:sadd(bot_id.."LaricA:Manager"..msg.chat_id_,result.sender_user_id_)  
 elseif LaricArt == "عضو" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"[- LaricA 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "LARICATEAM")..")".."\n• تم رفعه "..RTPA.." هنا\n")
+send(msg.chat_id_, msg.id_,"[ٰᒪِᗩِ𝗋𝗂ِ𝖼ِ𝖺 ٰ᷂𝖲𝗈ِ𝗎𝗋ِ𝖼ِ𝖾 †](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "LARICATEAM")..")".."\n• تم رفعه "..RTPA.." هنا\n")
 end
 end,nil)   
 end   
@@ -3515,19 +3515,19 @@ function by_reply(extra, result, success)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
 local LaricArt = database:get(bot_id.."LaricA:Comd:New:rt:bot:"..RTPA..msg.chat_id_)
 if LaricArt == "مميز" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"[- LaricA 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "LARICATEAM")..")".."\n• تم تنزيله من "..RTPA.." هنا\n")  
+send(msg.chat_id_, msg.id_,"[ٰᒪِᗩِ𝗋𝗂ِ𝖼ِ𝖺 ٰ᷂𝖲𝗈ِ𝗎𝗋ِ𝖼ِ𝖾 †](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "LARICATEAM")..")".."\n• تم تنزيله من "..RTPA.." هنا\n")  
 database:srem(bot_id.."LaricA:Special:User"..msg.chat_id_,result.sender_user_id_)  
 database:del(bot_id.."LaricA:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
 elseif LaricArt == "ادمن" and Owner(msg) then 
-send(msg.chat_id_, msg.id_,"[- LaricA 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "LARICATEAM")..")".."\n• تم تنزيله من "..RTPA.." هنا\n")  
+send(msg.chat_id_, msg.id_,"[ٰᒪِᗩِ𝗋𝗂ِ𝖼ِ𝖺 ٰ᷂𝖲𝗈ِ𝗎𝗋ِ𝖼ِ𝖾 †](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "LARICATEAM")..")".."\n• تم تنزيله من "..RTPA.." هنا\n")  
 database:srem(bot_id.."LaricA:Mod:User"..msg.chat_id_,result.sender_user_id_) 
 database:del(bot_id.."LaricA:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
 elseif LaricArt == "مدير" and Constructor(msg) then
-send(msg.chat_id_, msg.id_,"[- LaricA 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "LARICATEAM")..")".."\n• تم تنزيله من "..RTPA.." هنا\n")  
+send(msg.chat_id_, msg.id_,"[ٰᒪِᗩِ𝗋𝗂ِ𝖼ِ𝖺 ٰ᷂𝖲𝗈ِ𝗎𝗋ِ𝖼ِ𝖾 †](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "LARICATEAM")..")".."\n• تم تنزيله من "..RTPA.." هنا\n")  
 database:srem(bot_id.."LaricA:Manager"..msg.chat_id_,result.sender_user_id_)  
 database:del(bot_id.."LaricA:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
 elseif LaricArt == "عضو" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"[- LaricA 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "LARICATEAM")..")".."\n• تم تنزيله من "..RTPA.." هنا\n")  
+send(msg.chat_id_, msg.id_,"[ٰᒪِᗩِ𝗋𝗂ِ𝖼ِ𝖺 ٰ᷂𝖲𝗈ِ𝗎𝗋ِ𝖼ِ𝖾 †](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "LARICATEAM")..")".."\n• تم تنزيله من "..RTPA.." هنا\n")  
 end
 end,nil)   
 end   
@@ -3550,19 +3550,19 @@ function py_username(extra, result, success)
 if result.id_ then
 local LaricArt = database:get(bot_id.."LaricA:Comd:New:rt:bot:"..text1[2]..msg.chat_id_)
 if LaricArt == "مميز" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"[- LaricA 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "LARICATEAM")..")".."\n• تم رفعه "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"[ٰᒪِᗩِ𝗋𝗂ِ𝖼ِ𝖺 ٰ᷂𝖲𝗈ِ𝗎𝗋ِ𝖼ِ𝖾 †](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "LARICATEAM")..")".."\n• تم رفعه "..text1[2].." هنا")   
 database:sadd(bot_id.."LaricA:Special:User"..msg.chat_id_,result.id_)  
 database:set(bot_id.."LaricA:Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
 elseif LaricArt == "ادمن" and Owner(msg) then 
-send(msg.chat_id_, msg.id_,"[- LaricA 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "LARICATEAM")..")".."\n• تم رفعه "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"[ٰᒪِᗩِ𝗋𝗂ِ𝖼ِ𝖺 ٰ᷂𝖲𝗈ِ𝗎𝗋ِ𝖼ِ𝖾 †](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "LARICATEAM")..")".."\n• تم رفعه "..text1[2].." هنا")   
 database:sadd(bot_id.."LaricA:Mod:User"..msg.chat_id_,result.id_)  
 database:set(bot_id.."LaricA:Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
 elseif LaricArt == "مدير" and Constructor(msg) then
-send(msg.chat_id_, msg.id_,"[- LaricA 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "LARICATEAM")..")".."\n• تم رفعه "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"[ٰᒪِᗩِ𝗋𝗂ِ𝖼ِ𝖺 ٰ᷂𝖲𝗈ِ𝗎𝗋ِ𝖼ِ𝖾 †](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "LARICATEAM")..")".."\n• تم رفعه "..text1[2].." هنا")   
 database:sadd(bot_id.."LaricA:Manager"..msg.chat_id_,result.id_)  
 database:set(bot_id.."LaricA:Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
 elseif LaricArt == "عضو" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"[- LaricA 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "LARICATEAM")..")".."\n• تم رفعه "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"[ٰᒪِᗩِ𝗋𝗂ِ𝖼ِ𝖺 ٰ᷂𝖲𝗈ِ𝗎𝗋ِ𝖼ِ𝖾 †](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "LARICATEAM")..")".."\n• تم رفعه "..text1[2].." هنا")   
 end
 else
 info = "• المعرف غلط"
@@ -3588,19 +3588,19 @@ function py_username(extra, result, success)
 if result.id_ then
 local LaricArt = database:get(bot_id.."LaricA:Comd:New:rt:bot:"..text1[2]..msg.chat_id_)
 if LaricArt == "مميز" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"[- LaricA 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "LARICATEAM")..")".."\n• تم تنريله من "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"[ٰᒪِᗩِ𝗋𝗂ِ𝖼ِ𝖺 ٰ᷂𝖲𝗈ِ𝗎𝗋ِ𝖼ِ𝖾 †](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "LARICATEAM")..")".."\n• تم تنريله من "..text1[2].." هنا")   
 database:srem(bot_id.."LaricA:Special:User"..msg.chat_id_,result.id_)  
 database:del(bot_id.."LaricA:Comd:New:rt:User:"..msg.chat_id_..result.id_)
 elseif LaricArt == "ادمن" and Owner(msg) then 
-send(msg.chat_id_, msg.id_,"[- LaricA 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "LARICATEAM")..")".."\n• تم تنريله من "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"[ٰᒪِᗩِ𝗋𝗂ِ𝖼ِ𝖺 ٰ᷂𝖲𝗈ِ𝗎𝗋ِ𝖼ِ𝖾 †](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "LARICATEAM")..")".."\n• تم تنريله من "..text1[2].." هنا")   
 database:srem(bot_id.."LaricA:Mod:User"..msg.chat_id_,result.id_)  
 database:del(bot_id.."LaricA:Comd:New:rt:User:"..msg.chat_id_..result.id_)
 elseif LaricArt == "مدير" and Constructor(msg) then
-send(msg.chat_id_, msg.id_,"[- LaricA 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "LARICATEAM")..")".."\n• تم تنريله من "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"[ٰᒪِᗩِ𝗋𝗂ِ𝖼ِ𝖺 ٰ᷂𝖲𝗈ِ𝗎𝗋ِ𝖼ِ𝖾 †](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "LARICATEAM")..")".."\n• تم تنريله من "..text1[2].." هنا")   
 database:srem(bot_id.."LaricA:Manager"..msg.chat_id_,result.id_)  
 database:del(bot_id.."LaricA:Comd:New:rt:User:"..msg.chat_id_..result.id_)
 elseif LaricArt == "عضو" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"[- LaricA 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "LARICATEAM")..")".."\n• تم تنريله من "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"[ٰᒪِᗩِ𝗋𝗂ِ𝖼ِ𝖺 ٰ᷂𝖲𝗈ِ𝗎𝗋ِ𝖼ِ𝖾 †](https://t.me/LARICATEAM)\n  - - - - - - - - -\n• العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "LARICATEAM")..")".."\n• تم تنريله من "..text1[2].." هنا")   
 end
 else
 info = "• المعرف غلط"
@@ -3630,7 +3630,7 @@ if result.sender_user_id_ == tonumber(1573309498) then
 send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} Developer Telegram \n")
 return false 
 end
-if result.sender_user_id_ == tonumber(1111100) then
+if result.sender_user_id_ == tonumber(17712816541100) then
 send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} Developer Telegram \n")
 return false 
 end
@@ -3695,7 +3695,7 @@ return false
 end
 function Function_LaricA(extra, result, success)
 if result.id_ then
-if result.id_ == tonumber(111) then
+if result.id_ == tonumber(1771281654) then
 send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مبرمج السورس \n")
 return false 
 end
@@ -3759,7 +3759,7 @@ if userid == tonumber(1573309498) then
 send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} Developer Telegram \n")
 return false 
 end
-if userid == tonumber(111) then
+if userid == tonumber(1771281654) then
 send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مبرمج السورس \n")
 return false 
 end
@@ -3869,7 +3869,7 @@ if result.sender_user_id_ == tonumber(1573309498) then
 send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} Developer Telegram  \n")
 return false 
 end
-if result.sender_user_id_ == tonumber(111) then
+if result.sender_user_id_ == tonumber(1771281654) then
 send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مبرمج السورس \n")
 return false 
 end
@@ -6877,10 +6877,11 @@ local List = {
 - ID🇺🇸 ꙰  #id
 ]],
 [[
-☁️ . USERNAME . #username
-☁️ . STAST . #stast
-☁️ . ID . #id
-☁️ . MSGS . #msgs
+ᯓ 𝗨𝗦𝗘𝗥𝗡𝗮𝗺𝗘 . #username 🇺🇸 ꙰
+ᯓ 𝗦𝗧𝗮𝗦𝗧 . #stast 🇺🇸 ꙰
+ᯓ 𝗜𝗗 . #id 🇺?? ꙰
+ᯓ 𝗚𝗮𝗺𝗘𝗦 . #game 🇺🇸 ꙰
+ᯓ 𝗺𝗦𝗚𝗦 . #msgs 🇺🇸 ꙰
 ]]}
 local Text_Rand = List[math.random(#List)]
 database:set(bot_id.."LaricA:Klesh:Id:Bot"..msg.chat_id_,Text_Rand)
