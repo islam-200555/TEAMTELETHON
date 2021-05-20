@@ -6318,7 +6318,7 @@ local namebot = {
 'شكد احب اسمي بصوتك',
 'دد لتلح؟',
 'لابسك لتلح',
-" هايروحي؟ "..Namebot,
+" ها يروح "..Namebot,
 }
 name = math.random(#namebot)
 send(msg.chat_id_, msg.id_, namebot[name]) 
