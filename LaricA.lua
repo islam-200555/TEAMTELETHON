@@ -6012,7 +6012,18 @@ local taha = "• عدد الادمنيه : "..data.administrator_count_..
 send(msg.chat_id_, msg.id_, taha) 
 end,nil)
 end,nil)
-end 
+end
+if text == 'تنزيل جميع الرتب' then
+                    if not BasicConstructor(msg) then
+                    send(msg.chat_id_, msg.id_,'✫: منشئ اساسي فقط لتكمز 😹😭 ') 
+                    return false
+                    end
+                    database:del(bot_id..'Constructor'..msg.chat_id_)
+                    database:del(bot_id..'Mod:User'..msg.chat_id_)
+                    database:del(bot_id..'Manager'..msg.chat_id_)
+                    database:del(bot_id..'Special:User'..msg.chat_id_)
+                    send(msg.chat_id_, msg.id_, '✫: تم تنزيل جميع رتب الاعضاء من ▾\n܁𓍼 :◝ المنشئين ٬ المدراء ٬ الادمنيه ٬ المميزين◟\n')
+                    end
 if text == "اطردني" or text == "طردني" then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
