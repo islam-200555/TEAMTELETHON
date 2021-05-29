@@ -8506,6 +8506,9 @@ keyboard.inline_keyboard = {
 {text = 'آوآمر آلمنشئين', callback_data=msg.sender_user_id_.."/help4"},{text = 'آوآمر آلمطورين', callback_data=msg.sender_user_id_.."/help5"},
 },
 }
+{text = 'اوامر التعطيل', callback_data=msg.sender_user_id_.."/homeaddrem"},{text = 'اوامر القفل', callback_data=msg.sender_user_id_.."/homelocks"},
+},
+} 
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
@@ -9796,6 +9799,9 @@ keyboard.inline_keyboard = {
 {text = 'الاوامر الرئيسيه', callback_data=data.sender_user_id_.."/help"},
 },
 }
+{text = 'اوامر التعطيل', callback_data=msg.sender_user_id_.."/homeaddrem"},{text = 'اوامر القفل', callback_data=msg.sender_user_id_.."/homelocks"},
+},
+} 
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
 elseif Text and Text:match('(.*)/help1') then
@@ -9849,6 +9855,9 @@ keyboard.inline_keyboard = {
 {text = 'الاوامر الرئيسيه', callback_data=data.sender_user_id_.."/help"},
 },
 }
+{text = 'اوامر التعطيل', callback_data=msg.sender_user_id_.."/homeaddrem"},{text = 'اوامر القفل', callback_data=msg.sender_user_id_.."/homelocks"},
+},
+} 
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
 elseif Text and Text:match('(.*)/help2') then
@@ -9927,6 +9936,9 @@ keyboard.inline_keyboard = {
 {text = 'الاوامر الرئيسيه', callback_data=data.sender_user_id_.."/help"},
 },
 }
+{text = 'اوامر التعطيل', callback_data=msg.sender_user_id_.."/homeaddrem"},{text = 'اوامر القفل', callback_data=msg.sender_user_id_.."/homelocks"},
+},
+} 
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
 elseif Text and Text:match('(.*)/help3') and Owner(data) then  
@@ -9980,6 +9992,9 @@ keyboard.inline_keyboard = {
 {text = 'الاوامر الرئيسيه', callback_data=data.sender_user_id_.."/help"},
 },
 }
+{text = 'اوامر التعطيل', callback_data=msg.sender_user_id_.."/homeaddrem"},{text = 'اوامر القفل', callback_data=msg.sender_user_id_.."/homelocks"},
+},
+} 
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
 elseif Text and Text:match('(.*)/help4') and Constructor(data) then  
@@ -10020,6 +10035,9 @@ keyboard.inline_keyboard = {
 },
 {
 {text = 'الاوامر الرئيسيه', callback_data=data.sender_user_id_.."/help"},
+},
+}
+{text = 'اوامر التعطيل', callback_data=msg.sender_user_id_.."/homeaddrem"},{text = 'اوامر القفل', callback_data=msg.sender_user_id_.."/homelocks"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -10087,6 +10105,9 @@ keyboard.inline_keyboard = {
 {text = 'الاوامر الرئيسيه', callback_data=data.sender_user_id_.."/help"},
 },
 }
+{text = 'اوامر التعطيل', callback_data=msg.sender_user_id_.."/homeaddrem"},{text = 'اوامر القفل', callback_data=msg.sender_user_id_.."/homelocks"},
+},
+} 
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
 elseif Text and Text:match('(.*)/help') then
@@ -10107,6 +10128,9 @@ keyboard.inline_keyboard = {
 {text = 'آوآمر آلمنشئين', callback_data=data.sender_user_id_.."/help4"},{text = 'آوآمر آلمطورين', callback_data=data.sender_user_id_.."/help5"},
 },
 }
+{text = 'اوامر التعطيل', callback_data=msg.sender_user_id_.."/homeaddrem"},{text = 'اوامر القفل', callback_data=msg.sender_user_id_.."/homelocks"},
+},
+} 
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
 end
