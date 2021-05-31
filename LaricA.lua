@@ -2732,6 +2732,22 @@ end
 if #list == 0 then
 t = "• لا يوجد ادمنيه"
 end
+if text == ("تاك للادمنيه") or text == ("صيح الادمنيه") then
+local list = database:smembers(bot_id..'Mod:User'..msg.chat_id_)
+t = "\n ✫: وينكم تعالو يريدوكم بكروب \n― — — — — ― — — — —\n"
+for k,v in pairs(list) do
+local username = database:get(bot_id.."user:Name" .. v)
+if username then
+t = t..""..k.."- {[@"..username.."]}\n"
+else
+t = t..""..k.."- {"..v.."}\n"
+end
+end
+if #list == 0 then
+t = " ✫: لا يوجد ادمنيه"
+end
+send(msg.chat_id_, msg.id_, t)
+end
 send(msg.chat_id_, msg.id_, t)
 end
 if text == ("المميزين") and Addictive(msg) then
