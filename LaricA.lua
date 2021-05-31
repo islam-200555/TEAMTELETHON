@@ -4669,18 +4669,43 @@ t = "• لا يوجد ميديا في المجموعه"
 end
 send(msg.chat_id_, msg.id_, t)
 end
-if text == ("الميديا") and cleaner(msg) then  
-local num = database:smembers(bot_id.."LaricA:allM"..msg.chat_id_)
-for k,v in pairs(num) do
-local numl = v
-if numl then
-l = "• عدد الميديا الموجود هو "..k
+if text == ("عدد الميديا") and cleaner(msg) then  
+local gmria = database:scard(bot_id.."LaricA:allM"..msg.chat_id_)  
+send(msg.chat_id_, msg.id_,"• عدد الميديا الموجود هو (* "..gmria.." *)")
+end
+if text == "امسح" and cleaner(msg) and GetSourseMember(msg) then   
+Msgs = {[0]=msg.id_}
+local Message = msg.id_
+for i=1,200 do
+Message = Message - 1048576
+Msgs[i] = Message
+end
+tdcli_function({ID = "GetMessages",chat_id_ = msg.chat_id_,message_ids_ = Msgs},function(arg,data)
+new = 0
+Msgs2 = {}
+for i=0 ,data.total_count_ do
+if data.messages_[i] and (not data.messages_[i].edit_date_ or data.messages_[i].edit_date_ ~= 0) then
+Msgs2[new] = data.messages_[i].id_
+new = new + 1
 end
 end
-if #num == 0 then
-l = "• لا يوجد ميديا في المجموعه"
+DeleteMessage(msg.chat_id_,Msgs2)
+end,nil)  
+send(msg.chat_id_, msg.id_,'• تم تنظيف الميديا المعدله')
 end
-send(msg.chat_id_, msg.id_, l)
+if not database:get(bot_id.."y:msg:media"..msg.chat_id_) and (msg.content_.text_) or (msg.content_.animation_) or (msg.content_.photo_) or (msg.content_.video_) or (msg.content_.document) or (msg.content_.sticker_) or (msg.content_.voice_) or (msg.content_.audio_) then    
+local gmedia = database:scard(bot_id.."LaricA:allM"..msg.chat_id_)  
+if gmedia == 200 then
+local liste = database:smembers(bot_id.."LaricA:allM"..msg.chat_id_)
+for k,v in pairs(liste) do
+local Mesge = v
+if Mesge then
+t = "• تم مسح "..k.." من الوسائط تلقائيا\n• يمكنك تعطيل الميزه بستخدام الامر ( `تعطيل المسح التلقائي` )"
+DeleteMessage(msg.chat_id_,{[0]=Mesge})
+end
+end
+send(msg.chat_id_, msg.id_, t)
+database:del(bot_id.."LaricA:allM"..msg.chat_id_)
 end
 if text and text:match("^ضع صوره") and Addictive(msg) and msg.reply_to_message_id_ == 0 or text and text:match("^وضع صوره") and Addictive(msg) and msg.reply_to_message_id_ == 0 then  
 if AddChannel(msg.sender_user_id_) == false then
@@ -8026,6 +8051,16 @@ t = t..i.."-  `"..v.."` \n"
 end
 send(msg.chat_id_, msg.id_, t..'  - - - - - - - - -\n• اضغط على الاسم ليتم نسخه')
 end
+if text == "تعطيل المسح التلقائي" and Owner(msg) and GetSourseMember(msg) then        
+database:set(bot_id.."y:msg:media"..msg.chat_id_,true)
+Reply_Status(msg,msg.sender_user_id_,"lock",'• تم تعطيل المسح التلقائي للميديا')
+return false
+end 
+if text == "تفعيل المسح التلقائي" and Owner(msg) and GetSourseMember(msg) then        
+database:del(bot_id.."y:msg:media"..msg.chat_id_)
+Reply_Status(msg,msg.sender_user_id_,"lock",'• تم تفعيل المسح التلقائي للميديا')
+return false
+end 
 if text == "تعطيل الابراج" and Owner(msg) then
 send(msg.chat_id_, msg.id_, '• تم تعطيل الابراج')
 database:set(bot_id.."LaricA:brj_Bots"..msg.chat_id_,"close")
