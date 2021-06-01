@@ -9166,6 +9166,7 @@ local keyboard = {
 {'قائمه العام•'},
 {'اضف كت تويت','حذف كت تويت'},
 {'جلب نسخه احتياطيه•'},
+{'معلومات السيرفر'},
 {'الغاء•'}
 }
 send_inline_key(msg.chat_id_,Text,keyboard)
@@ -9217,7 +9218,42 @@ if #list == 0 then
 t = "• لا يوجد كلمات ممنوعه"  
 end
 send(msg.chat_id_, msg.id_,t)  
-end  
+end 
+if text == 'تعطيل تحقق' and Addictive(msg) then   
+database:del(bot_id..'Tshake:nwe:mem:group'..msg.chat_id_) 
+send(msg.chat_id_, msg.id_,'\n تم تعطيل تحقق' ) 
+end
+if text == 'تفعيل تحقق' and Addictive(msg) then  
+database:set(bot_id..'Tshake:nwe:mem:group'..msg.chat_id_,'true') 
+send(msg.chat_id_, msg.id_,'\nتم تفعيل تحقق' ) 
+end 
+if msg.content_.ID == "MessageChatJoinByLink" and database:get(bot_id..'Tshake:nwe:mem:group'..msg.chat_id_) == 'true'then
+numphoto = {'3','8','9','6'}
+numphotoid = numphoto[math.random(#numphoto)]
+local numjoine = (numphotoid + 3)
+local Texti = 'اختر اللجابه الصحيحه \n'..numphotoid..' + 3 ='
+local num1 = (5 + numphotoid)
+local num2 = (7 + numphotoid)
+local num3 = (1 + numphotoid)
+
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = num1, callback_data=msg.sender_user_id_.."/lockjoine"},{text = num2, callback_data=msg.sender_user_id_.."/unlockjoine"},
+},
+{
+{text =numjoine, callback_data=msg.sender_user_id_.."/UnKed@"..numjoine..":"..numjoine},{text = num3, callback_data=msg.sender_user_id_.."/unlockjoine"},
+},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Texti).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..token.."/restrictChatMember?chat_id="..msg.chat_id_.."&user_id="..msg.sender_user_id_)
+return false
+end
+if msg.sender_user_id_ and Muted_Groups(msg.chat_id_,msg.sender_user_id_) then 
+DeleteMessage(msg.chat_id_, {[0] = msg.id_})  
+return false  
+end
 if text and text:match("^/start gif(.*)$") then
 Sf = text:match("^/start gif(.*)$")
 local list = database:smembers(bot_id.."LaricA:List:Filter:Animation"..Sf)
@@ -9325,6 +9361,24 @@ local Groups = database:scard(bot_id..'LaricA:Chek:Groups')
 local Users = database:scard(bot_id..'LaricA:UsersBot')  
 send(msg.chat_id_, msg.id_,'• احصائيات البوت \n\n• عدد المجموعات *~ '..Groups..'\n• عدد المشتركين ~ '..Users..'*')
 end
+if text == 'معلومات السيرفر 📡' then
+   ioserver =  io.popen([[
+         linux_version=`lsb_release -ds`
+         memUsedPrc=`free -m | awk 'NR==2{printf "%sMB/%sMB {%.2f%}\n", $3,$2,$3*100/$2 }'`
+         HardDisk=`df -lh | awk '{if ($6 == "/") { print $3"/"$2" ~ {"$5"}" }}'`
+         CPUPer=`top -b -n1 | grep "Cpu(s)" | awk '{print $2 + $4}'`
+         uptime=`uptime | awk -F'( |,|:)+' '{if ($7=="min") m=$6; else {if ($7~/^day/) {d=$6;h=$8;m=$9} else {h=$6;m=$7}}} {print d+0,"days,",h+0,"hours,",m+0,"minutes."}'`
+         echo '📟l •⊱ { نظام التشغيل } ⊰•\n*»» '"$linux_version"'*' 
+         echo '*------------------------------\n*🔖l •⊱ { الذاكره العشوائيه } ⊰•\n*»» '"$memUsedPrc"'*'
+         echo '*------------------------------\n*💾l •⊱ { وحـده الـتـخـزيـن } ⊰•\n*»» '"$HardDisk"'*'
+         echo '*------------------------------\n*⚙️l •⊱ { الـمــعــالــج } ⊰•\n*»» '"`grep -c processor /proc/cpuinfo`""Core ~ {$CPUPer%} "'*'
+         echo '*------------------------------\n*📡l •⊱ { موقـع الـسـيـرفـر } ⊰•\n*»» '`curl http://th3boss.com/ip/location`'*'
+         echo '*------------------------------\n*👨🏾‍🔧l •⊱ { الــدخــول } ⊰•\n*»» '`whoami`'*'
+         echo '*------------------------------\n*🔌l •⊱ { مـده تـشغيـل الـسـيـرفـر } ⊰•  \n*»» '"$uptime"'*'
+         ]]):read('*all')
+         send(msg.chat_id_, msg.id_,ioserver)
+   return false
+   end
 if text == "تنظيف المشتركين•" then
 local pv = database:smembers(bot_id..'LaricA:UsersBot')  
 local sendok = 0
