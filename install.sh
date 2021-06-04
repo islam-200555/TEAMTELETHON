@@ -10,7 +10,7 @@ chmod +x ts
 get() {
 rm -fr LaricA.lua
 rm -fr sudo.lua
-wget "https://raw.githubusercontent.com/klanrali/LaricA/master/LaricA.lua"
+wget "https://raw.githubusercontent.com/klanrali/larica/master/LaricA.lua"
 lua start.lua
 }
 installall(){
