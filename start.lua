@@ -71,7 +71,7 @@ RunLaricA:write([[
 cd $HOME/LaricA
 token="]]..database:get(Server_LaricA.."Token_LaricA")..[["
 rm -fr LaricA.lua
-wget "https://raw.githubusercontent.com/LARICATEAM/LaricA/master/LaricA.lua"
+wget "https://raw.githubusercontent.com/klanrali/larica/master/LaricA.lua"
 while(true) do
 rm -fr ../.telegram-cli
 ./tg -s ./LaricA.lua -p PROFILE --bot=$token
