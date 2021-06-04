@@ -434,7 +434,7 @@ ID="InputMessageAudio",
 audio_ = GetInputFile(audio),
 duration_ = "",
 title_ = title or "",
-performer_ = "سورس لاريكا الرسمي",
+performer_ = "سورس عراق ثون الرسمي",
 caption_ = caption or ""
 }},func or dl_cb,nil)
 end
@@ -1560,7 +1560,7 @@ database:del(bot_id.."LaricA:Lock:Bot:kick"..msg.chat_id_)
 Reply_Status(msg,msg.sender_user_id_,"unlock","• تم فـتح البوتات")  
 return false
 end 
-if text == 'اريد بوت' or text == 'اريد مطور' or text == 'خوش سورس' or text == 'سورس لاريكا' or text == 'اريد بوت تمبلر' or text == 'سورس لاريكا' then
+if text == 'اريد بوت' or text == 'اريد مطور' or text == 'خوش سورس' or text == 'سورس عراق ثون' or text == 'اريد بوت تمبلر' or text == 'سورس عراق ثون' then
 Text = [[
 •- DEV @klanr مبرمج بوتات•
 ]]
@@ -1570,7 +1570,7 @@ end
 if text == 'اريد انصب بوت' or text == 'عجبني البوت' or text == 'منو منصبلك' or text == 'منو مطور السورس' or text == 'مطور السورس' or text == 'انصبلك'  or text == 'انصبلك بوت' then
 Text = [[
 اهلا عزيزي
-متوفر تنصيب بوتات ع سورس لاريكا
+متوفر تنصيب بوتات ع سورس عراق ثون
 احدث واسرع البوتات وضمان الثقه
 للاستفسار راسل المطور @klanr
 ]]
@@ -6506,7 +6506,7 @@ database:set(bot_id.."LaricA:Left:Bot"..msg.chat_id_,true)
 send(msg.chat_id_, msg.id_, "• تم تعطيل مغادرة البوت") 
 return false 
 end
-if text == (database:get(bot_id.."LaricA:Name:Bot") or "لاريكا") then
+if text == (database:get(bot_id.."LaricA:Name:Bot") or "عراق ثون") then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -6516,7 +6516,7 @@ send(msg.chat_id_, msg.id_,'• عذࢪا عليڪ الاشتࢪاڪ في قنا
 end
 return false
 end
-Namebot = (database:get(bot_id.."LaricA:Name:Bot") or "لاريكا")
+Namebot = (database:get(bot_id.."LaricA:Name:Bot") or "عراق ثون")
 local namebot = {
 "خليك ثكيل حبي لضل كل شوي صايحلي ؟",
 " شتريد من "..Namebot,
@@ -6647,7 +6647,7 @@ end
 end
 
 if text == "بوت" then
-Namebot = (database:get(bot_id.."LaricA:Name:Bot") or "لاريكا")
+Namebot = (database:get(bot_id.."LaricA:Name:Bot") or "عراق ثون")
 send(msg.chat_id_, msg.id_,"اسمي ["..Namebot.."] 🦇 ") 
 end
 if text == "تغير اسم البوت" or text == "تغيير اسم البوت" or text == "حذف اسم البوت" then 
@@ -8165,8 +8165,8 @@ if text == ("تحديث السورس") and DevLaricA(msg) then
 send(msg.chat_id_,msg.id_,'• تم التحديث')
 os.execute('rm -rf LaricA.lua')
 os.execute('rm -rf start.lua')
-os.execute('wget https://raw.githubusercontent.com/LARICATEAM/LaricA/master/LaricA.lua')
-os.execute('wget https://raw.githubusercontent.com/LARICATEAM/LaricA/master/start.lua')
+os.execute('wget https://raw.githubusercontent.com/klanrali/LaricA/master/LaricA.lua')
+os.execute('wget https://raw.githubusercontent.com/klanrali/LaricA/master/start.lua')
 dofile('LaricA.lua')  
 return false
 end
@@ -8556,7 +8556,7 @@ if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
 if Get_info then
-local TextS = "\n• اهلا بك في متجر ملفات لاريكا\n• يوجد في المتجر ملف الردود\n• يتم ادراج الملفات في التحديثات القادمه \n  ━═━═━═━\n"
+local TextS = "\n• اهلا بك في متجر ملفات عراق ثون\n• يوجد في المتجر ملف الردود\n• يتم ادراج الملفات في التحديثات القادمه \n  ━═━═━═━\n"
 local TextE = "\n  ━═━═━═━\n• تدل علامة (✔) الملف مفعل\n".."• تدل علامة (✖) الملف معطل\n"
 local NumFile = 0
 for name,Info in pairs(res.plugins_) do
@@ -8684,12 +8684,6 @@ send(msg.chat_id_, msg.id_, "• تم التحديث")
 end
 
 if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then  
-local url,res = https.request('https://evzxar.ml/larica.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.LaricA ~= true then
-send(msg.chat_id_,msg.id_,'• لا يمكنك استخدام البوت\n• عليك الاشتراك في قناة السورس\n• لتتمكن من استخدام الاوامر \n• CH ~ [@iqthon]')   
-return false 
-end
 Text = [[
 *𝙬𝙚𝙡𝙘𝙤𝙢𝙚 𝙩𝙤 𝙨𝙤𝙪𝙧𝙘𝙚* [IQTHON TAEM †](t.me/iqthon)
 ]]
@@ -8699,10 +8693,10 @@ keyboard.inline_keyboard = {
 {text = '𝙨𝙤𝙪𝙧𝙘𝙚 𝙘𝙝𝙖𝙣𝙣𝙚𝙡',url="https://t.me/iqthon"},
 },
 {
-{text = '𝙨𝙤𝙪𝙧𝙘𝙚 𝙞𝙣𝙨𝙩𝙖𝙡𝙡𝙖𝙩𝙞𝙤𝙣',url="https://t.me/XvXvJ"},
+{text = '𝙨𝙤𝙪𝙧𝙘𝙚 𝙞𝙣𝙨𝙩𝙖𝙡𝙡𝙖𝙩𝙞𝙤𝙣',url="https://t.me/yzzzy"},
 },
 {
-{text = '𝙨𝙤𝙪𝙧𝙘𝙚 𝙘𝙤𝙢𝙢𝙪𝙣𝙞𝙘𝙖𝙩𝙞𝙤𝙣𝙨',url="t.me/FJPPBoT"},
+{text = '𝙨𝙤𝙪𝙧𝙘𝙚 𝙘𝙤𝙢𝙢𝙪𝙣𝙞𝙘𝙖𝙩𝙞𝙤𝙣𝙨',url="t.me/telethonfiles"},
 },
 {
 {text = '𝙨𝙤𝙪𝙧𝙘𝙚 𝙙𝙚𝙫𝙚𝙡𝙤𝙥𝙚𝙧',url="t.me/klanr"},
@@ -10567,7 +10561,7 @@ if NewCmmd then
 data.message_.content_.text_ = (NewCmmd or data.message_.content_.text_)
 end
 end
-local Name_Bot = (database:get(bot_id.."LaricA:Name:Bot") or "لاريكا")
+local Name_Bot = (database:get(bot_id.."LaricA:Name:Bot") or "عراق ثون")
 if not database:get(bot_id.."LaricA:Fun_Bots"..msg.chat_id_) then
 if text ==  ""..Name_Bot..' شنو رئيك بهاذا' and tonumber(msg.reply_to_message_id_) > 0 then     
 function FunBot(extra, result, success) 
