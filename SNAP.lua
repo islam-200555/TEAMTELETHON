@@ -1170,7 +1170,7 @@ local GetWelcomeGroup = database:get(bot_id.."SNAP:Get:Welcome:Group"..msg.chat_
 if GetWelcomeGroup then 
 t = GetWelcomeGroup
 else  
-t = "\n⌔︙يهلا بالكمرر  \n⌔︙ name \n⌔︙user" 
+t = "\n⌔︙يهلا بالكمرر  \n⌔︙name \n⌔︙user" 
 end 
 t = t:gsub("name",result.first_name_) 
 t = t:gsub("user",("@"..result.username_ or "لا يوجد")) 
@@ -4445,8 +4445,8 @@ send(msg.chat_id_, msg.id_,' ⌔︙البوت ليس مشرف يرجى ترقي�
 return false  
 end
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
-usertext = '\n ⌔︙ العضو↺ ['..data.first_name_..'](t.me/'..(data.username_ or 'S0DRG')..')'
-status  = '\n ⌔︙ الايدي↺ `'..result.sender_user_id_..'`\n ⌔︙ تم حذف لقبه من الكروب'
+usertext = '\n ⌔︙العضو↺ ['..data.first_name_..'](t.me/'..(data.username_ or 'S0DRG')..')'
+status  = '\n ⌔︙الايدي↺ `'..result.sender_user_id_..'`\n ⌔︙تم حذف لقبه من الكروب'
 send(msg.chat_id_, msg.id_, usertext..status)
 https.request("https://api.telegram.org/bot"..token.."/promoteChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" ..result.sender_user_id_.."&can_change_info=false&can_delete_messages=false&can_invite_users=false&can_restrict_members=false&can_pin_messages=false&can_promote_members=false")
 end,nil)
@@ -4463,11 +4463,11 @@ end
 function start_function(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_," ⌔︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_," ⌔︙عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
-usertext = '\n ⌔︙ العضو↺ ['..result.title_..'](t.me/'..(username or 'S0DRG')..')'
-status  = '\n ⌔︙ تم حذف لقبه من الكروب'
+usertext = '\n ⌔︙العضو↺ ['..result.title_..'](t.me/'..(username or 'S0DRG')..')'
+status  = '\n ⌔︙تم حذف لقبه من الكروب'
 texts = usertext..status
 send(msg.chat_id_, msg.id_, texts)
 https.request("https://api.telegram.org/bot"..token.."/promoteChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" ..result.id_.."&can_change_info=false&can_delete_messages=false&can_invite_users=false&can_restrict_members=false&can_pin_messages=false&can_promote_members=false")
@@ -8320,7 +8320,7 @@ data,res = https.request('https://boyka-api.ml/audios.php')
 if res == 200 then
 audios = json:decode(data)
 if audios.Info == true then
-local Text ='⌔︙ تم اختيار المقطع الصوتي لك'
+local Text ='⌔︙تم اختيار المقطع الصوتي لك'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '- - 𝗌𝗈𝗎𝗋𝖼𝖾 𝗌𝗇𝖺𝗉 メ .',url="t.me/iinzzz "}},
