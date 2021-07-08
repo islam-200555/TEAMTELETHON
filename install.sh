@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
-cd $HOME/LaricA
+cd $HOME/SNAP
 install() {
 rm -rf $HOME/.telegram-cli
 sudo chmod +x tg
-chmod +x LaricA
+chmod +x SNAP
 chmod +x ts
 ./ts
 }
 get() {
 rm -fr LaricA.lua
 rm -fr sudo.lua
-wget "https://raw.githubusercontent.com/klanrali/larica/master/LaricA.lua"
+wget "https://raw.githubusercontent.com/snapteamdollar/SNAP/master/SNAP.lua"
 lua start.lua
 }
 installall(){
@@ -47,7 +47,7 @@ fi
 installall
 cd ..
 rm -rf luarocks*
-cd LaricA
+cd SNAP
 rm -rf luarocks*
 lua start.lua
 
