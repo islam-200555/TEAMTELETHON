@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-cd $HOME/LaricA
+cd $HOME/SNAP
 rm -rf $HOME/.telegram-cli
 install() {
 rm -rf $HOME/.telegram-cli
 sudo chmod +x tg
-chmod +x LaricA
+chmod +x SNAP
 chmod +x ts
 ./ts
 }
