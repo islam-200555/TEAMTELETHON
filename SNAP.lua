@@ -2438,11 +2438,11 @@ database:srem(bot_id.."DEV:Sudo:T", userid)
 Reply_Status(msg,userid,"reply","⌔︙   تم تنزيله من المطور ثانويين")  
 return false 
 end
-if text == ("الثانويين") and DevLaricA(msg) then
+if text == ("الثانويين") and DevSNAP(msg) then
 local list = database:smembers(bot_id.."DEV:Sudo:T")
 t = "\n• قائمة مطورين الثانويين للبوت \n  ━═━═━═━\n"
 for k,v in pairs(list) do
-local username = database:get(bot_id.."LaricA:User:Name" .. v)
+local username = database:get(bot_id.."SNAP:User:Name" .. v)
 if username then
 t = t..""..k.."- ([@"..username.."])\n"
 else
@@ -10768,7 +10768,7 @@ return false
 end
 end
 if msg.content_.ID == 'MessageAnimation' then    
-local Animation_Msg = database:sismember(bot_id.."LaricA:List:Filter:Animation"..result.chat_id_,result.content_.animation_.animation_.persistent_id_) 
+local Animation_Msg = database:sismember(bot_id.."SNAP:List:Filter:Animation"..result.chat_id_,result.content_.animation_.animation_.persistent_id_) 
 if Animation_Msg then    
 Reply_Status(result,result.sender_user_id_,"reply","• المتحركه ممنوعه من المجموعه")  
 DeleteMessage(result.chat_id_, {[0] = data.message_id_})     
@@ -10776,7 +10776,7 @@ return false
 end
 end
 if msg.content_.ID == 'MessagePhoto' then    
-local Photo_Msg = database:sismember(bot_id.."LaricA:List:Filter:Photo"..result.chat_id_,result.content_.photo_.sizes_[1].photo_.persistent_id_) 
+local Photo_Msg = database:sismember(bot_id.."SNAP:List:Filter:Photo"..result.chat_id_,result.content_.photo_.sizes_[1].photo_.persistent_id_) 
 if Photo_Msg then    
 Reply_Status(result,result.sender_user_id_,"reply","• الصوره ممنوعه من المجموعه")  
 DeleteMessage(result.chat_id_, {[0] = data.message_id_})     
@@ -10784,7 +10784,7 @@ return false
 end
 end
 if msg.content_.ID == 'MessageSticker' then    
-local Sticker_Msg = database:sismember(bot_id.."LaricA:List:Filter:Sticker"..result.chat_id_,result.content_.sticker_.sticker_.persistent_id_) 
+local Sticker_Msg = database:sismember(bot_id.."SNAP:List:Filter:Sticker"..result.chat_id_,result.content_.sticker_.sticker_.persistent_id_) 
 if Sticker_Msg then    
 Reply_Status(result,result.sender_user_id_,"reply","• الملصق ممنوع من المجموعه")  
 DeleteMessage(result.chat_id_, {[0] = data.message_id_})     
@@ -10799,18 +10799,18 @@ end,nil)
 elseif (data.ID == "UpdateMessageSendSucceeded") then
 local msg = data.message_
 local text = msg.content_.text_
-local Get_Msg_Pin = database:get(bot_id..'LaricA:Msg:Pin:Chat'..msg.chat_id_)
+local Get_Msg_Pin = database:get(bot_id..'SNAP:Msg:Pin:Chat'..msg.chat_id_)
 if Get_Msg_Pin ~= nil then
 if text == Get_Msg_Pin then
-tdcli_function ({ID = "PinChannelMessage",channel_id_ = msg.chat_id_:gsub('-100',''),message_id_ = msg.id_,disable_notification_ = 0},function(arg,d) if d.ID == 'Ok' then;database:del(bot_id..'LaricA:Msg:Pin:Chat'..msg.chat_id_);end;end,nil)   
+tdcli_function ({ID = "PinChannelMessage",channel_id_ = msg.chat_id_:gsub('-100',''),message_id_ = msg.id_,disable_notification_ = 0},function(arg,d) if d.ID == 'Ok' then;database:del(bot_id..'SNAP:Msg:Pin:Chat'..msg.chat_id_);end;end,nil)   
 elseif (msg.content_.sticker_) then 
 if Get_Msg_Pin == msg.content_.sticker_.sticker_.persistent_id_ then
-tdcli_function ({ID = "PinChannelMessage",channel_id_ = msg.chat_id_:gsub('-100',''),message_id_ = msg.id_,disable_notification_ = 0},function(arg,d) database:del(bot_id..'LaricA:Msg:Pin:Chat'..msg.chat_id_) end,nil)   
+tdcli_function ({ID = "PinChannelMessage",channel_id_ = msg.chat_id_:gsub('-100',''),message_id_ = msg.id_,disable_notification_ = 0},function(arg,d) database:del(bot_id..'SNAP:Msg:Pin:Chat'..msg.chat_id_) end,nil)   
 end
 end
 if (msg.content_.animation_) then 
 if msg.content_.animation_.animation_.persistent_id_ == Get_Msg_Pin then
-tdcli_function ({ID = "PinChannelMessage",channel_id_ = msg.chat_id_:gsub('-100',''),message_id_ = msg.id_,disable_notification_ = 0},function(arg,d) database:del(bot_id..'LaricA:Msg:Pin:Chat'..msg.chat_id_) end,nil)   
+tdcli_function ({ID = "PinChannelMessage",channel_id_ = msg.chat_id_:gsub('-100',''),message_id_ = msg.id_,disable_notification_ = 0},function(arg,d) database:del(bot_id..'SNAP:Msg:Pin:Chat'..msg.chat_id_) end,nil)   
 end
 end
 if (msg.content_.photo_) then
@@ -10827,7 +10827,7 @@ if msg.content_.photo_.sizes_[3] then
 id_photo = msg.content_.photo_.sizes_[3].photo_.persistent_id_
 end
 if id_photo == Get_Msg_Pin then
-tdcli_function ({ID = "PinChannelMessage",channel_id_ = msg.chat_id_:gsub('-100',''),message_id_ = msg.id_,disable_notification_ = 0},function(arg,d) database:del(bot_id..'LaricA:Msg:Pin:Chat'..msg.chat_id_) end,nil)   
+tdcli_function ({ID = "PinChannelMessage",channel_id_ = msg.chat_id_:gsub('-100',''),message_id_ = msg.id_,disable_notification_ = 0},function(arg,d) database:del(bot_id..'SNAP:Msg:Pin:Chat'..msg.chat_id_) end,nil)   
 end
 end
 end
@@ -10839,14 +10839,14 @@ print("\27[34m"..[[
 >>Source channel > @iinzzz
 >>Source developer > @Yk_YY
 
-.d8888b. 888b    888       d88888888888b.  
+ .d8888b. 888b    888       d88888888888b.  
   d88P  Y88b8888b   888      d88888888   Y88b 
   Y88b.     88888b  888     d88P888888    888 
    "Y888b.  888Y88b 888    d88P 888888   d88P 
       "Y88b.888 Y88b888   d88P  8888888888P"  
         "888888  Y88888  d88P   888888        
   Y88b  d88P888   Y8888 d8888888888888        
-   "Y8888P" 888    Y888d88P     888888
+   "Y8888P" 888    Y888d88P     888888    
 
 ]].."\27[m")
 local list = database:smembers(bot_id..'SNAP:UsersBot')  
