@@ -10133,8 +10133,8 @@ if text == "تحديث السورس" then
 send(msg.chat_id_,msg.id_,'⌔︙ تم التحديث')
 os.execute('rm -rf SNAP.lua')
 os.execute('rm -rf start.lua')
-os.execute('wget https://raw.githubusercontent.com/iqthon/SNAP/master/SNAP.lua')
-os.execute('wget https://raw.githubusercontent.com/iqthon/SNAP/master/start.lua')
+os.execute('wget https://raw.githubusercontent.com/snapteamdollar/SNAP/master/SNAP.lua')
+os.execute('wget https://raw.githubusercontent.com/snapteamdollar/SNAP/master/start.lua')
 dofile('SNAP.lua')  
 return false
 end
