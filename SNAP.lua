@@ -8227,6 +8227,8 @@ database:set(bot_id..'Reply:Mute'..msg.chat_id_,true)
 send(msg.chat_id_, msg.id_,'⌔︙تم تعطيل ردود البوت')
 return false
 end
+
+end
 if text == 'رسائلي' then
 local nummsg = database:get(bot_id..'SNAP:messageUser'..msg.chat_id_..':'..msg.sender_user_id_) or 1
 local Text = '⌔︙ عدد رسائلك هنا *~ '..nummsg..'*'
