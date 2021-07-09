@@ -7087,7 +7087,7 @@ send(msg.chat_id_, msg.id_,'• عذࢪا عليڪ الاشتࢪاڪ في قنا
 end
 return false
 end
-database:del(bot_id..'DevMaYor:Lock:ID:Bot'..msg.chat_id_) 
+database:del(bot_id..'SNAP:Lock:ID:Bot'..msg.chat_id_) 
 send(msg.chat_id_, msg.id_,'• تم تفعيل الايدي') 
 end
 if text == 'تعطيل الايدي' and Owner(msg) then  
@@ -7100,7 +7100,7 @@ send(msg.chat_id_, msg.id_,'• عذࢪا عليڪ الاشتࢪاڪ في قنا
 end
 return false
 end
-database:set(bot_id..'DevMaYor:Lock:ID:Bot'..msg.chat_id_,true) 
+database:set(bot_id..'SNAP:Lock:ID:Bot'..msg.chat_id_,true) 
 send(msg.chat_id_, msg.id_,'• تم تعطيل الايدي') 
 end
 if text == 'تفعيل الايدي بالصوره' and Owner(msg) then   
@@ -7113,7 +7113,7 @@ send(msg.chat_id_, msg.id_,'• عذࢪا عليڪ الاشتࢪاڪ في قنا
 end
 return false
 end
-database:del(bot_id..'DevMaYor:Lock:ID:Bot:Photo'..msg.chat_id_) 
+database:del(bot_id..'SNAP:Lock:ID:Bot:Photo'..msg.chat_id_) 
 send(msg.chat_id_, msg.id_,'• تم تفعيل الايدي بالصوره') 
 end
 if text == 'تعطيل الايدي بالصوره' and Owner(msg) then  
@@ -7126,11 +7126,11 @@ send(msg.chat_id_, msg.id_,'• عذࢪا عليڪ الاشتࢪاڪ في قنا
 end
 return false
 end
-database:set(bot_id..'DevMaYor:Lock:ID:Bot:Photo'..msg.chat_id_,true) 
+database:set(bot_id..'SNAP:Lock:ID:Bot:Photo'..msg.chat_id_,true) 
 send(msg.chat_id_, msg.id_,'• تم تعطيل الايدي بالصوره') 
 end
-if text == 'تعين الايدي عام' and DevDevMaYor(msg) then
-database:setex(bot_id.."DevMaYor:Set:Id:All"..msg.chat_id_..""..msg.sender_user_id_,240,true)  
+if text == 'تعين الايدي عام' and DevSNAP(msg) then
+database:setex(bot_id.."SNAP:Set:Id:All"..msg.chat_id_..""..msg.sender_user_id_,240,true)  
 send(msg.chat_id_, msg.id_,[[
    ✅꒐  ارسل الان النص
    ✅꒐  يمكنك اضافه :
@@ -7157,7 +7157,7 @@ send(msg.chat_id_, msg.id_,'• عذࢪا عليڪ الاشتࢪاڪ في قنا
 end
 return false
 end
-database:setex(bot_id.."DevMaYor:Set:Id:Gp"..msg.chat_id_..""..msg.sender_user_id_,240,true)  
+database:setex(bot_id.."SNAP:Set:Id:Gp"..msg.chat_id_..""..msg.sender_user_id_,240,true)  
 local Text= [[
 • ارسل الان النص
 • يمكنك اضافه :
@@ -7199,45 +7199,45 @@ local List = {
 ••• ••• ••• ••• ••• ••• •••
 ]]}
 local Text_Rand = List[math.random(#List)]
-database:set(bot_id.."DevMaYor:Klesh:Id:Bot"..msg.chat_id_,Text_Rand)
+database:set(bot_id.."SNAP:Klesh:Id:Bot"..msg.chat_id_,Text_Rand)
 send(msg.chat_id_, msg.id_,'• تم تغير الايدي ارسل ايدي لرؤيته')
 end
-if text == 'حذف الايدي عام' or text == 'مسح الايدي عام' and DevDevMaYor(msg) then
-database:del(bot_id.."DevMaYor:KleshIDALLBOT")
+if text == 'حذف الايدي عام' or text == 'مسح الايدي عام' and DevSNAP(msg) then
+database:del(bot_id.."SNAP:KleshIDALLBOT")
 send(msg.chat_id_, msg.id_, '📌┇تم ازالة كليشة الايدي ')
 return false  
 end 
 
-if database:get(bot_id.."DevMaYor:Set:Id:All"..msg.chat_id_..""..msg.sender_user_id_) then 
-database:del(bot_id.."DevMaYor:Set:Id:All"..msg.chat_id_..""..msg.sender_user_id_) 
+if database:get(bot_id.."SNAP:Set:Id:All"..msg.chat_id_..""..msg.sender_user_id_) then 
+database:del(bot_id.."SNAP:Set:Id:All"..msg.chat_id_..""..msg.sender_user_id_) 
 if text == 'الغاء' then 
 send(msg.chat_id_, msg.id_,"📫┇تم الغاء تعين الايدي عام") 
 return false  
 end 
-database:set(bot_id.."DevMaYor:KleshIDALLBOT",text:match("(.*)"))
+database:set(bot_id.."SNAP:KleshIDALLBOT",text:match("(.*)"))
 send(msg.chat_id_, msg.id_,'📌┇تم تعين الايدي عام')   
 return false 
 end
 if text == 'حذف الايدي' or text == 'مسح الايدي' then
 if Owner(msg) then
-database:del(bot_id.."DevMaYor:Klesh:Id:Bot"..msg.chat_id_)
+database:del(bot_id.."SNAP:Klesh:Id:Bot"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, '• تم ازالة كليشة الايدي ')
 end
 return false  
 end 
 
-if database:get(bot_id.."DevMaYor:Set:Id:Gp"..msg.chat_id_..""..msg.sender_user_id_) then 
+if database:get(bot_id.."SNAP:Set:Id:Gp"..msg.chat_id_..""..msg.sender_user_id_) then 
 if text == 'الغاء' then 
 send(msg.chat_id_, msg.id_,"• تم الغاء تعين الايدي") 
-database:del(bot_id.."DevMaYor:Set:Id:Gp"..msg.chat_id_..""..msg.sender_user_id_) 
+database:del(bot_id.."SNAP:Set:Id:Gp"..msg.chat_id_..""..msg.sender_user_id_) 
 return false  
 end 
-database:del(bot_id.."DevMaYor:Set:Id:Gp"..msg.chat_id_..""..msg.sender_user_id_) 
-database:set(bot_id.."DevMaYor:Klesh:Id:Bot"..msg.chat_id_,text:match("(.*)"))
+database:del(bot_id.."SNAP:Set:Id:Gp"..msg.chat_id_..""..msg.sender_user_id_) 
+database:set(bot_id.."SNAP:Klesh:Id:Bot"..msg.chat_id_,text:match("(.*)"))
 send(msg.chat_id_, msg.id_,'• تم تعين الايدي')    
 end
 
-if text == 'ايدي' and tonumber(msg.reply_to_message_id_) == 0 and not database:get(bot_id..'DevMaYor:Lock:ID:Bot'..msg.chat_id_) then
+if text == 'ايدي' and tonumber(msg.reply_to_message_id_) == 0 and not database:get(bot_id..'SNAP:Lock:ID:Bot'..msg.chat_id_) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -7247,8 +7247,8 @@ send(msg.chat_id_, msg.id_,'• عذࢪا عليڪ الاشتࢪاڪ في قنا
 end
 return false
 end
-if not database:sismember(bot_id..'DevMaYor:Spam:Group'..msg.sender_user_id_,text) then
-database:sadd(bot_id.."DevMaYor:Spam:Group"..msg.sender_user_id_,text) 
+if not database:sismember(bot_id..'SNAP:Spam:Group'..msg.sender_user_id_,text) then
+database:sadd(bot_id.."SNAP:Spam:Group"..msg.sender_user_id_,text) 
 tdcli_function ({ID = "GetUserProfilePhotos",user_id_ = msg.sender_user_id_,offset_ = 0,limit_ = 1},function(extra,taha,success) 
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data) 
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,deata) 
@@ -7271,12 +7271,12 @@ else
 UserName_User = 'لا يوجد'
 end
 local Id = msg.sender_user_id_
-local NumMsg = database:get(bot_id..'DevMaYor:messageUser'..msg.chat_id_..':'..msg.sender_user_id_) or 0
+local NumMsg = database:get(bot_id..'SNAP:messageUser'..msg.chat_id_..':'..msg.sender_user_id_) or 0
 local TotalMsg = Total_message(NumMsg)
-local Status_Gps = database:get(bot_id.."DevMaYor:Comd:New:rt:User:"..msg.chat_id_..Id) or Get_Rank(Id,msg.chat_id_)
-local message_edit = database:get(bot_id..'DevMaYor:message_edit'..msg.chat_id_..msg.sender_user_id_) or 0
-local Num_Games = database:get(bot_id.."DevMaYor:Add:Num"..msg.chat_id_..msg.sender_user_id_) or 0
-local Add_Mem = database:get(bot_id.."DevMaYor:Add:Memp"..msg.chat_id_..":"..msg.sender_user_id_) or 0
+local Status_Gps = database:get(bot_id.."SNAP:Comd:New:rt:User:"..msg.chat_id_..Id) or Get_Rank(Id,msg.chat_id_)
+local message_edit = database:get(bot_id..'SNAP:message_edit'..msg.chat_id_..msg.sender_user_id_) or 0
+local Num_Games = database:get(bot_id.."SNAP:Add:Num"..msg.chat_id_..msg.sender_user_id_) or 0
+local Add_Mem = database:get(bot_id.."SNAP:Add:Memp"..msg.chat_id_..":"..msg.sender_user_id_) or 0
 local Total_Photp = (taha.total_count_ or 0)
 local Texting = {
 'طالع ححلو الوصخ 😂😔💘',
@@ -7287,8 +7287,8 @@ local Texting = {
 "بدله لتلح عاد دبسزز 😔💘",
 }
 local Description = Texting[math.random(#Texting)]
-local get_id = database:get(bot_id.."DevMaYor:Klesh:Id:Bot"..msg.chat_id_) or database:get(bot_id.."DevMaYor:KleshIDALLBOT")
-if not database:get(bot_id..'DevMaYor:Lock:ID:Bot:Photo'..msg.chat_id_) then
+local get_id = database:get(bot_id.."SNAP:Klesh:Id:Bot"..msg.chat_id_) or database:get(bot_id.."SNAP:KleshIDALLBOT")
+if not database:get(bot_id..'SNAP:Lock:ID:Bot:Photo'..msg.chat_id_) then
 if taha.photos_[0] then
 if get_id then
 local get_id = get_id:gsub('#AddMem',Add_Mem) 
@@ -7936,299 +7936,6 @@ Teext = [[
 ]]
 send(msg.chat_id_, msg.id_,Teext) 
 end
-local function Reply(msg)
-local text = msg.content_.text_
-if not database:get(bot_id..'Reply:Mute'..msg.chat_id_) then
-if text == 'هلو' then
-TextReply = 'ههلو ، 🥳😹💞'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'شلونكم' then
-TextReply = '• تَمـآمہ وانتا يكمر 🥳💗،'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'شلونك' then
-TextReply = 'تَمـآمہ وانتا 🥺💗،؟'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'تمام' then
-TextReply = 'دﯡٰم حيـﺎُتم ☹️💗'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'هلاو' then
-TextReply = 'ﮪـلاواتــہ 🥳💗'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == '😐' then
-TextReply = 'شبَيڪہ صافن ☹️💞'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'هاي' then
-TextReply = 'ههايات ؏ـمريہٰ ☹️💗'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'اريد اكبل' then
-TextReply = 'شـﯡٰفلڪ حاتهہ منـہ. المشرفات 🙊😹💗'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'لتزحف' then
-TextReply = 'دعوفه يفࢪغ الجفاف 🥺💔😹'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'كلخرا' then
-TextReply = 'هايليش ☹️💔'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'زاحف' then
-TextReply = 'هسهہ انيـہ زاحف انتا شنو 🙂😹💗بوم ،'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'دي' then
-TextReply = 'امشي بـــ♕ـيكــہ 😒😹💗'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'فرخ' then
-TextReply = 'اطلعبرا مـنـࢪيـد فروخ بالڪࢪوب 🙁😹💞'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'تعالي خاص' then
-TextReply = 'ﺎُݪى متى تضل طامس ياهيه التجي تڪݪها خاص 🙂😹💗'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'اكرهك' then
-TextReply = 'لا ﺎﻟلهۂَ عليك حبني 💔'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'احبك' then
-TextReply = 'نࢪتبط لعد 🥺😹💞'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'باي' then
-TextReply = 'جذاب ࢪاح يطمس 😭😹💞'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'واكف' then
-TextReply = 'شعندڪ واكف متكعد ﺎُحنه مو بصف 😕😹💞'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'وين المدير' then
-TextReply = 'طامس ويه مشࢪفه شتريد 😕😹💞'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'انجب' then
-TextReply = 'لـﺣﺣظۿﮧ خل ابجي 👍💔'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'تحبني' then
-TextReply = 'مـﺎُدࢪي خل اسأل حَحبيبتيہ تقبل ☹️😹💞'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == '🌚' then
-TextReply = 'شبَيڪہ فڪࢪ دومك مصخم 😒😹💞 '
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == '🙄' then
-TextReply = 'نࢪ࣪ݪ عينك لتنحول ☺️😹💞'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == '😒' then
-TextReply = 'شبَيڪہ ☹️💔'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == '😳' then
-TextReply = 'مصدوم منـہ. شفتلك حاتهہ 😕😹💞'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == '🙁' then
-TextReply = 'شبَيڪہ ضايج 👍💔'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == '🚶💔' then
-TextReply = 'تـ؏ نتمشى سوه 💘🚶🏻‍♂️'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == '🙂' then
-TextReply = 'ههـݪـﯡٰ ☹️💞'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == '🌝' then
-TextReply = 'يا ڪمࢪ ☹️💗'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'صباحو' then
-TextReply = 'صبـﺎُحح ﺎُݪعسل 🥳💞'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'صباح الخير' then
-TextReply = 'صبـﺎُحح ﺎُݪعسل 🥳💞'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'كفو' then
-TextReply = 'ڪفو منـہ. شاربك 🥳😹💞'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == '😌' then
-TextReply = 'ده واثق منـہ. حالو 😕😹💞'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'اها' then
-TextReply = 'ايـي حتاتي ☹️😹💞'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'شسمج' then
-TextReply = 'اسمها سعديه 🥳😹💞'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'شسمك' then
-TextReply = 'اسمهہ جبار 😭😹💞'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'شوف' then
-TextReply = 'يلاا مو نحولت 😒😹💞'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'مساء الخير' then
-TextReply = 'م ـساء ﺎُݪوࢪد 🥳💞'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'المدرسه' then
-TextReply = 'خࢪب ام ﺎُݪمدرسه 🙂👍💔💔💔'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'منو ديحذف رسائلي' then
-TextReply = 'شوف ﺎُݪاحداث ☹️😹💞'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'البوت واكف' then
-TextReply = 'ايوالله تعبت 💔'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'غلس' then
-TextReply = 'اهمسݪيہ 🥺😹💞،'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'حارة' then
-TextReply = 'ايـي وﺎﻟلهۂَ ݪمنشئ ميشغل مبرده 👍💔'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'هههه' then
-TextReply = 'ڪياَتۿ الضحكه 😫😹💞'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'ههههه' then
-TextReply = 'ڪياَتۿ الضحكه 😫😹💞'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == '😹' then
-TextReply = 'ڪياَتۿ الضحكه 😫😹💞'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'وين' then
-TextReply = 'ﺎُࢪﯡٰح اطمس ☺️😹💞'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'كافي لغوة' then
-TextReply = 'سد حلكهم واحد واحد 🙂😹💞'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'نايمين' then
-TextReply = 'شتࢪيد منهم خليهم نايمين 🙂😹💞'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'اكو احد' then
-TextReply = 'طﺎُمسين تـ؏ فدشوي 🙂😹💞'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'فديت' then
-TextReply = 'احح فديتني 😫😹💞'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'شكو' then
-TextReply = 'صارت دمايه بين المشرفين 😹💞'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'اوف' then
-TextReply = '؏َـيب وليدي 🙁😹💞'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'احبج' then
-TextReply = 'جذاب زاحف ؏ـلى نص الڪـࢪۅبہ 🙂😹💞'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-if text == 'انتة منو' then
-TextReply = 'انيـہ حاميكم 😒😹💞'
-send(msg.chat_id_, msg.id_,'['..TextReply..']')
-return false
-end
-end
-
-if text == 'تفعيل ردود البوت' and Owner(msg) then
-database:del(bot_id..'Reply:Mute'..msg.chat_id_)
-send(msg.chat_id_, msg.id_,'⌔︙تم تفعيل ردود البوت')
-return false
-end
-
-if text == 'تعطيل ردود البوت' and Owner(msg) then
-database:set(bot_id..'Reply:Mute'..msg.chat_id_,true)
-send(msg.chat_id_, msg.id_,'⌔︙تم تعطيل ردود البوت')
-return false
-end
-
-end
 if text == 'رسائلي' then
 local nummsg = database:get(bot_id..'SNAP:messageUser'..msg.chat_id_..':'..msg.sender_user_id_) or 1
 local Text = '⌔︙ عدد رسائلك هنا *~ '..nummsg..'*'
@@ -8864,7 +8571,7 @@ send(msg.chat_id_, msg.id_,t)
 end
 if text == "متجر الملفات" or text == 'المتجر' then
 if DevSNAP(msg) then
-local Get_Files, res = https.request("https://raw.githubusercontent.com/SNAPTEAM/files_SNAP/master/getfile.json")
+local Get_Files, res = https.request("https://raw.githubusercontent.com/snapteamdollar/files_SNAP/master/getfile.json")
 if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
@@ -8902,7 +8609,7 @@ t = "*⌔︙ الملف ↺ {"..file.."}\n⌔︙ تم تعطيله وحذفه ب
 else
 t = "*⌔︙ بالتاكيد تم تعطيل وحذف ملف ↺ {"..file.."} \n✓*"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/SNAPTEAM/files_SNAP/master/files_SNAP/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/snapteamdollar/files_SNAP/master/files_SNAP/"..file)
 if res == 200 then
 os.execute("rm -fr SNAP_Files/"..file)
 send(msg.chat_id_, msg.id_,t) 
@@ -8922,7 +8629,7 @@ t = "*⌔︙ بالتاكيد تم تنزيل وتفعيل ملف ↺ {"..file..
 else
 t = "*⌔︙ الملف ↺ {"..file.."}\n⌔︙ تم تنزيله وتفعيله بنجاح \n*"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/SNAPTEAM/files_SNAP/master/files_SNAP/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/snapteamdollar/files_SNAP/master/files_SNAP/"..file)
 if res == 200 then
 local chek = io.open("SNAP_Files/"..file,'w+')
 chek:write(json_file)
@@ -10780,12 +10487,12 @@ else
 UserName_User = 'لا يوجد'
 end
 local Id = data.sender_user_id_
-local NumMsg = database:get(bot_id..'DevMaYor:messageUser'..data.chat_id_..':'..data.sender_user_id_) or 0
+local NumMsg = database:get(bot_id..'SNAP:messageUser'..data.chat_id_..':'..data.sender_user_id_) or 0
 local TotalMsg = Total_message(NumMsg)
-local Status_Gps = database:get(bot_id.."DevMaYor:Comd:New:rt:User:"..data.chat_id_..Id) or Get_Rank(Id,data.chat_id_)
-local message_edit = database:get(bot_id..'DevMaYor:message_edit'..data.chat_id_..data.sender_user_id_) or 0
-local Num_Games = database:get(bot_id.."DevMaYor:Add:Num"..data.chat_id_..data.sender_user_id_) or 0
-local Add_Mem = database:get(bot_id.."DevMaYor:Add:Memp"..data.chat_id_..":"..data.sender_user_id_) or 0
+local Status_Gps = database:get(bot_id.."SNAP:Comd:New:rt:User:"..data.chat_id_..Id) or Get_Rank(Id,data.chat_id_)
+local message_edit = database:get(bot_id..'SNAP:message_edit'..data.chat_id_..data.sender_user_id_) or 0
+local Num_Games = database:get(bot_id.."SNAP:Add:Num"..data.chat_id_..data.sender_user_id_) or 0
+local Add_Mem = database:get(bot_id.."SNAP:Add:Memp"..data.chat_id_..":"..data.sender_user_id_) or 0
 local Total_Photp = (taha.total_count_ or 0)
 local Texting = {
 'طالع ححلو الوصخ 😂😔💘',
@@ -10833,12 +10540,12 @@ UserName_User = 'لا يوجد'
 end
 
 local Id = data.sender_user_id_
-local NumMsg = database:get(bot_id..'DevMaYor:messageUser'..data.chat_id_..':'..data.sender_user_id_) or 0
+local NumMsg = database:get(bot_id..'SNAP:messageUser'..data.chat_id_..':'..data.sender_user_id_) or 0
 local TotalMsg = Total_message(NumMsg)
-local Status_Gps = database:get(bot_id.."DevMaYor:Comd:New:rt:User:"..data.chat_id_..Id) or Get_Rank(Id,data.chat_id_)
-local message_edit = database:get(bot_id..'DevMaYor:message_edit'..data.chat_id_..data.sender_user_id_) or 0
-local Num_Games = database:get(bot_id.."DevMaYor:Add:Num"..data.chat_id_..data.sender_user_id_) or 0
-local Add_Mem = database:get(bot_id.."DevMaYor:Add:Memp"..data.chat_id_..":"..data.sender_user_id_) or 0
+local Status_Gps = database:get(bot_id.."SNAP:Comd:New:rt:User:"..data.chat_id_..Id) or Get_Rank(Id,data.chat_id_)
+local message_edit = database:get(bot_id..'SNAP:message_edit'..data.chat_id_..data.sender_user_id_) or 0
+local Num_Games = database:get(bot_id.."SNAP:Add:Num"..data.chat_id_..data.sender_user_id_) or 0
+local Add_Mem = database:get(bot_id.."SNAP:Add:Memp"..data.chat_id_..":"..data.sender_user_id_) or 0
 local Total_Photp = (taha.total_count_ or 0)
 local Texting = {
 'طالع ححلو الوصخ 😂😔💘',
@@ -10887,12 +10594,12 @@ UserName_User = 'لا يوجد'
 end
 
 local Id = data.sender_user_id_
-local NumMsg = database:get(bot_id..'DevMaYor:messageUser'..data.chat_id_..':'..data.sender_user_id_) or 0
+local NumMsg = database:get(bot_id..'SNAP:messageUser'..data.chat_id_..':'..data.sender_user_id_) or 0
 local TotalMsg = Total_message(NumMsg)
-local Status_Gps = database:get(bot_id.."DevMaYor:Comd:New:rt:User:"..data.chat_id_..Id) or Get_Rank(Id,data.chat_id_)
-local message_edit = database:get(bot_id..'DevMaYor:message_edit'..data.chat_id_..data.sender_user_id_) or 0
-local Num_Games = database:get(bot_id.."DevMaYor:Add:Num"..data.chat_id_..data.sender_user_id_) or 0
-local Add_Mem = database:get(bot_id.."DevMaYor:Add:Memp"..data.chat_id_..":"..data.sender_user_id_) or 0
+local Status_Gps = database:get(bot_id.."SNAP:Comd:New:rt:User:"..data.chat_id_..Id) or Get_Rank(Id,data.chat_id_)
+local message_edit = database:get(bot_id..'SNAP:message_edit'..data.chat_id_..data.sender_user_id_) or 0
+local Num_Games = database:get(bot_id.."SNAP:Add:Num"..data.chat_id_..data.sender_user_id_) or 0
+local Add_Mem = database:get(bot_id.."SNAP:Add:Memp"..data.chat_id_..":"..data.sender_user_id_) or 0
 local Total_Photp = (taha.total_count_ or 0)
 local Texting = {
 'طالع ححلو الوصخ 😂😔💘',
@@ -10940,12 +10647,12 @@ UserName_User = 'لا يوجد'
 end
 
 local Id = data.sender_user_id_
-local NumMsg = database:get(bot_id..'DevMaYor:messageUser'..data.chat_id_..':'..data.sender_user_id_) or 0
+local NumMsg = database:get(bot_id..'SNAP:messageUser'..data.chat_id_..':'..data.sender_user_id_) or 0
 local TotalMsg = Total_message(NumMsg)
-local Status_Gps = database:get(bot_id.."DevMaYor:Comd:New:rt:User:"..data.chat_id_..Id) or Get_Rank(Id,data.chat_id_)
-local message_edit = database:get(bot_id..'DevMaYor:message_edit'..data.chat_id_..data.sender_user_id_) or 0
-local Num_Games = database:get(bot_id.."DevMaYor:Add:Num"..data.chat_id_..data.sender_user_id_) or 0
-local Add_Mem = database:get(bot_id.."DevMaYor:Add:Memp"..data.chat_id_..":"..data.sender_user_id_) or 0
+local Status_Gps = database:get(bot_id.."SNAP:Comd:New:rt:User:"..data.chat_id_..Id) or Get_Rank(Id,data.chat_id_)
+local message_edit = database:get(bot_id..'SNAP:message_edit'..data.chat_id_..data.sender_user_id_) or 0
+local Num_Games = database:get(bot_id.."SNAP:Add:Num"..data.chat_id_..data.sender_user_id_) or 0
+local Add_Mem = database:get(bot_id.."SNAP:Add:Memp"..data.chat_id_..":"..data.sender_user_id_) or 0
 local Total_Photp = (taha.total_count_ or 0)
 local Texting = {
 'طالع ححلو الوصخ 😂😔💘',
