@@ -1845,6 +1845,78 @@ database:del(bot_id.."SNAP:Lock:User:Name"..msg.chat_id_)
 Reply_Status(msg,msg.sender_user_id_,"unlock","⌔︙ تم فتح المعرفات")  
 return false
 end 
+if text == 'تفعيل نسبه الحب' and Manager(msg) then   
+if database:get(bot_id..'Cick:lov'..msg.chat_id_) then
+Text = ' *✬︙تم تفعيل نسبه الحب*'
+database:del(bot_id..'Cick:lov'..msg.chat_id_)  
+else
+Text = ' *✬︙بالتاكيد تم تفعيل نسبه الحب*'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == 'تعطيل نسبه الحب' and Manager(msg) then  
+if not database:get(bot_id..'Cick:lov'..msg.chat_id_) then
+database:set(bot_id..'Cick:lov'..msg.chat_id_,true)  
+Text = '\n *✬︙تم تعطيل نسبه الحب*'
+else
+Text = '\n *✬︙بالتاكيد تم تعطيل نسبه الحب*'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == 'تفعيل نسبه الرجوله' and Manager(msg) then   
+if database:get(bot_id..'Cick:rjo'..msg.chat_id_) then
+Text = ' *✬︙تم تفعيل نسبه الرجوله*'
+database:del(bot_id..'Cick:rjo'..msg.chat_id_)  
+else
+Text = ' *✬︙بالتاكيد تم تفعيل الرجوله*'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == 'تعطيل نسبه الرجوله' and Manager(msg) then  
+if not database:get(bot_id..'Cick:rjo'..msg.chat_id_) then
+database:set(bot_id..'Cick:rjo'..msg.chat_id_,true)  
+Text = '\n *✬︙تم تعطيل نسبه الرجوله*'
+else
+Text = '\n *✬︙بالتاكيد تم تعطيل نسبه الرجوله*'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == 'تفعيل نسبه الكره' and Manager(msg) then   
+if database:get(bot_id..'Cick:krh'..msg.chat_id_) then
+Text = ' *✬︙تم تفعيل نسبه الكره*'
+database:del(bot_id..'Cick:krh'..msg.chat_id_)  
+else
+Text = ' *✬︙بالتاكيد تم تفعيل نسبه الكره*'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == 'تعطيل نسبه الكره' and Manager(msg) then  
+if not database:get(bot_id..'Cick:krh'..msg.chat_id_) then
+database:set(bot_id..'Cick:krh'..msg.chat_id_,true)  
+Text = '\n *✬︙تم تعطيل نسبه الكره*'
+else
+Text = '\n *✬︙بالتاكيد تم تعطيل نسبه الكره*'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == 'تفعيل نسبه الانوثه' and Manager(msg) then   
+if database:get(bot_id..'Cick:ano'..msg.chat_id_) then
+Text = ' *✬︙تم تفعيل نسبه الانوثه*'
+database:del(bot_id..'Cick:ano'..msg.chat_id_)  
+else
+Text = ' *✬︙بالتاكيد تم تفعيل الانوثه*'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == 'تعطيل نسبه الانوثه' and Manager(msg) then  
+if not database:get(bot_id..'Cick:ano'..msg.chat_id_) then
+database:set(bot_id..'Cick:ano'..msg.chat_id_,true)  
+Text = '\n *✬︙تم تعطيل نسبه الانوثه*'
+else
+Text = '\n *✬︙بالتاكيد تم تعطيل نسبه الانوثه*'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
 if text == "قفل التاك" and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
 local DevCh1 = database:get(bot_id.."add:ch:username")
@@ -12121,6 +12193,64 @@ Kick_Group(msg.chat_id_,msg.content_.members_[0].id_)
 DeleteMessage(msg.chat_id_, {[0] = msg.id_})  
 end 
 end
+--------------------------------------------------------------------------------------------------------------
+if text == "نسبه الحب" or text == "نسبه حب" and msg.reply_to_message_id_ ~= 0 and Mod(msg) then
+if not database:get(bot_id..'Cick:lov'..msg.chat_id_) then
+database:set(bot_id..":"..msg.sender_user_id_..":lov_Bots"..msg.chat_id_,"sendlove")
+Text = '*ارسل اسمك واسم الشخص الثاني،*  *\n مثال اسد و لبوى*'
+send(msg.chat_id_, msg.id_,Text) 
+end
+end
+if text and text ~="نسبه الحب" and database:get(bot_id..":"..msg.sender_user_id_..":lov_Bots"..msg.chat_id_) == "sendlove" then
+num = {"10","20","30","35","75","34","66","82","23","19","55","8","63","32","27","89","99","98","3","80","49","100","6","0",};
+sendnum = num[math.random(#num)]
+sl = '*نسبه حب* *'..text..'* هي :* '..sendnum..'%*'
+send(msg.chat_id_, msg.id_,sl) 
+database:del(bot_id..":"..msg.sender_user_id_..":lov_Bots"..msg.chat_id_)
+end
+if text == "نسبه الكره" or text == "نسبه كره" and msg.reply_to_message_id_ ~= 0 and Mod(msg) then
+if not database:get(bot_id..'Cick:krh'..msg.chat_id_) then
+database:set(bot_id..":"..msg.sender_user_id_..":krh_Bots"..msg.chat_id_,"sendkrhe")
+Text = '*ارسل اسمك واسم الشخص الثاني،*  *\n مثال اسد و لبوى*'
+send(msg.chat_id_, msg.id_,Text) 
+end
+end
+if text and text ~="نسبه الكره" and database:get(bot_id..":"..msg.sender_user_id_..":krh_Bots"..msg.chat_id_) == "sendkrhe" then
+num = {"10","20","30","35","75","34","66","82","23","19","55","8","63","32","27","89","99","98","3","80","8","100","6","0",};
+sendnum = num[math.random(#num)]
+sl = '*نسبه كره* *'..text..'* هي : *'..sendnum..'%*'
+send(msg.chat_id_, msg.id_,sl) 
+database:del(bot_id..":"..msg.sender_user_id_..":krh_Bots"..msg.chat_id_)
+end
+if text == "نسبه رجوله" or text == "نسبه الرجوله" and msg.reply_to_message_id_ ~= 0 and Mod(msg) then
+if not database:get(bot_id..'Cick:rjo'..msg.chat_id_) then
+database:set(bot_id..":"..msg.sender_user_id_..":rjo_Bots"..msg.chat_id_,"sendrjoe")
+Text = '*ارسل اسم الشخص الذي تريد قياس نسبه رجولته* *\n مثال امير*'
+send(msg.chat_id_, msg.id_,Text) 
+end
+end
+if text and text ~="نسبه رجوله" and database:get(bot_id..":"..msg.sender_user_id_..":rjo_Bots"..msg.chat_id_) == "sendrjoe" then
+numj = {"10","20","30","35","75","34","66","82","23","19","55","80","63","32","27","89","99","98","79","100","8","3","6","0",};
+sendnuj = numj[math.random(#numj)]
+xl = '*نسبه رجوله* *'..text..'* هي : *\n '..sendnuj..'%*'
+send(msg.chat_id_, msg.id_,xl) 
+database:del(bot_id..":"..msg.sender_user_id_..":rjo_Bots"..msg.chat_id_)
+end
+if text == "نسبه الانوثه" or text == "نسبه انوثه" and msg.reply_to_message_id_ ~= 0 and Mod(msg) then
+if not database:get(bot_id..'Cick:ano'..msg.chat_id_) then
+database:set(bot_id..":"..msg.sender_user_id_..":ano_Bots"..msg.chat_id_,"sendanoe")
+Text = '*ارسل اسم الشخص الذي تريد قياس نسبه انوثتها* *\n مثال نونه*'
+send(msg.chat_id_, msg.id_,Text) 
+end
+end
+if text and text ~="نسبه الانوثه" and database:get(bot_id..":"..msg.sender_user_id_..":ano_Bots"..msg.chat_id_) == "sendanoe" then
+numj = {"10","20","30","35","75","34","66","82","23","19","55","80","63","32","27","89","99","98","79","100","8","3","6","0",};
+sendnuj = numj[math.random(#numj)]
+xl = '*نسبه الانوثه* *'..text..'* هي : *\n '..sendnuj..'%*'
+send(msg.chat_id_, msg.id_,xl) 
+database:del(bot_id..":"..msg.sender_user_id_..":ano_Bots"..msg.chat_id_)
+end	
+		
 ------------------------------------------------------------------------
 if msg.content_.ID == "MessageChatDeletePhoto" or msg.content_.ID == "MessageChatChangePhoto" or msg.content_.ID == "MessagePinMessage" or msg.content_.ID == "MessageChatJoinByLink" or msg.content_.ID == "MessageChatAddMembers" or msg.content_.ID == "MessageChatChangeTitle" or msg.content_.ID == "MessageChatDeleteMember" then   
 if database:get(bot_id.."SNAP:Lock:tagservr"..msg.chat_id_) then  
