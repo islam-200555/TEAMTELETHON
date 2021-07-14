@@ -1464,14 +1464,21 @@ return false
 end 
 if text == "قفل التعديل" and msg.reply_to_message_id_ == 0 and Constructor(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
-return false
-end 
 database:set(bot_id.."SNAP:Lock:edit"..msg.chat_id_,true) 
 Reply_Status(msg,msg.sender_user_id_,"lock","⌔︙ تم قفـل تعديل")  
 return false
@@ -1483,14 +1490,21 @@ return false
 end 
 if text == "قفل الكل" and msg.reply_to_message_id_ == 0 and Constructor(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
-end  
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
+end 
 database:set(bot_id.."SNAP:Lock:tagservrbot"..msg.chat_id_,true)   
 list ={"Lock:Bot:kick","Lock:User:Name","Lock:hashtak","Lock:Cmd","Lock:Link","Lock:forward","Lock:Keyboard","Lock:geam","Lock:Photo","Lock:Animation","Lock:Video","Lock:Audio","Lock:vico","Lock:Sticker","Lock:Document","Lock:Unsupported","Lock:Markdaun","Lock:Contact","Lock:Spam"}
 for i,lock in pairs(list) do 
@@ -1502,56 +1516,84 @@ end
 --------------------------------------------------------------------------------------------------------------
 if text == "فتح الاضافه" and msg.reply_to_message_id_ == 0 and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
-return false
-end 
 database:del(bot_id.."SNAP:Lock:AddMempar"..msg.chat_id_)  
 Reply_Status(msg,msg.sender_user_id_,"unlock","⌔︙ تم فتح اضافة الاعضاء")  
 return false
 end 
 if text == "فتح الدردشه" and msg.reply_to_message_id_ == 0 and Owner(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
-return false
-end 
 database:del(bot_id.."SNAP:Lock:text"..msg.chat_id_)  
 Reply_Status(msg,msg.sender_user_id_,"unlock","⌔︙ تم فتح الدردشه")  
 return false
 end 
 if text == "فتح الدخول" and msg.reply_to_message_id_ == 0 and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
-return false
-end 
 database:del(bot_id.."SNAP:Lock:Join"..msg.chat_id_)  
 Reply_Status(msg,msg.sender_user_id_,"unlock","⌔︙ تم فتح دخول الاعضاء")  
 return false
 end 
 if text == "فتح البوتات" and msg.reply_to_message_id_ == 0 and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
-return false
-end 
 database:del(bot_id.."SNAP:Lock:Bot:kick"..msg.chat_id_)  
 Reply_Status(msg,msg.sender_user_id_,"unlock","⌔︙ تم فـتح البوتات")  
 return false
@@ -1575,42 +1617,63 @@ return false
 end
 if text == "فتح البوتات " and msg.reply_to_message_id_ == 0 and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
-return false
-end 
 database:del(bot_id.."SNAP:Lock:Bot:kick"..msg.chat_id_)  
 Reply_Status(msg,msg.sender_user_id_,"unlock","🍃\n⌔︙ تم فـتح البوتات")  
 return false
 end 
 if text == "فتح الاشعارات" and msg.reply_to_message_id_ == 0 and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
-end  
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
+end 
 database:del(bot_id.."SNAP:Lock:tagservr"..msg.chat_id_)  
 Reply_Status(msg,msg.sender_user_id_,"unlock","⌔︙ تم فـتح الاشعارات")  
 return false
 end 
 if text == "فتح التثبيت" and msg.reply_to_message_id_ == 0 and Constructor(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
-return false
-end 
 database:del(bot_id.."SNAP:lockpin"..msg.chat_id_)  
 database:srem(bot_id.."SNAP:Lock:pin",msg.chat_id_)
 Reply_Status(msg,msg.sender_user_id_,"unlock","⌔︙ تم فـتح التثبيت هنا")  
@@ -1618,14 +1681,21 @@ return false
 end 
 if text == "فتح التعديل" and msg.reply_to_message_id_ == 0 and Constructor(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
-return false
-end 
 database:del(bot_id.."SNAP:Lock:edit"..msg.chat_id_) 
 Reply_Status(msg,msg.sender_user_id_,"unlock","⌔︙ تم فـتح تعديل")  
 return false
@@ -1637,14 +1707,21 @@ return false
 end 
 if text == "فتح الكل" and msg.reply_to_message_id_ == 0 and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
-return false
-end 
 database:del(bot_id.."SNAP:Lock:tagservrbot"..msg.chat_id_)   
 list ={"Lock:Bot:kick","Lock:User:Name","Lock:hashtak","Lock:Cmd","Lock:Link","Lock:forward","Lock:Keyboard","Lock:geam","Lock:Photo","Lock:Animation","Lock:Video","Lock:Audio","Lock:vico","Lock:Sticker","Lock:Document","Lock:Unsupported","Lock:Markdaun","Lock:Contact","Lock:Spam"}
 for i,lock in pairs(list) do 
@@ -1656,13 +1733,20 @@ end
 --------------------------------------------------------------------------------------------------------------
 if text == "قفل الروابط" and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:set(bot_id.."SNAP:Lock:Link"..msg.chat_id_,"del")  
 Reply_Status(msg,msg.sender_user_id_,"lock","⌔︙ تم قفـل الروابط")  
@@ -1685,13 +1769,20 @@ return false
 end 
 if text == "فتح الروابط" and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:del(bot_id.."SNAP:Lock:Link"..msg.chat_id_)  
 Reply_Status(msg,msg.sender_user_id_,"unlock","⌔︙ تم فتح الروابط")  
@@ -1699,13 +1790,20 @@ return false
 end 
 if text == "قفل المعرفات" and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:set(bot_id.."SNAP:Lock:User:Name"..msg.chat_id_,"del")  
 Reply_Status(msg,msg.sender_user_id_,"lock","⌔︙ تم قفـل المعرفات")  
@@ -1728,13 +1826,20 @@ return false
 end 
 if text == "فتح المعرفات" and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:del(bot_id.."SNAP:Lock:User:Name"..msg.chat_id_)  
 Reply_Status(msg,msg.sender_user_id_,"unlock","⌔︙ تم فتح المعرفات")  
@@ -1742,13 +1847,20 @@ return false
 end 
 if text == "قفل التاك" and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:set(bot_id.."SNAP:Lock:hashtak"..msg.chat_id_,"del")  
 Reply_Status(msg,msg.sender_user_id_,"lock","⌔︙ تم قفـل التاك")  
@@ -1771,13 +1883,20 @@ return false
 end 
 if text == "فتح التاك" and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:del(bot_id.."SNAP:Lock:hashtak"..msg.chat_id_)  
 Reply_Status(msg,msg.sender_user_id_,"unlock","⌔︙ تم فتح التاك")  
@@ -1870,13 +1989,20 @@ return false
 end 
 if text == "قفل المتحركه" and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:set(bot_id.."SNAP:Lock:Animation"..msg.chat_id_,"del")  
 Reply_Status(msg,msg.sender_user_id_,"lock","⌔︙ تم قفـل المتحركه")  
@@ -1913,13 +2039,20 @@ return false
 end 
 if text == "قفل الالعاب" and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:set(bot_id.."SNAP:Lock:geam"..msg.chat_id_,"del")  
 Reply_Status(msg,msg.sender_user_id_,"lock","⌔︙ تم قفـل الالعاب")  
@@ -1942,13 +2075,20 @@ return false
 end 
 if text == "فتح الالعاب" and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:del(bot_id.."SNAP:Lock:geam"..msg.chat_id_)  
 Reply_Status(msg,msg.sender_user_id_,"unlock","⌔︙ تم فتح الالعاب")  
@@ -2031,13 +2171,20 @@ return false
 end 
 if text == "قفل الملصقات" and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:set(bot_id.."SNAP:Lock:Sticker"..msg.chat_id_,"del")  
 Reply_Status(msg,msg.sender_user_id_,"lock","⌔︙ تم قفـل الملصقات")  
@@ -2060,13 +2207,20 @@ return false
 end 
 if text == "فتح الملصقات" and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:del(bot_id.."SNAP:Lock:Sticker"..msg.chat_id_)  
 Reply_Status(msg,msg.sender_user_id_,"unlock","⌔︙ تم فتح الملصقات")  
@@ -2074,13 +2228,20 @@ return false
 end 
 if text == "قفل التوجيه" and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:set(bot_id.."SNAP:Lock:forward"..msg.chat_id_,"del")  
 Reply_Status(msg,msg.sender_user_id_,"lock","⌔︙ تم قفـل التوجيه")  
@@ -2103,13 +2264,20 @@ return false
 end 
 if text == "فتح التوجيه" and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:del(bot_id.."SNAP:Lock:forward"..msg.chat_id_)  
 Reply_Status(msg,msg.sender_user_id_,"unlock","⌔︙ تم فتح التوجيه")  
@@ -2142,13 +2310,20 @@ return false
 end 
 if text == "قفل السيلفي" and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:set(bot_id.."SNAP:Lock:Unsupported"..msg.chat_id_,"del")  
 Reply_Status(msg,msg.sender_user_id_,"lock","⌔︙ تم قفـل السيلفي")  
@@ -2171,13 +2346,20 @@ return false
 end 
 if text == "فتح السيلفي" and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:del(bot_id.."SNAP:Lock:Unsupported"..msg.chat_id_)  
 Reply_Status(msg,msg.sender_user_id_,"unlock","⌔︙ تم فتح السيلفي")  
@@ -2205,13 +2387,20 @@ return false
 end 
 if text == "فتح الماركداون" and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:del(bot_id.."SNAP:Lock:Markdaun"..msg.chat_id_)  
 Reply_Status(msg,msg.sender_user_id_,"unlock","⌔︙ تم فتح الماركداون")  
@@ -2239,13 +2428,20 @@ return false
 end 
 if text == "فتح الجهات" and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:del(bot_id.."SNAP:Lock:Contact"..msg.chat_id_)  
 Reply_Status(msg,msg.sender_user_id_,"unlock","⌔︙ تم فتح الجهات")  
@@ -2273,13 +2469,20 @@ return false
 end 
 if text == "فتح الكلايش" and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:del(bot_id.."SNAP:Lock:Spam"..msg.chat_id_)  
 Reply_Status(msg,msg.sender_user_id_,"unlock","⌔︙ تم فتح الكلايش")  
@@ -2312,70 +2515,105 @@ return false
 end 
 if text == "قفل التكرار بالطرد" and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
-return false
-end 
 database:hset(bot_id.."SNAP:flooding:settings:"..msg.chat_id_ ,"flood","kick")  
 Reply_Status(msg,msg.sender_user_id_,"lockkick","⌔︙ تم قفل التكرار")
 return false
 end 
 if text == "قفل التكرار" and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
-return false
-end 
 database:hset(bot_id.."SNAP:flooding:settings:"..msg.chat_id_ ,"flood","del")  
 Reply_Status(msg,msg.sender_user_id_,"lock","⌔︙ تم قفل التكرار بالحذف")
 return false
 end 
 if text == "قفل التكرار بالتقيد" and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
-return false
-end 
 database:hset(bot_id.."SNAP:flooding:settings:"..msg.chat_id_ ,"flood","keed")  
 Reply_Status(msg,msg.sender_user_id_,"lockkid","⌔︙ تم قفل التكرار")
 return false
 end 
 if text == "قفل التكرار بالكتم" and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
-return false
-end 
 database:hset(bot_id.."SNAP:flooding:settings:"..msg.chat_id_ ,"flood","mute")  
 Reply_Status(msg,msg.sender_user_id_,"lockktm","⌔︙ تم قفل التكرار")
 return false
 end 
 if text == "فتح التكرار" and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
-return false
-end 
 database:hdel(bot_id.."SNAP:flooding:settings:"..msg.chat_id_ ,"flood")  
 Reply_Status(msg,msg.sender_user_id_,"unlock","⌔︙ تم فتح التكرار")
 return false
@@ -2470,13 +2708,20 @@ send(msg.chat_id_, msg.id_, texts)
 end
 if text == "مسح المنشئين" and BasicConstructor(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:del(bot_id.."SNAP:Constructor"..msg.chat_id_)
 texts = "⌔︙ تم مسح المنشئين "
@@ -2484,13 +2729,20 @@ send(msg.chat_id_, msg.id_, texts)
 end
 if text == "مسح المدراء" and Constructor(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:del(bot_id.."SNAP:Manager"..msg.chat_id_)
 texts = "⌔︙ تم مسح المدراء "
@@ -2498,26 +2750,40 @@ send(msg.chat_id_, msg.id_, texts)
 end
 if text == "مسح الادمنيه" and Owner(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:del(bot_id.."SNAP:Mod:User"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, "🗑︙ تم مسح  قائمة الادمنية  ")
 end
 if text == "مسح المميزين" and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:del(bot_id.."SNAP:Special:User"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, "🗑︙ تم مسح  قائمة الاعضاء المميزين  ")
@@ -2529,74 +2795,116 @@ send(msg.chat_id_, msg.id_, texts)
 end
 if text == "تنزيل جميع الرتب" and BasicConstructor(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:del(bot_id.."SNAP:Constructor"..msg.chat_id_)
 end
 if text == "تنزيل جميع الرتب" and Constructor(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:del(bot_id.."SNAP:Manager"..msg.chat_id_)
 end
 if text == "تنزيل جميع الرتب" and Owner(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:del(bot_id.."SNAP:Mod:User"..msg.chat_id_)
 end
 if text == "تنزيل جميع الرتب" and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:del(bot_id.."SNAP:Special:User"..msg.chat_id_)
 end
 if text == "مسح المكتومين" and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:del(bot_id.."SNAP:Muted:User"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, "🗑︙ تم مسح قائمه المكتومين ")
 end
 if text == "مسح المحظورين" and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:del(bot_id.."SNAP:Ban:User"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, "\n⌔︙ تم مسح المحظورين")
@@ -2653,13 +2961,20 @@ return false
 end
 if text == ("المنشئين") and BasicConstructor(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local list = database:smembers(bot_id.."SNAP:Constructor"..msg.chat_id_)
 t = "\n⌔︙ قائمة المنشئين \n⋆ ━━━━━━✿━━━━━━ ⋆\n"
@@ -2678,13 +2993,20 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == ("المدراء") and Constructor(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local list = database:smembers(bot_id.."SNAP:Manager"..msg.chat_id_)
 t = "\n⌔︙ قائمة المدراء \n⋆ ━━━━━━✿━━━━━━ ⋆\n"
@@ -2703,13 +3025,20 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == ("الادمنيه") and Owner(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local list = database:smembers(bot_id.."SNAP:Mod:User"..msg.chat_id_)
 t = "\n⌔︙ قائمة الادمنيه \n⋆ ━━━━━━✿━━━━━━ ⋆\n"
@@ -2744,13 +3073,20 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == ("المكتومين") and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local list = database:smembers(bot_id.."SNAP:Muted:User"..msg.chat_id_)
 t = "\n⌔︙ قائمة المكتومين \n⋆ ━━━━━━✿━━━━━━ ⋆\n"
@@ -2770,13 +3106,20 @@ end
 
 if text == ("المحظورين") then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local list = database:smembers(bot_id.."SNAP:Ban:User"..msg.chat_id_)
 t = "\n⌔︙ قائمة محظورين المجموعه \n⋆ ━━━━━━✿━━━━━━ ⋆\n"
@@ -2947,13 +3290,20 @@ end
 
 if text == ("رفع منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 and DevBot(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 function Function_SNAP(extra, result, success)
 database:sadd(bot_id.."SNAP:Basic:Constructor"..msg.chat_id_, result.sender_user_id_)
@@ -2964,13 +3314,20 @@ return false
 end
 if text and text:match("^رفع منشئ اساسي @(.*)$") and DevBot(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local username = text:match("^رفع منشئ اساسي @(.*)$")
 function Function_SNAP(extra, result, success)
@@ -2990,13 +3347,20 @@ return false
 end
 if text and text:match("^رفع منشئ اساسي (%d+)$") and DevBot(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local userid = text:match("^رفع منشئ اساسي (%d+)$") 
 database:sadd(bot_id.."SNAP:Basic:Constructor"..msg.chat_id_, userid)
@@ -3005,13 +3369,20 @@ return false
 end
 if text == ("تنزيل منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 and DevBot(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 function Function_SNAP(extra, result, success)
 database:srem(bot_id.."SNAP:Basic:Constructor"..msg.chat_id_, result.sender_user_id_)
@@ -3022,13 +3393,20 @@ return false
 end
 if text and text:match("^تنزيل منشئ اساسي @(.*)$") and DevBot(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local username = text:match("^تنزيل منشئ اساسي @(.*)$")
 function Function_SNAP(extra, result, success)
@@ -3045,13 +3423,20 @@ return false
 end
 if text and text:match("^تنزيل منشئ اساسي (%d+)$") and DevBot(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local userid = text:match("^تنزيل منشئ اساسي (%d+)$") 
 database:srem(bot_id.."SNAP:Basic:Constructor"..msg.chat_id_, userid)
@@ -3061,13 +3446,20 @@ end
 
 if text == "رفع منشئ" and tonumber(msg.reply_to_message_id_) ~= 0 and BasicConstructor(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 function Function_SNAP(extra, result, success)
 database:sadd(bot_id.."SNAP:Constructor"..msg.chat_id_, result.sender_user_id_)
@@ -3077,13 +3469,20 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 end
 if text and text:match("^رفع منشئ @(.*)$") and BasicConstructor(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local username = text:match("^رفع منشئ @(.*)$")
 function Function_SNAP(extra, result, success)
@@ -3103,13 +3502,20 @@ end
 ------------------------------------------------------------------------
 if text and text:match("^رفع منشئ (%d+)$") and BasicConstructor(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local userid = text:match("^رفع منشئ (%d+)$")
 database:sadd(bot_id.."SNAP:Constructor"..msg.chat_id_, userid)
@@ -3125,13 +3531,20 @@ end
 ------------------------------------------------------------------------
 if text and text:match("^تنزيل منشئ @(.*)$") and BasicConstructor(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local username = text:match("^تنزيل منشئ @(.*)$")
 function Function_SNAP(extra, result, success)
@@ -3147,13 +3560,20 @@ end
 ------------------------------------------------------------------------
 if text and text:match("^تنزيل منشئ (%d+)$") and BasicConstructor(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local userid = text:match("^تنزيل منشئ (%d+)$")
 database:srem(bot_id.."SNAP:Constructor"..msg.chat_id_, userid)
@@ -3162,13 +3582,20 @@ end
 
 if text == ("رفع مدير") and tonumber(msg.reply_to_message_id_) ~= 0 and Constructor(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 function Function_SNAP(extra, result, success)
 database:sadd(bot_id.."SNAP:Manager"..msg.chat_id_, result.sender_user_id_)
@@ -3179,13 +3606,20 @@ return false
 end  
 if text and text:match("^رفع مدير @(.*)$") and Constructor(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local username = text:match("^رفع مدير @(.*)$") 
 function Function_SNAP(extra, result, success)
@@ -3206,13 +3640,20 @@ end
 
 if text and text:match("^رفع مدير (%d+)$") and Constructor(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local userid = text:match("^رفع مدير (%d+)$") 
 database:sadd(bot_id.."SNAP:Manager"..msg.chat_id_, userid)
@@ -3221,13 +3662,20 @@ return false
 end  
 if text == ("تنزيل مدير") and tonumber(msg.reply_to_message_id_) ~= 0 and Constructor(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 function Function_SNAP(extra, result, success)
 database:srem(bot_id.."SNAP:Manager"..msg.chat_id_, result.sender_user_id_)
@@ -3238,13 +3686,20 @@ return false
 end  
 if text and text:match("^تنزيل مدير @(.*)$") and Constructor(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local username = text:match("^تنزيل مدير @(.*)$")
 function Function_SNAP(extra, result, success)
@@ -3260,13 +3715,20 @@ return false
 end  
 if text and text:match("^تنزيل مدير (%d+)$") and Constructor(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local userid = text:match("^تنزيل مدير (%d+)$") 
 database:srem(bot_id.."SNAP:Manager"..msg.chat_id_, userid)
@@ -3276,13 +3738,20 @@ end
 
 if text == ("رفع ادمن") and tonumber(msg.reply_to_message_id_) ~= 0 and Owner(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'⌔︙ لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
@@ -3297,13 +3766,20 @@ return false
 end
 if text and text:match("^رفع ادمن @(.*)$") and Owner(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local username = text:match("^رفع ادمن @(.*)$")
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
@@ -3327,13 +3803,20 @@ return false
 end
 if text and text:match("^رفع ادمن (%d+)$") and Owner(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local userid = text:match("^رفع ادمن (%d+)$")
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
@@ -3346,13 +3829,20 @@ return false
 end
 if text == ("تنزيل ادمن") and tonumber(msg.reply_to_message_id_) ~= 0 and Owner(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 function Function_SNAP(extra, result, success)
 database:srem(bot_id.."SNAP:Mod:User"..msg.chat_id_, result.sender_user_id_)
@@ -3363,13 +3853,20 @@ return false
 end
 if text and text:match("^تنزيل ادمن @(.*)$") and Owner(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local username = text:match("^تنزيل ادمن @(.*)$") 
 function Function_SNAP(extra, result, success)
@@ -3385,13 +3882,20 @@ return false
 end
 if text and text:match("^تنزيل ادمن (%d+)$") and Owner(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local userid = text:match("^تنزيل ادمن (%d+)$")
 database:srem(bot_id.."SNAP:Mod:User"..msg.chat_id_, userid)
@@ -3401,13 +3905,20 @@ end
 
 if text == ("رفع مميز") and tonumber(msg.reply_to_message_id_) ~= 0 and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'⌔︙ لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
@@ -3422,13 +3933,20 @@ return false
 end
 if text and text:match("^رفع مميز @(.*)$") and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local username = text:match("^رفع مميز @(.*)$") 
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
@@ -3453,13 +3971,20 @@ end
 
 if text and text:match("^رفع مميز (%d+)$") and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local userid = text:match("^رفع مميز (%d+)$")
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
@@ -3473,13 +3998,20 @@ end
 
 if (text == ("تنزيل مميز")) and tonumber(msg.reply_to_message_id_) ~= 0 and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 function Function_SNAP(extra, result, success)
 database:srem(bot_id.."SNAP:Special:User"..msg.chat_id_, result.sender_user_id_)
@@ -3490,13 +4022,20 @@ return false
 end
 if text and text:match("^تنزيل مميز @(.*)$") and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local username = text:match("^تنزيل مميز @(.*)$") 
 function Function_SNAP(extra, result, success)
@@ -3512,13 +4051,20 @@ return false
 end
 if text and text:match("^تنزيل مميز (%d+)$") and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local userid = text:match("^تنزيل مميز (%d+)$") 
 database:srem(bot_id.."SNAP:Special:User"..msg.chat_id_, userid)
@@ -3527,13 +4073,20 @@ return false
 end  
 if text and text:match("رفع (.*)") and tonumber(msg.reply_to_message_id_) > 0 and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local RTPA = text:match("رفع (.*)")
 if database:sismember(bot_id.."SNAP:Coomds"..msg.chat_id_,RTPA) then
@@ -3562,13 +4115,20 @@ end
 end
 if text and text:match("تنزيل (.*)") and tonumber(msg.reply_to_message_id_) > 0 and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local RTPA = text:match("تنزيل (.*)")
 if database:sismember(bot_id.."SNAP:Coomds"..msg.chat_id_,RTPA) then
@@ -3597,13 +4157,20 @@ end
 end
 if text and text:match("^رفع (.*) @(.*)") and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local text1 = {string.match(text, "^(رفع) (.*) @(.*)$")}
 if database:sismember(bot_id.."SNAP:Coomds"..msg.chat_id_,text1[2]) then
@@ -3635,13 +4202,20 @@ end
 end
 if text and text:match("^تنزيل (.*) @(.*)") and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local text1 = {string.match(text, "^(تنزيل) (.*) @(.*)$")}
 if database:sismember(bot_id.."SNAP:Coomds"..msg.chat_id_,text1[2]) then
@@ -3674,13 +4248,20 @@ end
 
 if text == ("حظر") and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if not Constructor(msg) and database:get(bot_id.."Ban:Cheking"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'⌔︙ لقد تم تعطيل الحظر و الطرد من قبل المنشئين')
@@ -3755,13 +4336,20 @@ return false
 end
 if text and text:match("^حظر @(.*)$") and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local username = text:match("^حظر @(.*)$")
 if not Constructor(msg) and database:get(bot_id.."Ban:Cheking"..msg.chat_id_) then 
@@ -3813,13 +4401,20 @@ end
 
 if text and text:match("^حظر (%d+)$") and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local userid = text:match("^حظر (%d+)$") 
 if not Constructor(msg) and database:get(bot_id.."Ban:Cheking"..msg.chat_id_) then 
@@ -3859,13 +4454,20 @@ return false
 end
 if text == ("الغاء حظر") and tonumber(msg.reply_to_message_id_) ~= 0 and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 function Function_SNAP(extra, result, success)
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then
@@ -3882,13 +4484,20 @@ end
  
 if text and text:match("^الغاء حظر @(.*)$") and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local username = text:match("^الغاء حظر @(.*)$") 
 function Function_SNAP(extra, result, success)
@@ -3910,13 +4519,20 @@ end
 
 if text and text:match("^الغاء حظر (%d+)$") and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local userid = text:match("^الغاء حظر (%d+)$") 
 if tonumber(userid) == tonumber(bot_id) then
@@ -3931,13 +4547,20 @@ end
 
 if text == ("كتم") and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 function Function_SNAP(extra, result, success)
 if result.sender_user_id_ == tonumber(1525163287) then
@@ -3968,13 +4591,20 @@ return false
 end
 if text and text:match("^كتم @(.*)$") and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local username = text:match("^كتم @(.*)$")
 if msg.can_be_deleted_ == false then 
@@ -4006,13 +4636,20 @@ return false
 end
 if text and text:match("^كتم (%d+)$") and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local userid = text:match("^كتم (%d+)$")
 if userid == tonumber(1525163287) then
@@ -4033,13 +4670,20 @@ return false
 end
 if text == ("الغاء كتم") and tonumber(msg.reply_to_message_id_) ~= 0 and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 function Function_SNAP(extra, result, success)
 database:srem(bot_id.."SNAP:Muted:User"..msg.chat_id_, result.sender_user_id_)
@@ -4064,13 +4708,20 @@ end
 
 if text and text:match("^الغاء كتم (%d+)$") and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local userid = text:match("^الغاء كتم (%d+)$") 
 database:srem(bot_id.."SNAP:Muted:User"..msg.chat_id_, userid)
@@ -4113,13 +4764,20 @@ Reply_Status(msg,msg.sender_user_id_,"lock","⌔︙ تـم فـتح الفشار
 end
 if text == ("تقيد") and tonumber(msg.reply_to_message_id_) ~= 0 and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 function Function_SNAP(extra, result, success)
 if Rank_Checking(result.sender_user_id_, msg.chat_id_) then
@@ -4166,13 +4824,20 @@ end
 ------------------------------------------------------------------------
 if text and text:match("^تقيد (%d+)$") and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local userid = text:match("^تقيد (%d+)$")
 if Rank_Checking(userid, msg.chat_id_) then
@@ -4186,13 +4851,20 @@ end
 ------------------------------------------------------------------------
 if text == ("الغاء تقيد") and tonumber(msg.reply_to_message_id_) ~= 0 and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 function Function_SNAP(extra, result, success)
 https.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. result.sender_user_id_ .. "&can_send_messages=True&can_send_media_messages=True&can_send_other_messages=True&can_add_web_page_previews=True")
@@ -4204,13 +4876,20 @@ end
 ------------------------------------------------------------------------
 if text and text:match("^الغاء تقيد @(.*)$") and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local username = text:match("^الغاء تقيد @(.*)$")
 function Function_SNAP(extra, result, success)
@@ -4227,13 +4906,20 @@ end
 ------------------------------------------------------------------------
 if text and text:match("^الغاء تقيد (%d+)$") and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local userid = text:match("^الغاء تقيد (%d+)$")
 https.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" ..userid.. "&can_send_messages=True&can_send_media_messages=True&can_send_other_messages=True&can_add_web_page_previews=True")
@@ -4242,13 +4928,20 @@ return false
 end
 if text == ("طرد") and msg.reply_to_message_id_ ~=0 and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if not Constructor(msg) and database:get(bot_id.."Ban:Cheking"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'⌔︙ لقد تم تعطيل الحظر و الطرد من قبل المنشئين')
@@ -4277,14 +4970,21 @@ return false
 end  
 if text and text:match("^طرد @(.*)$") and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
-return false
-end 
 local username = text:match("^طرد @(.*)$")
 if not Constructor(msg) and database:get(bot_id.."Ban:Cheking"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'⌔︙ لقد تم تعطيل الحظر و الطرد من قبل المنشئين')
@@ -4322,14 +5022,21 @@ end
 
 if text and text:match("^طرد (%d+)$") and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
-return false
-end 
 local userid = text:match("^طرد (%d+)$") 
 if not Constructor(msg) and database:get(bot_id.."Ban:Cheking"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'⌔︙ لقد تم تعطيل الحظر و الطرد من قبل المنشئين')
@@ -4356,13 +5063,20 @@ end
 
 if text == "تعطيل الطرد" or text == "تعطيل الحظر" then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if Constructor(msg) then
 database:set(bot_id.."Ban:Cheking"..msg.chat_id_,"true")
@@ -4372,13 +5086,20 @@ end
 end
 if text == "تفعيل الطرد" or text == "تفعيل الحظر" then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if Constructor(msg) then
 database:del(bot_id.."Ban:Cheking"..msg.chat_id_)
@@ -4388,13 +5109,20 @@ end
 end
 if text == "تعطيل الرفع" or text == "تعطيل الترقيه" then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if Constructor(msg) then
 database:set(bot_id.."Add:Group:Cheking"..msg.chat_id_,"true")
@@ -4404,13 +5132,20 @@ end
 end
 if text == "تفعيل الرفع" or text == "تفعيل الترقيه" then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if Constructor(msg) then
 database:del(bot_id.."Add:Group:Cheking"..msg.chat_id_)
@@ -4527,13 +5262,20 @@ end
 end
 if text ==("تثبيت") and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if database:sismember(bot_id.."SNAP:Lock:pin",msg.chat_id_) and not Constructor(msg) then
 send(msg.chat_id_,msg.id_,"⌔︙ التثبيت والغاء التثبيت تم قفله من قبل المنشئين")  
@@ -4552,13 +5294,20 @@ end,nil)
 end
 if text == "الغاء التثبيت" and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if database:sismember(bot_id.."SNAP:Lock:pin",msg.chat_id_) and not Constructor(msg) then
 send(msg.chat_id_,msg.id_,"⌔︙ التثبيت والغاء التثبيت تم قفله من قبل المنشئين")  
@@ -4577,13 +5326,20 @@ end,nil)
 end
 if text == 'الغاء تثبيت الكل' and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if database:sismember(bot_id.."SNAP:Lock:pin",msg.chat_id_) and not Constructor(msg) then
 send(msg.chat_id_,msg.id_,"⌔︙ التثبيت والغاء التثبيت تم قفله من قبل المنشئين")  
@@ -4613,13 +5369,20 @@ send(msg.chat_id_, msg.id_,"⌔︙ تم وضع زمن التكرار ("..Num..")
 end
 if text == "ضع رابط" or text == "وضع رابط" then
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if msg.reply_to_message_id_ == 0  and Addictive(msg) then  
 send(msg.chat_id_,msg.id_,"⌔︙ ارسل رابط المجموعه او رابط قناة المجموعه")
@@ -4629,13 +5392,20 @@ end
 end
 if text == "تفعيل جلب الرابط" or text == 'تفعيل الرابط' then
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if Addictive(msg) then  
 database:set(bot_id.."SNAP:Link_Group"..msg.chat_id_,true) 
@@ -4645,13 +5415,20 @@ end
 end
 if text == "تعطيل جلب الرابط" or text == 'تعطيل الرابط' then
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if Addictive(msg) then  
 database:del(bot_id.."SNAP:Link_Group"..msg.chat_id_) 
@@ -4660,13 +5437,20 @@ return false end
 end
 if text == "الرابط" then 
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local status_Link = database:get(bot_id.."SNAP:Link_Group"..msg.chat_id_)
 if not status_Link then
@@ -4682,13 +5466,20 @@ end
 end
 if text == "مسح الرابط" or text == "حذف الرابط" then
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if Addictive(msg) then     
 send(msg.chat_id_,msg.id_,"⌔︙ تم مسح الرابط ")           
@@ -4730,13 +5521,20 @@ send(msg.chat_id_, msg.id_, l)
 end
 if text and text:match("^ضع صوره") and Addictive(msg) and msg.reply_to_message_id_ == 0 or text and text:match("^وضع صوره") and Addictive(msg) and msg.reply_to_message_id_ == 0 then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:set(bot_id.."SNAP:Change:Chat:Photo"..msg.chat_id_..":"..msg.sender_user_id_,true) 
 send(msg.chat_id_, msg.id_,"⌔︙ ارسل لي الصوره") 
@@ -4744,13 +5542,20 @@ return false
 end
 if text == "حذف الصوره" or text == "مسح الصوره" then 
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if Addictive(msg) then
 https.request("https://api.telegram.org/bot"..token.."/deleteChatPhoto?chat_id="..msg.chat_id_) 
@@ -4760,13 +5565,20 @@ return false
 end
 if text == "ضع وصف" or text == "وضع وصف" then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if Addictive(msg) then
 database:setex(bot_id.."SNAP:Set:Description" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 120, true)  
@@ -4776,13 +5588,20 @@ return false
 end
 if text == "ضع ترحيب" or text == "وضع ترحيب" then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if Addictive(msg) then
 database:setex(bot_id.."SNAP:Welcome:Group" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 120, true)  
@@ -4794,13 +5613,20 @@ return false
 end
 if text == "الترحيب" and Addictive(msg) then 
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if database:get(bot_id.."SNAP:Get:Welcome:Group"..msg.chat_id_)   then 
 Welcome = database:get(bot_id.."SNAP:Get:Welcome:Group"..msg.chat_id_)  
@@ -4812,13 +5638,20 @@ return false
 end
 if text == "تفعيل الترحيب" and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:set(bot_id.."SNAP:Chek:Welcome"..msg.chat_id_,true) 
 send(msg.chat_id_, msg.id_,"⌔︙ تم تفعيل ترحيب المجموعه") 
@@ -4826,13 +5659,20 @@ return false
 end
 if text == "تعطيل الترحيب" and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:del(bot_id.."SNAP:Chek:Welcome"..msg.chat_id_) 
 send(msg.chat_id_, msg.id_,"⌔︙ تم تعطيل ترحيب المجموعه") 
@@ -4840,13 +5680,20 @@ return false
 end
 if text == "مسح الترحيب" or text == "حذف الترحيب" then 
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if Addictive(msg) then
 database:del(bot_id.."SNAP:Get:Welcome:Group"..msg.chat_id_) 
@@ -4856,13 +5703,20 @@ return false
 end
 if text == "قائمه المنع" and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:set(bot_id.."SNAP:Filter:msg",msg.chat_id_)
 tdcli_function ({ID = "GetUser",user_id_ = bot_id},function(arg,data) 
@@ -4878,13 +5732,20 @@ end,nil)
 end
 if text == "مسح قائمه المنع" and Addictive(msg) then   
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local listtext = database:smembers(bot_id.."SNAP:List:Filter:text"..msg.chat_id_)  
 for k,v in pairs(listtext) do  
@@ -4947,13 +5808,20 @@ end
 end
 if text == "الغاء منع" and msg.reply_to_message_id_ == 0 and Addictive(msg) then    
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 send(msg.chat_id_, msg.id_,"⌔︙ الان ارسل { كلمه،صوره،ملصق،متحركه } ممنوع لالغاء منعه")  
 database:set(bot_id.."SNAP:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_,"reppp")  
@@ -4997,13 +5865,20 @@ end
 end
 if text == "مسح البوتات" and Addictive(msg) then 
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 tdcli_function ({ ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersBots"},offset_ = 0,limit_ = 100 },function(arg,tah)  
 local admins = tah.members_  
@@ -5028,13 +5903,20 @@ end,nil)
 end   
 if text == ("كشف البوتات") and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersBots"},offset_ = 0,limit_ = 100 },function(extra,result,success)
 local admins = result.members_  
@@ -5079,13 +5961,20 @@ end
 
 if text == "ضع قوانين" or text == "وضع قوانين" then 
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if Addictive(msg) then
 database:setex(bot_id.."SNAP:Set:Rules:" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
@@ -5094,13 +5983,20 @@ end
 end
 if text == "مسح القوانين" or text == "حذف القوانين" then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if Addictive(msg) then
 send(msg.chat_id_, msg.id_,"⌔︙ تم ازالة قوانين المجموعه")  
@@ -5109,13 +6005,20 @@ end
 end
 if text == "القوانين" then 
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local Set_Rules = database:get(bot_id.."SNAP:Set:Rules:Group" .. msg.chat_id_)   
 if Set_Rules then     
@@ -5127,13 +6030,20 @@ end
 
 if text == "الاوامر المضافه" and Constructor(msg) then
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local list = database:smembers(bot_id.."SNAP:List:Cmd:Group:New"..msg.chat_id_.."")
 t = "⌔︙ قائمه الاوامر المضافه  \n⋆ ━━━━━━✿━━━━━━ ⋆\n"
@@ -5152,13 +6062,20 @@ send(msg.chat_id_, msg.id_,"["..t.."]")
 end
 if text == "حذف الاوامر المضافه" or text == "مسح الاوامر المضافه" then
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if Constructor(msg) then 
 local list = database:smembers(bot_id.."SNAP:List:Cmd:Group:New"..msg.chat_id_)
@@ -5190,13 +6107,20 @@ send(msg.chat_id_, msg.id_,"⌔︙ تم ترتيب الاوامر بالشكل �
 end
 if text == "اضف امر" and Constructor(msg) then
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:set(bot_id.."SNAP:Set:Cmd:Group"..msg.chat_id_..":"..msg.sender_user_id_,"true") 
 send(msg.chat_id_, msg.id_,"⌔︙ الان ارسل لي الامر القديم ..")  
@@ -5204,13 +6128,20 @@ return false
 end
 if text == "حذف امر" or text == "مسح امر" then 
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if Constructor(msg) then
 database:set(bot_id.."SNAP:Del:Cmd:Group"..msg.chat_id_..":"..msg.sender_user_id_,"true") 
@@ -5220,13 +6151,20 @@ end
 end
 if text == ("رفع منظف") and tonumber(msg.reply_to_message_id_) ~= 0 and BasicConstructor(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'⌔︙ لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
@@ -5241,13 +6179,20 @@ return false
 end
 if text and text:match("^رفع منظف @(.*)$") and BasicConstructor(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local username = text:match("^رفع منظف @(.*)$")
 function Function_SNAP(extra, result, success)
@@ -5267,13 +6212,20 @@ return false
 end
 if text and text:match("^رفع منظف (%d+)$") and BasicConstructor(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local userid = text:match("^رفع منظف (%d+)$")
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
@@ -5286,13 +6238,20 @@ return false
 end
 if text == ("تنزيل منظف") and tonumber(msg.reply_to_message_id_) ~= 0 and BasicConstructor(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 function Function_SNAP(extra, result, success)
 database:srem(bot_id.."SNAP:MN:TF"..msg.chat_id_, result.sender_user_id_)
@@ -5303,13 +6262,20 @@ return false
 end
 if text and text:match("^تنزيل منظف @(.*)$") and BasicConstructor(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local username = text:match("^تنزيل منظف @(.*)$") 
 function Function_SNAP(extra, result, success)
@@ -5325,13 +6291,20 @@ return false
 end
 if text and text:match("^تنزيل منظف (%d+)$") and BasicConstructor(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local userid = text:match("^تنزيل منظف (%d+)$")
 database:srem(bot_id.."SNAP:MN:TF"..msg.chat_id_, userid)
@@ -5341,13 +6314,20 @@ end
 
 if text == "الصلاحيات" and Addictive(msg) then 
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local list = database:smembers(bot_id.."SNAP:Coomds"..msg.chat_id_)
 if #list == 0 then
@@ -5367,26 +6347,40 @@ send(msg.chat_id_, msg.id_,t)
 end
 if text == "مسح المنظفين" and BasicConstructor(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:del(bot_id.."SNAP:MN:TF"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, "🗑︙ تم مسح  قائمة المنظفين  ")
 end
 if text == ("المنظفين") and Owner(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local list = database:smembers(bot_id.."SNAP:MN:TF"..msg.chat_id_)
 t = "\n⌔︙ قائمة المنظفين \n⋆ ━━━━━━✿━━━━━━ ⋆\n"
@@ -5413,13 +6407,20 @@ send(msg.chat_id_, msg.id_,"⌔︙ تم مسح الصلاحيات")
 end
 if text and text:match("^اضف صلاحيه (.*)$") and Addictive(msg) then 
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 ComdNew = text:match("^اضف صلاحيه (.*)$")
 database:set(bot_id.."SNAP:Comd:New:rt"..msg.chat_id_..msg.sender_user_id_,ComdNew)  
@@ -5429,13 +6430,20 @@ send(msg.chat_id_, msg.id_, "⌔︙ ارسل نوع الصلاحيه⌔︙\n⌔�
 end
 if text and text:match("^مسح صلاحيه (.*)$") and Addictive(msg) or text and text:match("^حذف صلاحيه (.*)$") and Addictive(msg) then 
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 ComdNew = text:match("^مسح صلاحيه (.*)$") or text:match("^حذف صلاحيه (.*)$")
 database:del(bot_id.."SNAP:Comd:New:rt:bot:"..ComdNew..msg.chat_id_)
@@ -5604,13 +6612,20 @@ end
 end
 if text == "اضف رد" and Owner(msg) then
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 send(msg.chat_id_, msg.id_,"⌔︙ ارسل الكلمه التي تريد اضافتها")
 database:set(bot_id.."SNAP:Set:Manager:rd"..msg.sender_user_id_..":"..msg.chat_id_,true)
@@ -5623,13 +6638,20 @@ send(msg.chat_id_, msg.id_,quschen)
 end
 if text == "حذف رد" and Owner(msg) then
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 send(msg.chat_id_, msg.id_,"⌔︙ ارسل الكلمه التي تريد حذفها")
 database:set(bot_id.."SNAP:Set:Manager:rd"..msg.sender_user_id_..":"..msg.chat_id_,"true2")
@@ -5906,13 +6928,20 @@ end
 end
 if text == 'طرد المحذوفين' or text == 'مسح المحذوفين' then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if Addictive(msg) then    
 tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),offset_ = 0,limit_ = 1000}, function(arg,del)
@@ -6071,13 +7100,20 @@ database:del(bot_id.."SNAP:Special:User"..msg.chat_id_)
 end
 if text == "تاك للكل" and Addictive(msg) then
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""), offset_ = 0,limit_ = 200},function(ta,taha)
 local t = "\n┆ ⤹ ِ𝙢𝙚ِ𝙢ِ𝙗𝙚ِ𝙧𝙨 ٰ𝙡𝙞𝙨𝙩 †\n⋆ ━━━━━━✿━━━━━━ ⋆\n"
@@ -6094,26 +7130,40 @@ end,nil)
 end
 if text == "رتبتي" then
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local rtp = Get_Rank(msg.sender_user_id_,msg.chat_id_)
 send(msg.chat_id_, msg.id_,"⌔︙ رتبتك في البوت ↺ "..rtp)
 end
 if text == "اسمي"  then 
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 tdcli_function({ID="GetUser",user_id_=msg.sender_user_id_},function(extra,result,success)
 if result.first_name_  then
@@ -6131,13 +7181,20 @@ end,nil)
 end 
 if text==("عدد الكروب") and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if msg.can_be_deleted_ == false then 
 send(msg.chat_id_,msg.id_,"⌔︙ البوت ليس ادمن هنا \n") 
@@ -6156,13 +7213,20 @@ end,nil)
 end 
 if text == "اطردني" or text == "طردني" then
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if not database:get(bot_id.."SNAP:Kick:Me"..msg.chat_id_) then
 if Rank_Checking(msg.sender_user_id_, msg.chat_id_) == true then
@@ -6195,26 +7259,40 @@ end
 
 if text == "تفعيل اطردني" and Owner(msg) then   
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:del(bot_id.."SNAP:Kick:Me"..msg.chat_id_)  
 send(msg.chat_id_, msg.id_,Text) 
 end
 if text == "تعطيل اطردني" and Owner(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 database:set(bot_id.."SNAP:Kick:Me"..msg.chat_id_,true)  
 Text = "\n⌔︙ تم تعطيل امر اطردني"
@@ -6223,13 +7301,20 @@ end
 
 if text and text:match("^رفع القيود @(.*)") and Owner(msg) then 
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local username = text:match("^رفع القيود @(.*)") 
 function Function_SNAP(extra, result, success)
@@ -6256,13 +7341,20 @@ tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_SNAP, n
 end
 if text == "رفع القيود" and Owner(msg) then
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 function Function_SNAP(extra, result, success)
 if DevSNAP(msg) then
@@ -6284,13 +7376,20 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 end
 if text and text:match("^كشف القيود @(.*)") and Owner(msg) then 
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local username = text:match("^كشف القيود @(.*)") 
 function Function_SNAP(extra, result, success)
@@ -6320,13 +7419,20 @@ end
 
 if text == "كشف القيود" and Owner(msg) then 
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 function Function_SNAP(extra, result, success)
 if database:sismember(bot_id.."SNAP:Muted:User"..msg.chat_id_,result.sender_user_id_) then
@@ -6375,13 +7481,20 @@ return send(msg.chat_id_, msg.id_,"📮¦ تم مسح جميع الوسائط ا
 end
 if text and text:match("^ضع اسم (.*)") and Owner(msg) or text and text:match("^وضع اسم (.*)") and Owner(msg) then 
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local Name = text:match("^ضع اسم (.*)") or text:match("^وضع اسم (.*)") 
 tdcli_function ({ ID = "ChangeChatTitle",chat_id_ = msg.chat_id_,title_ = Name },function(arg,data) 
@@ -6399,13 +7512,20 @@ end
 
 if text ==("رفع الادمنيه") and Owner(msg) then
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersAdministrators"},offset_ = 0,limit_ = 100},function(arg,data) 
 local num2 = 0
@@ -6500,13 +7620,20 @@ return false
 end
 if text == (database:get(bot_id.."SNAP:Name:Bot") or "سناب") then
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 Namebot = (database:get(bot_id.."SNAP:Name:Bot") or "سناب")
 local namebot = {
@@ -6664,6 +7791,22 @@ end
 send(msg.chat_id_, msg.id_,"⌔︙ تم الغاء الحظر عن *~ "..num.." ~* اشخاص ") 
 end    
 tdcli_function({ID="GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersKicked"},offset_ = 0,limit_ = 200}, delbans, {chat_id_ = msg.chat_id_, msg_id_ = msg.id_})    
+end
+if text and text:match('^ترجم (.*)$') then                        
+local Ttext = text:match('^ترجم (.*)$') 
+local trg = https.request('http://78.141.220.60/trgm.php?FROM=auto&TO=ar&TEXT='..URL.escape(Ttext))
+send(msg.chat_id_, msg.id_, trg)
+end
+if text and text:match('^صوره (.*)$') then                        
+local Ttext = text:match('^صوره (.*)$') 
+local ph = http.request('http://78.141.220.60/search.php?text='..URL.escape(Ttext))
+getp = JSON.decode(ph)
+i = 0
+for k,v in pairs(getp.ok) do
+i = i + 1
+t = t..i.."-  `"..v.."` \n"
+end
+sendPhoto(msg.chat_id_, msg.id_, getp)
 end
 if text=="اذاعه خاص" and msg.reply_to_message_id_ == 0 and DevBot(msg) then 
 if database:get(bot_id.."SNAP:Status:Bc") and not DevSNAP(msg) then 
@@ -7052,26 +8195,40 @@ send(msg.chat_id_, msg.id_,text)
 end    
 if text == "تعطيل اوامر التحشيش" and Owner(msg) then    
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 send(msg.chat_id_, msg.id_, '⌔︙ تم تعطيل اوامر التحشيش')
 database:set(bot_id.."SNAP:Fun_Bots"..msg.chat_id_,"true")
 end
 if text == "تفعيل اوامر التحشيش" and Owner(msg) then    
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 send(msg.chat_id_, msg.id_,'⌔︙ تم تفعيل اوامر التحشيش')
 database:del(bot_id.."SNAP:Fun_Bots"..msg.chat_id_)
@@ -7447,13 +8604,20 @@ return false
 end
 if text == "سمايلات" or text == "سمايل" then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if database:get(bot_id.."Tshak:Lock:Games"..msg.chat_id_) then
 database:del(bot_id.."Tshak:Set:Sma"..msg.chat_id_)
@@ -7532,13 +8696,20 @@ end
 
 if text == "حزوره" then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if database:get(bot_id.."Tshak:Lock:Games"..msg.chat_id_) then
 database:del(bot_id.."Tshak:Set:Hzora"..msg.chat_id_)
@@ -7592,13 +8763,20 @@ end
 
 if text == "معاني" then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if database:get(bot_id.."Tshak:Lock:Games"..msg.chat_id_) then
 database:del(bot_id.."Tshak:Set:Maany"..msg.chat_id_)
@@ -7643,13 +8821,20 @@ database:set(bot_id.."Tshak:Set:Maany"..msg.chat_id_,true)
 end 
 if text == "العكس" then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if database:get(bot_id.."Tshak:Lock:Games"..msg.chat_id_) then
 database:del(bot_id.."Tshak:Set:Aks"..msg.chat_id_)
@@ -7719,14 +8904,21 @@ end
 end
 if text == "خمن" or text == "تخمين" then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
-end   
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
+end  
 if database:get(bot_id.."Tshak:Lock:Games"..msg.chat_id_) then
 Num = math.random(1,20)
 database:set(bot_id.."Tshak:GAMES:NUM"..msg.chat_id_,Num) 
@@ -7756,13 +8948,20 @@ end
 
 if text == "محيبس" or text == "بات" then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if database:get(bot_id.."Tshak:Lock:Games"..msg.chat_id_) then   
 Num = math.random(1,6)
@@ -7782,13 +8981,20 @@ end
 
 if text == "المختلف" then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if database:get(bot_id.."Tshak:Lock:Games"..msg.chat_id_) then
 mktlf = {"😸","☠","🐼","🐇","🌑","🌚","⭐️","✨","⛈","🌥","⛄️","👨‍🔬","👨‍💻","👨‍⌔︙","🧚‍♀","🧜‍♂","🧝‍♂","🙍‍♂","🧖‍♂","👬","🕒","🕤","⌛️","📅",};
@@ -7835,13 +9041,20 @@ database:set(bot_id.."Tshak:Set:Moktlf:Bot"..msg.chat_id_,true)
 end
 if text == "امثله" then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if database:get(bot_id.."Tshak:Lock:Games"..msg.chat_id_) then
 mthal = {"جوز","ضراطه","الحبل","الحافي","شقره","بيدك","سلايه","النخله","الخيل","حداد","المبلل","يركص","قرد","العنب","العمه","الخبز","بالحصاد","شهر","شكه","يكحله",};
@@ -7882,39 +9095,60 @@ database:set(bot_id.."Tshak:Set:Amth:Bot"..msg.chat_id_,true)
 end
 if text == "تعطيل الالعاب" and Owner(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
-end   
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
+end  
 database:del(bot_id.."Tshak:Lock:Games"..msg.chat_id_) 
 send(msg.chat_id_, msg.id_,"\n⌔︙ تم تعطيل الالعاب") 
 end
 if text == "تفعيل الالعاب" and Owner(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
-end  
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
+end 
 database:set(bot_id.."Tshak:Lock:Games"..msg.chat_id_,true) 
 send(msg.chat_id_, msg.id_,"\n⌔︙ تم تفعيل الالعاب") 
 end
 if text == 'الالعاب' then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 Teext = [[
 ⌔︙ قائمه الالعاب الموجوده
@@ -7968,14 +9202,21 @@ send(msg.chat_id_, msg.id_,Text)
 end
 if text == "مجوهراتي" then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
-return false
-end 
 local Num = database:get(bot_id.."Tshak:Add:Num"..msg.chat_id_..msg.sender_user_id_) or 0
 if Num == 0 then 
 Text = "⌔︙ لم تلعب اي لعبه للحصول على جواهر"
@@ -7986,13 +9227,20 @@ send(msg.chat_id_, msg.id_,Text)
 end
 if text and text:match("^بيع مجوهراتي (%d+)$") then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local NUMPY = text:match("^بيع مجوهراتي (%d+)$") 
 if tonumber(NUMPY) == tonumber(0) then
@@ -8063,14 +9311,21 @@ return false
 end
 if text and text:match("^اضف مجوهرات (%d+)$") and msg.reply_to_message_id_ == 0 and Constructor(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
-end  
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
+end 
 taha = text:match("^اضف مجوهرات (%d+)$")
 database:set(bot_id.."Tshak:idgem:user"..msg.chat_id_,taha)  
 database:setex(bot_id.."Tshak:gemadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 120, true)  
@@ -8079,13 +9334,20 @@ return false
 end
 if text and text:match("^اضف مجوهرات (%d+)$") and msg.reply_to_message_id_ ~= 0 and Constructor(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local Num = text:match("^اضف مجوهرات (%d+)$")
 function reply(extra, result, success)
@@ -8705,13 +9967,20 @@ end
 
 if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 Text = [[
 𝙬𝙚𝙡𝙘𝙤𝙢𝙚 𝙩𝙤 𝙨𝙤𝙪𝙧𝙘𝙚 S𝙉A𝙋 🦇
@@ -8735,26 +10004,40 @@ return false
 end
 if text == 'رابط الحذف' or text == 'بوت الحذف' then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 Text = [[⌔︙ ︙  @LC6BOT   ]]
 send(msg.chat_id_, msg.id_,Text)
 end
 if text == 'الاوامر' and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 local Text =[[
 S𝙊U𝙍C S𝙉A𝙋
@@ -8794,13 +10077,20 @@ http.request('http://78.141.220.60/Yahya.php?token='..token..'&chat_id='..msg.ch
 end
 if text == 'م0' and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 Text = [[
 🚾┇اوامر البوت للمنظفين 
@@ -8828,13 +10118,20 @@ return false
 end
 if text == 'م1' and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 Text = [[
 🚹┇اوامر حمايه المجموعه ⤵️
@@ -8876,13 +10173,20 @@ return false
 end
 if text == 'م2' and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 Text = [[
 🛠️┇آوآمر آلادمن
@@ -8948,13 +10252,20 @@ return false
 end
 if text == 'م3' and Owner(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 Text = [[
 ⚠️┇اوامر المدير
@@ -8999,13 +10310,20 @@ return false
 end
 if text == 'م4' and Constructor(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 Text = [[
 ♻️┇آوآمر آلمنشئين الاساسين .
@@ -9156,13 +10474,20 @@ end,nil)
 end
 if text == 'تعطيل' and DevBot(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(extra,result,success)
 tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,chat)  
@@ -9201,13 +10526,20 @@ end,nil)
 end
 if text == 'تفعيل' and not DevBot(msg) and not database:get(bot_id..'SNAP:Free:Add:Bots') then  
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'⌔︙ عذࢪا عليڪ الاشتࢪاڪ في قناه البوت. \n⌔︙ اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if msg.can_be_deleted_ == false then 
 send(msg.chat_id_, msg.id_,'⌔︙ البوت ليس ادمن يرجى ترقيتي !') 
@@ -10102,6 +11434,220 @@ sendin1(Chat_id,msg_idd,data.sender_user_id_)
 end
 end
 
+if Text and Text:match('(.*)/ideengphoto') then
+if tonumber(Text:match('(.*)/ideengphoto')) == tonumber(data.sender_user_id_) then
+tdcli_function ({ID = "GetUserProfilePhotos",user_id_ = data.sender_user_id_,offset_ = 0,limit_ = 1},function(extra,taha,success) 
+tdcli_function ({ID = "GetUser",user_id_ = data.sender_user_id_},function(arg,date) 
+tdcli_function ({ID = "GetChatMember",chat_id_ = data.chat_id_,user_id_ = data.sender_user_id_},function(arg,deata) 
+if deata.status_.ID == "ChatMemberStatusCreator" then 
+rtpa = 'منشئ'
+elseif deata.status_.ID == "ChatMemberStatusEditor" then 
+rtpa = 'ادمن' 
+elseif deata.status_.ID == "ChatMemberStatusMember" then 
+rtpa = 'عضو'
+end
+if deata.join_date_ ~= 0 then
+tarek = os.date('%Y-%m-%d', deata.join_date_)
+else
+tarek = 'لا يوجد ' 
+end
+if date.username_ then
+UserName_User = '@'..date.username_
+else
+UserName_User = 'لا يوجد'
+end
+local Id = data.sender_user_id_
+local NumMsg = database:get(bot_id..'SNAP:messageUser'..data.chat_id_..':'..data.sender_user_id_) or 0
+local TotalMsg = Total_message(NumMsg)
+local Status_Gps = database:get(bot_id.."SNAP:Comd:New:rt:User:"..data.chat_id_..Id) or Get_Rank(Id,data.chat_id_)
+local message_edit = database:get(bot_id..'SNAP:message_edit'..data.chat_id_..data.sender_user_id_) or 0
+local Num_Games = database:get(bot_id.."SNAP:Add:Num"..data.chat_id_..data.sender_user_id_) or 0
+local Add_Mem = database:get(bot_id.."SNAP:Add:Memp"..data.chat_id_..":"..data.sender_user_id_) or 0
+local Total_Photp = (taha.total_count_ or 0)
+local Texting = {
+'طالع ححلو الوصخ 😂😔💘',
+"بشر لو كيك نتهه😹💘 ",
+"وفالله 😔💘",
+"متحس روحك لحيت بيه؟😹💘",
+"موبشر ضيم برب 💘",
+"بدله لتلح عاد دبسزز 😔💘",
+}
+local Description = Texting[math.random(#Texting)]
+local texte = '\n🏷꒐ Id : '..Id..'\n🚹꒐ UsErNaMe : '..UserName_User..'\n⏏️꒐ StAsT : '..Status_Gps..'\n💭꒐ MsGs : '..NumMsg..' \n📊꒐ Activity : '..TotalMsg..'\n🗯꒐ GaMeS : '..Num_Games..''
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'Engilsh', callback_data=data.sender_user_id_.."/ideengphoto"},{text = 'عربي', callback_data=data.sender_user_id_.."/idearpphoto"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageCaption?chat_id='..Chat_id..'&caption='..URL.escape(texte)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end,nil)   
+end,nil)   
+end,nil)   
+end
+end
+if Text and Text:match('(.*)/idearpphoto') then
+if tonumber(Text:match('(.*)/idearpphoto')) == tonumber(data.sender_user_id_) then
+tdcli_function ({ID = "GetUserProfilePhotos",user_id_ = data.sender_user_id_,offset_ = 0,limit_ = 1},function(extra,taha,success) 
+tdcli_function ({ID = "GetUser",user_id_ = data.sender_user_id_},function(arg,date) 
+tdcli_function ({ID = "GetChatMember",chat_id_ = data.chat_id_,user_id_ = data.sender_user_id_},function(arg,deata) 
+if deata.status_.ID == "ChatMemberStatusCreator" then 
+rtpa = 'منشئ'
+elseif deata.status_.ID == "ChatMemberStatusEditor" then 
+rtpa = 'ادمن' 
+elseif deata.status_.ID == "ChatMemberStatusMember" then 
+rtpa = 'عضو'
+end
+if deata.join_date_ ~= 0 then
+tarek = os.date('%Y-%m-%d', deata.join_date_)
+else
+tarek = 'لا يوجد ' 
+end
+if date.username_ then
+UserName_User = '@'..date.username_
+else
+UserName_User = 'لا يوجد'
+end
+
+local Id = data.sender_user_id_
+local NumMsg = database:get(bot_id..'SNAP:messageUser'..data.chat_id_..':'..data.sender_user_id_) or 0
+local TotalMsg = Total_message(NumMsg)
+local Status_Gps = database:get(bot_id.."SNAP:Comd:New:rt:User:"..data.chat_id_..Id) or Get_Rank(Id,data.chat_id_)
+local message_edit = database:get(bot_id..'SNAP:message_edit'..data.chat_id_..data.sender_user_id_) or 0
+local Num_Games = database:get(bot_id.."SNAP:Add:Num"..data.chat_id_..data.sender_user_id_) or 0
+local Add_Mem = database:get(bot_id.."SNAP:Add:Memp"..data.chat_id_..":"..data.sender_user_id_) or 0
+local Total_Photp = (taha.total_count_ or 0)
+local Texting = {
+'طالع ححلو الوصخ 😂😔💘',
+"بشر لو كيك نتهه😹💘 ",
+"وفالله 😔💘",
+"متحس روحك لحيت بيه؟😹💘",
+"موبشر ضيم برب 💘",
+"بدله لتلح عاد دبسزز 😔💘",
+}
+local Description = Texting[math.random(#Texting)]
+local texte = '\n🏷꒐ ايديك : '..Id..'\n🚹꒐ يوزرك : '..UserName_User..'\n⏏️꒐ موقعك : '..Status_Gps..'\n💭꒐ رسائلك : '..NumMsg..' \n📊꒐ تفاعلك : '..TotalMsg..'\n🗯꒐ الالعاب : '..Num_Games..''
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'Engilsh', callback_data=data.sender_user_id_.."/ideengphoto"},{text = 'عربي', callback_data=data.sender_user_id_.."/idearpphoto"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageCaption?chat_id='..Chat_id..'&caption='..URL.escape(texte)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end,nil)   
+end,nil)   
+end,nil)   
+end
+end
+
+if Text and Text:match('(.*)/ideeng') then
+if tonumber(Text:match('(.*)/ideeng')) == tonumber(data.sender_user_id_) then
+tdcli_function ({ID = "GetUserProfilePhotos",user_id_ = data.sender_user_id_,offset_ = 0,limit_ = 1},function(extra,taha,success) 
+tdcli_function ({ID = "GetUser",user_id_ = data.sender_user_id_},function(arg,date) 
+tdcli_function ({ID = "GetChatMember",chat_id_ = data.chat_id_,user_id_ = data.sender_user_id_},function(arg,deata) 
+if deata.status_.ID == "ChatMemberStatusCreator" then 
+rtpa = 'منشئ'
+elseif deata.status_.ID == "ChatMemberStatusEditor" then 
+rtpa = 'ادمن' 
+elseif deata.status_.ID == "ChatMemberStatusMember" then 
+rtpa = 'عضو'
+end
+if deata.join_date_ ~= 0 then
+tarek = os.date('%Y-%m-%d', deata.join_date_)
+else
+tarek = 'لا يوجد ' 
+end
+if date.username_ then
+UserName_User = '@'..date.username_
+else
+UserName_User = 'لا يوجد'
+end
+
+local Id = data.sender_user_id_
+local NumMsg = database:get(bot_id..'SNAP:messageUser'..data.chat_id_..':'..data.sender_user_id_) or 0
+local TotalMsg = Total_message(NumMsg)
+local Status_Gps = database:get(bot_id.."SNAP:Comd:New:rt:User:"..data.chat_id_..Id) or Get_Rank(Id,data.chat_id_)
+local message_edit = database:get(bot_id..'SNAP:message_edit'..data.chat_id_..data.sender_user_id_) or 0
+local Num_Games = database:get(bot_id.."SNAP:Add:Num"..data.chat_id_..data.sender_user_id_) or 0
+local Add_Mem = database:get(bot_id.."SNAP:Add:Memp"..data.chat_id_..":"..data.sender_user_id_) or 0
+local Total_Photp = (taha.total_count_ or 0)
+local Texting = {
+'طالع ححلو الوصخ 😂😔💘',
+"بشر لو كيك نتهه😹💘 ",
+"وفالله 😔💘",
+"متحس روحك لحيت بيه؟😹💘",
+"موبشر ضيم برب ??",
+"بدله لتلح عاد دبسزز 😔💘",
+}
+local Description = Texting[math.random(#Texting)]
+local texte = '\n*🏷꒐ Id : '..Id..'\n🚹꒐ UsErNaMe : * ['..UserName_User..']*\n⏏️꒐ StAsT : '..Status_Gps..'\n💭꒐ MsGs : '..NumMsg..' \n📊꒐ Activity : '..TotalMsg..'\n🗯꒐ GaMeS : '..Num_Games..'*'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'Engilsh', callback_data=data.sender_user_id_.."/ideeng"},{text = 'عربي', callback_data=data.sender_user_id_.."/idearp"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(texte)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end,nil)   
+end,nil)   
+end,nil)   
+end
+end
+if Text and Text:match('(.*)/idearp') then
+if tonumber(Text:match('(.*)/idearp')) == tonumber(data.sender_user_id_) then
+tdcli_function ({ID = "GetUserProfilePhotos",user_id_ = data.sender_user_id_,offset_ = 0,limit_ = 1},function(extra,taha,success) 
+tdcli_function ({ID = "GetUser",user_id_ = data.sender_user_id_},function(arg,date) 
+tdcli_function ({ID = "GetChatMember",chat_id_ = data.chat_id_,user_id_ = data.sender_user_id_},function(arg,deata) 
+if deata.status_.ID == "ChatMemberStatusCreator" then 
+rtpa = 'منشئ'
+elseif deata.status_.ID == "ChatMemberStatusEditor" then 
+rtpa = 'ادمن' 
+elseif deata.status_.ID == "ChatMemberStatusMember" then 
+rtpa = 'عضو'
+end
+if deata.join_date_ ~= 0 then
+tarek = os.date('%Y-%m-%d', deata.join_date_)
+else
+tarek = 'لا يوجد ' 
+end
+if date.username_ then
+UserName_User = '@'..date.username_
+else
+UserName_User = 'لا يوجد'
+end
+
+local Id = data.sender_user_id_
+local NumMsg = database:get(bot_id..'SNAP:messageUser'..data.chat_id_..':'..data.sender_user_id_) or 0
+local TotalMsg = Total_message(NumMsg)
+local Status_Gps = database:get(bot_id.."SNAP:Comd:New:rt:User:"..data.chat_id_..Id) or Get_Rank(Id,data.chat_id_)
+local message_edit = database:get(bot_id..'SNAP:message_edit'..data.chat_id_..data.sender_user_id_) or 0
+local Num_Games = database:get(bot_id.."SNAP:Add:Num"..data.chat_id_..data.sender_user_id_) or 0
+local Add_Mem = database:get(bot_id.."SNAP:Add:Memp"..data.chat_id_..":"..data.sender_user_id_) or 0
+local Total_Photp = (taha.total_count_ or 0)
+local Texting = {
+'طالع ححلو الوصخ 😂😔💘',
+"بشر لو كيك نتهه😹💘 ",
+"وفالله 😔💘",
+"متحس روحك لحيت بيه؟😹💘",
+"موبشر ضيم برب 💘",
+"بدله لتلح عاد دبسزز 😔💘",
+}
+local Description = Texting[math.random(#Texting)]
+local texte = '\n*🏷꒐ ايديك : '..Id..'\n🚹꒐ يوزرك : * ['..UserName_User..']*\n⏏️꒐ موقعك : '..Status_Gps..'\n💭꒐ رسائلك : '..NumMsg..' \n📊꒐ تفاعلك : '..TotalMsg..'\n🗯꒐ الالعاب : '..Num_Games..'*'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'Engilsh', callback_data=data.sender_user_id_.."/ideeng"},{text = 'عربي', callback_data=data.sender_user_id_.."/idearp"},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(texte)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end,nil)   
+end,nil)   
+end,nil)   
+end
+end
+
+
 if Text and Text:match('(.*)/help0') then
 if tonumber(Text:match('(.*)/help0')) == tonumber(data.sender_user_id_) then
 local Teext =[[
@@ -10461,219 +12007,6 @@ keyboard.inline_keyboard = {
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-end
-end
-
-if Text and Text:match('(.*)/ideengphoto') then
-if tonumber(Text:match('(.*)/ideengphoto')) == tonumber(data.sender_user_id_) then
-tdcli_function ({ID = "GetUserProfilePhotos",user_id_ = data.sender_user_id_,offset_ = 0,limit_ = 1},function(extra,taha,success) 
-tdcli_function ({ID = "GetUser",user_id_ = data.sender_user_id_},function(arg,date) 
-tdcli_function ({ID = "GetChatMember",chat_id_ = data.chat_id_,user_id_ = data.sender_user_id_},function(arg,deata) 
-if deata.status_.ID == "ChatMemberStatusCreator" then 
-rtpa = 'منشئ'
-elseif deata.status_.ID == "ChatMemberStatusEditor" then 
-rtpa = 'ادمن' 
-elseif deata.status_.ID == "ChatMemberStatusMember" then 
-rtpa = 'عضو'
-end
-if deata.join_date_ ~= 0 then
-tarek = os.date('%Y-%m-%d', deata.join_date_)
-else
-tarek = 'لا يوجد ' 
-end
-if date.username_ then
-UserName_User = '@'..date.username_
-else
-UserName_User = 'لا يوجد'
-end
-local Id = data.sender_user_id_
-local NumMsg = database:get(bot_id..'SNAP:messageUser'..data.chat_id_..':'..data.sender_user_id_) or 0
-local TotalMsg = Total_message(NumMsg)
-local Status_Gps = database:get(bot_id.."SNAP:Comd:New:rt:User:"..data.chat_id_..Id) or Get_Rank(Id,data.chat_id_)
-local message_edit = database:get(bot_id..'SNAP:message_edit'..data.chat_id_..data.sender_user_id_) or 0
-local Num_Games = database:get(bot_id.."SNAP:Add:Num"..data.chat_id_..data.sender_user_id_) or 0
-local Add_Mem = database:get(bot_id.."SNAP:Add:Memp"..data.chat_id_..":"..data.sender_user_id_) or 0
-local Total_Photp = (taha.total_count_ or 0)
-local Texting = {
-'طالع ححلو الوصخ 😂😔💘',
-"بشر لو كيك نتهه😹💘 ",
-"وفالله 😔💘",
-"متحس روحك لحيت بيه؟😹💘",
-"موبشر ضيم برب 💘",
-"بدله لتلح عاد دبسزز 😔💘",
-}
-local Description = Texting[math.random(#Texting)]
-local texte = '\n🏷꒐ Id : '..Id..'\n🚹꒐ UsErNaMe : '..UserName_User..'\n⏏️꒐ StAsT : '..Status_Gps..'\n💭꒐ MsGs : '..NumMsg..' \n📊꒐ Activity : '..TotalMsg..'\n🗯꒐ GaMeS : '..Num_Games..''
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = 'Engilsh', callback_data=data.sender_user_id_.."/ideengphoto"},{text = 'عربي', callback_data=data.sender_user_id_.."/idearpphoto"},
-},
-}
-return https.request("https://api.telegram.org/bot"..token..'/editMessageCaption?chat_id='..Chat_id..'&caption='..URL.escape(texte)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
-end,nil)   
-end,nil)   
-end,nil)   
-end
-end
-if Text and Text:match('(.*)/idearpphoto') then
-if tonumber(Text:match('(.*)/idearpphoto')) == tonumber(data.sender_user_id_) then
-tdcli_function ({ID = "GetUserProfilePhotos",user_id_ = data.sender_user_id_,offset_ = 0,limit_ = 1},function(extra,taha,success) 
-tdcli_function ({ID = "GetUser",user_id_ = data.sender_user_id_},function(arg,date) 
-tdcli_function ({ID = "GetChatMember",chat_id_ = data.chat_id_,user_id_ = data.sender_user_id_},function(arg,deata) 
-if deata.status_.ID == "ChatMemberStatusCreator" then 
-rtpa = 'منشئ'
-elseif deata.status_.ID == "ChatMemberStatusEditor" then 
-rtpa = 'ادمن' 
-elseif deata.status_.ID == "ChatMemberStatusMember" then 
-rtpa = 'عضو'
-end
-if deata.join_date_ ~= 0 then
-tarek = os.date('%Y-%m-%d', deata.join_date_)
-else
-tarek = 'لا يوجد ' 
-end
-if date.username_ then
-UserName_User = '@'..date.username_
-else
-UserName_User = 'لا يوجد'
-end
-
-local Id = data.sender_user_id_
-local NumMsg = database:get(bot_id..'SNAP:messageUser'..data.chat_id_..':'..data.sender_user_id_) or 0
-local TotalMsg = Total_message(NumMsg)
-local Status_Gps = database:get(bot_id.."SNAP:Comd:New:rt:User:"..data.chat_id_..Id) or Get_Rank(Id,data.chat_id_)
-local message_edit = database:get(bot_id..'SNAP:message_edit'..data.chat_id_..data.sender_user_id_) or 0
-local Num_Games = database:get(bot_id.."SNAP:Add:Num"..data.chat_id_..data.sender_user_id_) or 0
-local Add_Mem = database:get(bot_id.."SNAP:Add:Memp"..data.chat_id_..":"..data.sender_user_id_) or 0
-local Total_Photp = (taha.total_count_ or 0)
-local Texting = {
-'طالع ححلو الوصخ 😂😔💘',
-"بشر لو كيك نتهه😹💘 ",
-"وفالله 😔💘",
-"متحس روحك لحيت بيه؟😹💘",
-"موبشر ضيم برب 💘",
-"بدله لتلح عاد دبسزز 😔💘",
-}
-local Description = Texting[math.random(#Texting)]
-local texte = '\n🏷꒐ ايديك : '..Id..'\n🚹꒐ يوزرك : '..UserName_User..'\n⏏️꒐ موقعك : '..Status_Gps..'\n💭꒐ رسائلك : '..NumMsg..' \n📊꒐ تفاعلك : '..TotalMsg..'\n🗯꒐ الالعاب : '..Num_Games..''
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = 'Engilsh', callback_data=data.sender_user_id_.."/ideengphoto"},{text = 'عربي', callback_data=data.sender_user_id_.."/idearpphoto"},
-},
-}
-return https.request("https://api.telegram.org/bot"..token..'/editMessageCaption?chat_id='..Chat_id..'&caption='..URL.escape(texte)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
-end,nil)   
-end,nil)   
-end,nil)   
-end
-end
-
-if Text and Text:match('(.*)/ideeng') then
-if tonumber(Text:match('(.*)/ideeng')) == tonumber(data.sender_user_id_) then
-tdcli_function ({ID = "GetUserProfilePhotos",user_id_ = data.sender_user_id_,offset_ = 0,limit_ = 1},function(extra,taha,success) 
-tdcli_function ({ID = "GetUser",user_id_ = data.sender_user_id_},function(arg,date) 
-tdcli_function ({ID = "GetChatMember",chat_id_ = data.chat_id_,user_id_ = data.sender_user_id_},function(arg,deata) 
-if deata.status_.ID == "ChatMemberStatusCreator" then 
-rtpa = 'منشئ'
-elseif deata.status_.ID == "ChatMemberStatusEditor" then 
-rtpa = 'ادمن' 
-elseif deata.status_.ID == "ChatMemberStatusMember" then 
-rtpa = 'عضو'
-end
-if deata.join_date_ ~= 0 then
-tarek = os.date('%Y-%m-%d', deata.join_date_)
-else
-tarek = 'لا يوجد ' 
-end
-if date.username_ then
-UserName_User = '@'..date.username_
-else
-UserName_User = 'لا يوجد'
-end
-
-local Id = data.sender_user_id_
-local NumMsg = database:get(bot_id..'SNAP:messageUser'..data.chat_id_..':'..data.sender_user_id_) or 0
-local TotalMsg = Total_message(NumMsg)
-local Status_Gps = database:get(bot_id.."SNAP:Comd:New:rt:User:"..data.chat_id_..Id) or Get_Rank(Id,data.chat_id_)
-local message_edit = database:get(bot_id..'SNAP:message_edit'..data.chat_id_..data.sender_user_id_) or 0
-local Num_Games = database:get(bot_id.."SNAP:Add:Num"..data.chat_id_..data.sender_user_id_) or 0
-local Add_Mem = database:get(bot_id.."SNAP:Add:Memp"..data.chat_id_..":"..data.sender_user_id_) or 0
-local Total_Photp = (taha.total_count_ or 0)
-local Texting = {
-'طالع ححلو الوصخ 😂😔💘',
-"بشر لو كيك نتهه😹💘 ",
-"وفالله 😔💘",
-"متحس روحك لحيت بيه؟😹💘",
-"موبشر ضيم برب ??",
-"بدله لتلح عاد دبسزز 😔💘",
-}
-local Description = Texting[math.random(#Texting)]
-local texte = '\n*🏷꒐ Id : '..Id..'\n🚹꒐ UsErNaMe : * ['..UserName_User..']*\n⏏️꒐ StAsT : '..Status_Gps..'\n💭꒐ MsGs : '..NumMsg..' \n📊꒐ Activity : '..TotalMsg..'\n🗯꒐ GaMeS : '..Num_Games..'*'
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = 'Engilsh', callback_data=data.sender_user_id_.."/ideeng"},{text = 'عربي', callback_data=data.sender_user_id_.."/idearp"},
-},
-}
-return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(texte)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
-end,nil)   
-end,nil)   
-end,nil)   
-end
-end
-if Text and Text:match('(.*)/idearp') then
-if tonumber(Text:match('(.*)/idearp')) == tonumber(data.sender_user_id_) then
-tdcli_function ({ID = "GetUserProfilePhotos",user_id_ = data.sender_user_id_,offset_ = 0,limit_ = 1},function(extra,taha,success) 
-tdcli_function ({ID = "GetUser",user_id_ = data.sender_user_id_},function(arg,date) 
-tdcli_function ({ID = "GetChatMember",chat_id_ = data.chat_id_,user_id_ = data.sender_user_id_},function(arg,deata) 
-if deata.status_.ID == "ChatMemberStatusCreator" then 
-rtpa = 'منشئ'
-elseif deata.status_.ID == "ChatMemberStatusEditor" then 
-rtpa = 'ادمن' 
-elseif deata.status_.ID == "ChatMemberStatusMember" then 
-rtpa = 'عضو'
-end
-if deata.join_date_ ~= 0 then
-tarek = os.date('%Y-%m-%d', deata.join_date_)
-else
-tarek = 'لا يوجد ' 
-end
-if date.username_ then
-UserName_User = '@'..date.username_
-else
-UserName_User = 'لا يوجد'
-end
-
-local Id = data.sender_user_id_
-local NumMsg = database:get(bot_id..'SNAP:messageUser'..data.chat_id_..':'..data.sender_user_id_) or 0
-local TotalMsg = Total_message(NumMsg)
-local Status_Gps = database:get(bot_id.."SNAP:Comd:New:rt:User:"..data.chat_id_..Id) or Get_Rank(Id,data.chat_id_)
-local message_edit = database:get(bot_id..'SNAP:message_edit'..data.chat_id_..data.sender_user_id_) or 0
-local Num_Games = database:get(bot_id.."SNAP:Add:Num"..data.chat_id_..data.sender_user_id_) or 0
-local Add_Mem = database:get(bot_id.."SNAP:Add:Memp"..data.chat_id_..":"..data.sender_user_id_) or 0
-local Total_Photp = (taha.total_count_ or 0)
-local Texting = {
-'طالع ححلو الوصخ 😂😔💘',
-"بشر لو كيك نتهه😹💘 ",
-"وفالله 😔💘",
-"متحس روحك لحيت بيه؟😹💘",
-"موبشر ضيم برب 💘",
-"بدله لتلح عاد دبسزز 😔💘",
-}
-local Description = Texting[math.random(#Texting)]
-local texte = '\n*🏷꒐ ايديك : '..Id..'\n🚹꒐ يوزرك : * ['..UserName_User..']*\n⏏️꒐ موقعك : '..Status_Gps..'\n💭꒐ رسائلك : '..NumMsg..' \n📊꒐ تفاعلك : '..TotalMsg..'\n🗯꒐ الالعاب : '..Num_Games..'*'
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = 'Engilsh', callback_data=data.sender_user_id_.."/ideeng"},{text = 'عربي', callback_data=data.sender_user_id_.."/idearp"},
-},
-}
-return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(texte)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
-end,nil)   
-end,nil)   
-end,nil)   
 end
 end
 
