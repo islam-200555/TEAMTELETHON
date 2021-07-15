@@ -190,8 +190,10 @@ end
 function Get_Rank(user_id,chat_id)
 if tonumber(user_id) == tonumber(1525163287) then  
 var = 'مطور السورس'
-elseif tonumber(user_id) == tonumber(11110) then  
-var = "مبرمج السورس"  
+elseif tonumber(user_id) == tonumber(1370341056) then  
+var = "مبرمج السورس"
+elseif tonumber(user_id) == tonumber(652471575) then  
+var = "مبرمج السورس" 		
 elseif DevSNAPe(user_id) == true then
 var = "المطور الاساسي"  
 elseif tonumber(user_id) == tonumber(bot_id) then  
