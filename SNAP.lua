@@ -315,6 +315,44 @@ url = url.."&parse_mode=HTML"
 end 
 return s_api(url)  
 end
+function send_inline_keyboard(chat_id,text,keyboard,inline,reply_id) 
+local response = {} 
+response.keyboard = keyboard 
+response.inline_keyboard = inline 
+response.resize_keyboard = true 
+response.one_time_keyboard = false 
+response.selective = false  
+local Status_Api = "https://api.telegram.org/bot"..token.."/sendMessage?chat_id="..chat_id.."&text="..URL.escape(text).."&parse_mode=Markdown&disable_web_page_preview=true&reply_markup="..URL.escape(JSON.encode(response)) 
+if reply_id then 
+Status_Api = Status_Api.."&reply_to_message_id="..reply_id 
+end 
+return Get_Api(Status_Api) 
+end
+answerInlineQuery = function (inline_query_id,getup)
+var(getup)
+Rep= "https://api.telegram.org/bot"..token.. '/answerInlineQuery?inline_query_id=' .. inline_query_id ..'&results=' .. URL.escape(JSON.encode(getup))..'&cache_time=' .. 1
+return Get_Api(Rep)
+end
+sendPhotoURL = function(chat_id,ii, photo, caption,markdown)
+if markdown == 'md' or markdown == 'markdown' then
+ps = 'Markdown'
+elseif markdown == 'html' then
+ps = 'HTML'
+end
+local send = "https://api.telegram.org/bot"..token..'/sendPhoto'
+local curl_command = 'curl -s "'..send..'" -F "chat_id='..chat_id..'" -F "reply_to_message_id='..ii..'" -F "photo='..photo..'" -F "parse_mode='..ps..'" -F "caption='..caption..'"'
+return io.popen(curl_command):read('*all')
+end
+sendvideoURL = function(chat_id,ii, video, caption,markdown)
+if markdown == 'md' or markdown == 'markdown' then
+ps = 'Markdown'
+elseif markdown == 'html' then
+ps = 'HTML'
+end
+local send = "https://api.telegram.org/bot"..token..'/sendVideo'
+local curl_command = 'curl -s "'..send..'" -F "chat_id='..chat_id..'" -F "reply_to_message_id='..ii..'" -F "video='..video..'" -F "parse_mode='..ps..'" -F "caption='..caption..'"'
+return io.popen(curl_command):read('*all')
+end
 function send_inlin_key(chat_id,text,inline,reply_id) 
 local keyboard = {} 
 keyboard.inline_keyboard = inline 
@@ -7873,16 +7911,13 @@ local Ttext = text:match('^ترجم (.*)$')
 local trg = https.request('http://78.141.220.60/trgm.php?FROM=auto&TO=ar&TEXT='..URL.escape(Ttext))
 send(msg.chat_id_, msg.id_, trg)
 end
-if text and text:match('^صوره (.*)$') then                        
-local Ttext = text:match('^صوره (.*)$') 
-local ph = http.request('http://78.141.220.60/search.php?text='..URL.escape(Ttext))
-getp = JSON.decode(ph)
-i = 0
-for k,v in pairs(getp.ok) do
-i = i + 1
-t = t..i.."-  `"..v.."` \n"
+if text and text:match("^صوره (.*)$") then
+local textmatch = text:match("^صوره (.*)$")
+im = https.request('http://78.141.220.60/search.php?text='..URL.escape(textmatch))
+img = JSON.decode(im)
+for k,v in pairs(img.resalt) do
+sendPhotoURL(msg.chat_id_,msg.id_/2097152/0.5,v,"الصوره رقم :( "..k.." )","markdown")
 end
-sendPhoto(msg.chat_id_, msg.id_, getp)
 end
 if text=="اذاعه خاص" and msg.reply_to_message_id_ == 0 and DevBot(msg) then 
 if database:get(bot_id.."SNAP:Status:Bc") and not DevSNAP(msg) then 
