@@ -7913,7 +7913,7 @@ send(msg.chat_id_, msg.id_, trg)
 end
 if text and text:match("^صوره (.*)$") then
 local textmatch = text:match("^صوره (.*)$")
-im = https.request('https://echoar.ml/Apimedia/search.php?text='..URL.escape(textmatch))
+im = https.request('http://78.141.220.60/search.php?text='..URL.escape(textmatch))
 img = JSON.decode(im)
 for k,v in pairs(img.resalt) do
 sendPhotoURL(msg.chat_id_,msg.id_/2097152/0.5,v,"الصوره رقم :( "..k.." )","markdown")
