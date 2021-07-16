@@ -7908,8 +7908,32 @@ tdcli_function({ID="GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""
 end
 if text and text:match('^ترجم (.*)$') then                        
 local Ttext = text:match('^ترجم (.*)$') 
-local trg = https.request('http://78.141.220.60/trgm.php?FROM=auto&TO=ar&TEXT='..URL.escape(Ttext))
-send(msg.chat_id_, msg.id_, trg)
+local trgg = https.request('https://hozory.com/translate/?target=ar&text='..URL.escape(Ttext))
+local zxe = JSON.decode(trgg)
+if zxe.result.translate then
+ar = zxe.result.translate
+local trgg = https.request('https://hozory.com/translate/?target=en&text='..URL.escape(Ttext))
+local zxe = JSON.decode(trgg)
+if zxe.result.translate then
+en = zxe.result.translate
+local trgg = https.request('https://hozory.com/translate/?target=fr&text='..URL.escape(Ttext))
+local zxe = JSON.decode(trgg)
+if zxe.result.translate then
+fr = zxe.result.translate
+local trgg = https.request('https://hozory.com/translate/?target=gr&text='..URL.escape(Ttext))
+local zxe = JSON.decode(trgg)
+if zxe.result.translate then
+gr = zxe.result.translate
+local trgg = https.request('https://hozory.com/translate/?target=fa&text='..URL.escape(Ttext))
+local zxe = JSON.decode(trgg)
+if zxe.result.translate then
+fa = zxe.result.translate
+send(msg.chat_id_, msg.id_,'🇬🇧 :  '..en..'\n🇮🇶 : '..ar..'\n🇫🇷 :  '..fr..'\n🇩🇪 : '..gr..'\n🇮🇷 : '..fa..'')
+end
+end
+end
+end
+end
 end
 if text and text:match("^صوره (.*)$") then
 local textmatch = text:match("^صوره (.*)$")
