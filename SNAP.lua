@@ -8531,13 +8531,20 @@ end
 
 if text == 'ايدي' and tonumber(msg.reply_to_message_id_) == 0 and not database:get(bot_id..'SNAP:Lock:ID:Bot'..msg.chat_id_) then
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
-else
-send(msg.chat_id_, msg.id_,'• عذࢪا عليڪ الاشتࢪاڪ في قناه البوت.\n• اشتࢪڪ هنا عمࢪي ←  ['..database:get(bot_id..'add:ch:username')..']')
-end
-return false
+local DevCh1 = database:get(bot_id.."add:ch:username")
+local channel = (DevCh1):gsub( "@", "")
+local Text =[[
+⌯︙عذراً عزيزي  .
+⌯︙أشترك في قناة البوت اولاً .
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]]
+keyboard = {} 
+keyboard.inline_keyboard = { 
+{{text = '• أشترك الان •',url="t.me/"..channel}},  
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false 
 end
 if not database:sismember(bot_id..'SNAP:Spam:Group'..msg.sender_user_id_,text) then
 database:sadd(bot_id.."SNAP:Spam:Group"..msg.sender_user_id_,text) 
