@@ -548,7 +548,7 @@ end
 function Reply_Status(msg,user_id,status,text)
 tdcli_function ({ID = "GetUser",user_id_ = user_id},function(arg,data) 
 if data.first_name_ ~= false then
-local UserName = (data.username_ or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢  𝗌𝗇𝖺𝗉 メ")
+local UserName = (data.username_ or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢")
 local NameUser = "\n⌔┇ بواسطه ↺ ["..data.first_name_.."](T.me/"..UserName..")"
 local NameUserr = "\n⌔┇ اسم المستخدم ↺ ["..data.first_name_.."](T.me/"..UserName..")"
 if status == "lock" then
@@ -4208,19 +4208,19 @@ function by_reply(extra, result, success)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
 local SNAPrt = database:get(bot_id.."SNAP:Comd:New:rt:bot:"..RTPA..msg.chat_id_)
 if SNAPrt == "مميز" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢  𝗌𝗇𝖺𝗉 メ")..")".."\n⌔┇ تم رفعه "..RTPA.." هنا\n")
+send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢")..")".."\n⌔┇ تم رفعه "..RTPA.." هنا\n")
 database:set(bot_id.."SNAP:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,RTPA) 
 database:sadd(bot_id.."SNAP:Special:User"..msg.chat_id_,result.sender_user_id_)  
 elseif SNAPrt == "ادمن" and Owner(msg) then 
-send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢  𝗌𝗇𝖺𝗉 メ")..")".."\n⌔┇ تم رفعه "..RTPA.." هنا\n")
+send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢")..")".."\n⌔┇ تم رفعه "..RTPA.." هنا\n")
 database:set(bot_id.."SNAP:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,RTPA)
 database:sadd(bot_id.."SNAP:Mod:User"..msg.chat_id_,result.sender_user_id_)  
 elseif SNAPrt == "مدير" and Constructor(msg) then
-send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢  𝗌𝗇𝖺𝗉 メ")..")".."\n⌔┇ تم رفعه "..RTPA.." هنا\n")
+send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢")..")".."\n⌔┇ تم رفعه "..RTPA.." هنا\n")
 database:set(bot_id.."SNAP:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,RTPA)  
 database:sadd(bot_id.."SNAP:Manager"..msg.chat_id_,result.sender_user_id_)  
 elseif SNAPrt == "عضو" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢  𝗌𝗇𝖺𝗉 メ")..")".."\n⌔┇ تم رفعه "..RTPA.." هنا\n")
+send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢")..")".."\n⌔┇ تم رفعه "..RTPA.." هنا\n")
 end
 end,nil)   
 end   
@@ -4250,19 +4250,19 @@ function by_reply(extra, result, success)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
 local SNAPrt = database:get(bot_id.."SNAP:Comd:New:rt:bot:"..RTPA..msg.chat_id_)
 if SNAPrt == "مميز" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢  𝗌𝗇𝖺𝗉 メ")..")".."\n⌔┇ تم تنزيله من "..RTPA.." هنا\n")  
+send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢")..")".."\n⌔┇ تم تنزيله من "..RTPA.." هنا\n")  
 database:srem(bot_id.."SNAP:Special:User"..msg.chat_id_,result.sender_user_id_)  
 database:del(bot_id.."SNAP:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
 elseif SNAPrt == "ادمن" and Owner(msg) then 
-send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢  𝗌𝗇𝖺𝗉 メ")..")".."\n⌔┇ تم تنزيله من "..RTPA.." هنا\n")  
+send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢")..")".."\n⌔┇ تم تنزيله من "..RTPA.." هنا\n")  
 database:srem(bot_id.."SNAP:Mod:User"..msg.chat_id_,result.sender_user_id_) 
 database:del(bot_id.."SNAP:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
 elseif SNAPrt == "مدير" and Constructor(msg) then
-send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢  𝗌𝗇𝖺𝗉 メ")..")".."\n⌔┇ تم تنزيله من "..RTPA.." هنا\n")  
+send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢")..")".."\n⌔┇ تم تنزيله من "..RTPA.." هنا\n")  
 database:srem(bot_id.."SNAP:Manager"..msg.chat_id_,result.sender_user_id_)  
 database:del(bot_id.."SNAP:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
 elseif SNAPrt == "عضو" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢  𝗌𝗇𝖺𝗉 メ")..")".."\n⌔┇ تم تنزيله من "..RTPA.." هنا\n")  
+send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢")..")".."\n⌔┇ تم تنزيله من "..RTPA.." هنا\n")  
 end
 end,nil)   
 end   
@@ -4292,19 +4292,19 @@ function py_username(extra, result, success)
 if result.id_ then
 local SNAPrt = database:get(bot_id.."SNAP:Comd:New:rt:bot:"..text1[2]..msg.chat_id_)
 if SNAPrt == "مميز" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢  𝗌𝗇𝖺𝗉 メ")..")".."\n⌔┇ تم رفعه "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢")..")".."\n⌔┇ تم رفعه "..text1[2].." هنا")   
 database:sadd(bot_id.."SNAP:Special:User"..msg.chat_id_,result.id_)  
 database:set(bot_id.."SNAP:Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
 elseif SNAPrt == "ادمن" and Owner(msg) then 
-send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢  𝗌𝗇𝖺𝗉 メ")..")".."\n⌔┇ تم رفعه "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢")..")".."\n⌔┇ تم رفعه "..text1[2].." هنا")   
 database:sadd(bot_id.."SNAP:Mod:User"..msg.chat_id_,result.id_)  
 database:set(bot_id.."SNAP:Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
 elseif SNAPrt == "مدير" and Constructor(msg) then
-send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢  𝗌𝗇𝖺𝗉 メ")..")".."\n⌔┇ تم رفعه "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢")..")".."\n⌔┇ تم رفعه "..text1[2].." هنا")   
 database:sadd(bot_id.."SNAP:Manager"..msg.chat_id_,result.id_)  
 database:set(bot_id.."SNAP:Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
 elseif SNAPrt == "عضو" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢  𝗌𝗇𝖺𝗉 メ")..")".."\n⌔┇ تم رفعه "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢")..")".."\n⌔┇ تم رفعه "..text1[2].." هنا")   
 end
 else
 info = "⌔┇ المعرف غلط"
@@ -4337,19 +4337,19 @@ function py_username(extra, result, success)
 if result.id_ then
 local SNAPrt = database:get(bot_id.."SNAP:Comd:New:rt:bot:"..text1[2]..msg.chat_id_)
 if SNAPrt == "مميز" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢  𝗌𝗇𝖺𝗉 メ")..")".."\n⌔┇ تم تنريله من "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢")..")".."\n⌔┇ تم تنريله من "..text1[2].." هنا")   
 database:srem(bot_id.."SNAP:Special:User"..msg.chat_id_,result.id_)  
 database:del(bot_id.."SNAP:Comd:New:rt:User:"..msg.chat_id_..result.id_)
 elseif SNAPrt == "ادمن" and Owner(msg) then 
-send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢  𝗌𝗇𝖺𝗉 メ")..")".."\n⌔┇ تم تنريله من "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢")..")".."\n⌔┇ تم تنريله من "..text1[2].." هنا")   
 database:srem(bot_id.."SNAP:Mod:User"..msg.chat_id_,result.id_)  
 database:del(bot_id.."SNAP:Comd:New:rt:User:"..msg.chat_id_..result.id_)
 elseif SNAPrt == "مدير" and Constructor(msg) then
-send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢  𝗌𝗇𝖺𝗉 メ")..")".."\n⌔┇ تم تنريله من "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢")..")".."\n⌔┇ تم تنريله من "..text1[2].." هنا")   
 database:srem(bot_id.."SNAP:Manager"..msg.chat_id_,result.id_)  
 database:del(bot_id.."SNAP:Comd:New:rt:User:"..msg.chat_id_..result.id_)
 elseif SNAPrt == "عضو" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢  𝗌𝗇𝖺𝗉 メ")..")".."\n⌔┇ تم تنريله من "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢")..")".."\n⌔┇ تم تنريله من "..text1[2].." هنا")   
 end
 else
 info = "⌔┇ المعرف غلط"
@@ -7677,7 +7677,7 @@ if b.first_name_ == false then
 send(msg.chat_id_, msg.id_,"⌔┇ حساب المنشئ محذوف")
 return false  
 end
-local UserName = (b.username_ or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢  𝗌𝗇𝖺𝗉 メ")
+local UserName = (b.username_ or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢")
 send(msg.chat_id_, msg.id_,"⌔┇ منشئ المجموعه ~ ["..b.first_name_.."](T.me/"..UserName..")")  
 end,nil)   
 end
@@ -7697,7 +7697,7 @@ if b.first_name_ == false then
 send(msg.chat_id_, msg.id_,"⌔┇ حساب المنشئ محذوف")
 return false  
 end
-local UserName = (b.username_ or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢  𝗌𝗇𝖺𝗉 メ")
+local UserName = (b.username_ or "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢")
 send(msg.chat_id_, msg.id_,"⌔┇ تم ترقية منشئ المجموعه ~ ["..b.first_name_.."](T.me/"..UserName..")")  
 database:sadd(bot_id.."SNAP:Basic:Constructor"..msg.chat_id_,b.id_)
 end,nil)   
@@ -9753,7 +9753,7 @@ if audios.Info == true then
 local Text ='⌔┇  تم اختيار المقطع الصوتي لك'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '- - 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢  𝗌𝗇𝖺𝗉 メ .',url="t.me/iinzzz "}},
+{{text = '- - 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢ .',url="t.me/iinzzz "}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -9768,7 +9768,7 @@ if audios.Info == true then
 local Text ='⌔┇ تم اختيار المقطع الصوتي لك'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '- - 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢  𝗌𝗇𝖺𝗉 メ .',url="t.me/iinzzz"}},
+{{text = '- - 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢ .',url="t.me/iinzzz"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -11020,7 +11020,7 @@ local A = io.open("sudo.lua", 'w')
 A:write([[
 s = "BBBBRR"
 
-q = "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢  𝗌𝗇𝖺𝗉 メ"
+q = "- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢"
 
 token = "]]..token..[["
 
@@ -12134,7 +12134,7 @@ end
 elseif Text and Text:match('(.*)/help') then
 if tonumber(Text:match('(.*)/help')) == tonumber(data.sender_user_id_) then
 local Teext =[[
-𝙬𝙚𝙡𝙘𝙤𝙢𝙚 𝙩𝙤 𝙨𝙤𝙪𝙧𝙘𝙚 [- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢  𝗌𝗇𝖺𝗉 メ](t.me/iinzzz) 
+𝙬𝙚𝙡𝙘𝙤𝙢𝙚 𝙩𝙤 𝙨𝙤𝙪𝙧𝙘𝙚 [- 🖨┇𝙎𝙣𝙖𝙥 𝙨𝙤𝙪𝙧𝙘𝙚 ➢](t.me/iinzzz) 
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
