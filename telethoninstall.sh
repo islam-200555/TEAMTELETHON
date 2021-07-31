@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
-cd $HOME/SNAP
+cd $HOME/TELETHON
 install() {
 rm -rf $HOME/.telegram-cli
 sudo chmod +x tg
-chmod +x SNAP
+chmod +x TELETHON
 chmod +x ts
 ./ts
 }
 get() {
-rm -fr LaricA.lua
+rm -fr TEAMTELETHON.lua
 rm -fr sudo.lua
-wget "https://raw.githubusercontent.com/snapteamdollar/SNAP/master/SNAP.lua"
-lua start.lua
+wget "https://raw.githubusercontent.com/telethon-Arab/TEAMTELETHON/master/TEAMTELETHON.lua"
+lua startTelethon.lua
 }
 installall(){
 apt update
@@ -47,8 +47,6 @@ fi
 installall
 cd ..
 rm -rf luarocks*
-cd SNAP
+cd TELETHON
 rm -rf luarocks*
-lua start.lua
-
-
+lua startTelethon.lua
