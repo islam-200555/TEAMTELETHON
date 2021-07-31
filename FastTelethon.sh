@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
-cd $HOME/SNAP
+cd $HOME/TEAMTELETHON
 rm -rf $HOME/.telegram-cli
 install() {
 rm -rf $HOME/.telegram-cli
 sudo chmod +x tg
-chmod +x SNAP
+chmod +x TEAMTELETHON
 chmod +x ts
 ./ts
 }
 if [ "$1" = "ins" ]; then
 install
 fi
-chmod +x install.sh
-lua start.lua
+chmod +x telethoninstall.sh
+lua startTelethon.lua
