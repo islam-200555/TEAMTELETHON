@@ -10102,7 +10102,7 @@ end
 if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then  
 local url,res = https.request('https://telethon.ml/telethonCH.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
-if data.Ch_Member.TEAMTELETHON ~= true then
+if data.ChatMember.TEAMTELETHON ~= true then
 local Text = '⌔︙ عليك الاشتراك في قناة البوت **\n**⌔︙قناة البوت ↫  @L3LL3'
 keyboard = {} 
 keyboard.inline_keyboard = { 
