@@ -1881,73 +1881,73 @@ return false
 end 
 if text == 'تفعيل نسبه الحب' and Manager(msg) then   
 if database:get(bot_id..'Cick:lov'..msg.chat_id_) then
-Text = ' *✬︙تم تفعيل نسبه الحب*'
+Text = ' *⌔┇تم تفعيل نسبه الحب*'
 database:del(bot_id..'Cick:lov'..msg.chat_id_)  
 else
-Text = ' *✬︙بالتاكيد تم تفعيل نسبه الحب*'
+Text = ' *⌔┇بالتاكيد تم تفعيل نسبه الحب*'
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
 if text == 'تعطيل نسبه الحب' and Manager(msg) then  
 if not database:get(bot_id..'Cick:lov'..msg.chat_id_) then
 database:set(bot_id..'Cick:lov'..msg.chat_id_,true)  
-Text = '\n *✬︙تم تعطيل نسبه الحب*'
+Text = '\n *⌔┇تم تعطيل نسبه الحب*'
 else
-Text = '\n *✬︙بالتاكيد تم تعطيل نسبه الحب*'
+Text = '\n *⌔┇بالتاكيد تم تعطيل نسبه الحب*'
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
 if text == 'تفعيل نسبه الرجوله' and Manager(msg) then   
 if database:get(bot_id..'Cick:rjo'..msg.chat_id_) then
-Text = ' *✬︙تم تفعيل نسبه الرجوله*'
+Text = ' *⌔┇تم تفعيل نسبه الرجوله*'
 database:del(bot_id..'Cick:rjo'..msg.chat_id_)  
 else
-Text = ' *✬︙بالتاكيد تم تفعيل الرجوله*'
+Text = ' *⌔┇بالتاكيد تم تفعيل الرجوله*'
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
 if text == 'تعطيل نسبه الرجوله' and Manager(msg) then  
 if not database:get(bot_id..'Cick:rjo'..msg.chat_id_) then
 database:set(bot_id..'Cick:rjo'..msg.chat_id_,true)  
-Text = '\n *✬︙تم تعطيل نسبه الرجوله*'
+Text = '\n *⌔┇تم تعطيل نسبه الرجوله*'
 else
-Text = '\n *✬︙بالتاكيد تم تعطيل نسبه الرجوله*'
+Text = '\n *⌔┇بالتاكيد تم تعطيل نسبه الرجوله*'
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
 if text == 'تفعيل نسبه الكره' and Manager(msg) then   
 if database:get(bot_id..'Cick:krh'..msg.chat_id_) then
-Text = ' *✬︙تم تفعيل نسبه الكره*'
+Text = ' *⌔┇تم تفعيل نسبه الكره*'
 database:del(bot_id..'Cick:krh'..msg.chat_id_)  
 else
-Text = ' *✬︙بالتاكيد تم تفعيل نسبه الكره*'
+Text = ' *⌔┇بالتاكيد تم تفعيل نسبه الكره*'
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
 if text == 'تعطيل نسبه الكره' and Manager(msg) then  
 if not database:get(bot_id..'Cick:krh'..msg.chat_id_) then
 database:set(bot_id..'Cick:krh'..msg.chat_id_,true)  
-Text = '\n *✬︙تم تعطيل نسبه الكره*'
+Text = '\n *⌔┇تم تعطيل نسبه الكره*'
 else
-Text = '\n *✬︙بالتاكيد تم تعطيل نسبه الكره*'
+Text = '\n *⌔┇بالتاكيد تم تعطيل نسبه الكره*'
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
 if text == 'تفعيل نسبه الانوثه' and Manager(msg) then   
 if database:get(bot_id..'Cick:ano'..msg.chat_id_) then
-Text = ' *✬︙تم تفعيل نسبه الانوثه*'
+Text = ' *⌔┇تم تفعيل نسبه الانوثه*'
 database:del(bot_id..'Cick:ano'..msg.chat_id_)  
 else
-Text = ' *✬︙بالتاكيد تم تفعيل الانوثه*'
+Text = ' *⌔┇بالتاكيد تم تفعيل الانوثه*'
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
 if text == 'تعطيل نسبه الانوثه' and Manager(msg) then  
 if not database:get(bot_id..'Cick:ano'..msg.chat_id_) then
 database:set(bot_id..'Cick:ano'..msg.chat_id_,true)  
-Text = '\n *✬︙تم تعطيل نسبه الانوثه*'
+Text = '\n *⌔┇تم تعطيل نسبه الانوثه*'
 else
-Text = '\n *✬︙بالتاكيد تم تعطيل نسبه الانوثه*'
+Text = '\n *⌔┇بالتاكيد تم تعطيل نسبه الانوثه*'
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
@@ -10124,13 +10124,13 @@ Text = [[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '⌔┇𝗍𝖾𝖺𝗆 𝗍𝖾𝗅𝖾𝗍𝗁𝗈𝗇 ',url="https://t.me/IQTHON"},
+{text = '⌔┇ 𝗍𝖾𝖺𝗆 𝗍𝖾𝗅𝖾𝗍𝗁𝗈𝗇 ',url="https://t.me/L3LL3"},
 },
 {
-{text = '⌔┇𝖼𝗁⁦ 𝗍𝖾𝗅𝖾𝗍𝗁𝗈𝗇 ',url="t.me/KLANR"},
+{text = '⌔┇ 𝖼𝗁⁦ 𝗍𝖾𝗅𝖾𝗍𝗁𝗈𝗇 ',url="https://t.me/P5PP5"},
 },
 {
-{text = '⌔┇ 𝖼𝗁 𝖽𝖾𝗏',url="t.me/BBI9B"},
+{text = '⌔┇ 𝖼𝗁 𝖽𝖾𝗏',url="t.me/klanr"},
 },
 }
 local msg_id = msg.id_/2097152/0.5
@@ -10195,21 +10195,6 @@ keyboard.inline_keyboard = {
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-end
-if text == 'تفعيل التنزيل' and Addictive(msg) then   
-database:del(bot_id..'dw:bot:api'..msg.chat_id_) 
-Text = '\n تم تفعيل التنزيلات' 
-send(msg.chat_id_, msg.id_,Text) 
-end
-if text == 'تعطيل التنزيل' and Owner(msg) then  
-database:set(bot_id..'dw:bot:api'..msg.chat_id_,true) 
-Text = '\nتم تعطيل التنزيلات' 
-send(msg.chat_id_, msg.id_,Text) 
-end 
-if text and text:match('^بحث (.*)$') and not database:get(bot_id..'dw:bot:api'..msg.chat_id_) then            
-local Ttext = text:match('^بحث (.*)$') 
-local msgin = msg.id_/2097152/0.5 
-http.request('http://78.141.220.60/Yahya.php?token='..token..'&chat_id='..msg.chat_id_..'&Text='..URL.escape(Ttext)..'&msg='..msgin)
 end
 if text == 'م0' and Addictive(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
@@ -11336,38 +11321,7 @@ local Msg_id = data.message_id_
 local msg_idd = Msg_id/2097152/0.5
 local DAata = data.payload_.data_
 local Text = data.payload_.data_
-vardump(data)
 
-if Text and Text:match('@id/(.*)') then
-local Id_Link = Text:match('@id/(.*)') 
-DeleteMessage(data.chat_id_,{[0] = Msg_id})  
-local textt = '- من فضلك اختر نوع التنزيل'
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = 'تنزيل ملف', callback_data="mp3/"..Id_Link},
-},
-{
-{text = 'تنزيل بصمه', callback_data="ogg/"..Id_Link},
-},
-{
-{text = 'تنزيل فيديو', callback_data="mp4/"..Id_Link},
-},
-}
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id='..Chat_id..'&photo='..'https://youtu.be/'..Id_Link..'&reply_to_message_id=0&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-elseif Text and Text:match('mp3/(.*)') then
-local Id_Link = Text:match('mp3/(.*)') 
-DeleteMessage(data.chat_id_,{[0] = Msg_id})    
-http.request('http://78.141.220.60/Pascar.php?url='..Id_Link..'&token='..token..'&chat='..data.chat_id_..'&type=mp3&msg=0')
-elseif Text and Text:match('ogg/(.*)') then
-local Id_Link = Text:match('ogg/(.*)') 
-DeleteMessage(data.chat_id_,{[0] = Msg_id})    
-http.request('http://78.141.220.60/Pascar.php?url='..Id_Link..'&token='..token..'&chat='..data.chat_id_..'&type=ogg&msg=0')
-elseif Text and Text:match('mp4/(.*)') then
-local Id_Link = Text:match('mp4/(.*)') 
-DeleteMessage(data.chat_id_,{[0] = Msg_id})    
-http.request('http://78.141.220.60/Pascar.php?url='..Id_Link..'&token='..token..'&chat='..data.chat_id_..'&type=mp4&msg=0')
-end
 
 if Text and Text:match('(.*)/mute_text') then
 if tonumber(Text:match('(.*)/mute_text')) == tonumber(data.sender_user_id_) then
