@@ -10103,17 +10103,10 @@ if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or tex
 local url,res = https.request('https://telethon.ml/telethonCH.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.TELETHON ~= true then
-send(msg.chat_id_,msg.id_,'**⌔︙ عليك الاشتراك في قناة البوت **\n**⌔︙قناة البوت ↫**  @L3LL3')   
-return false 
-end
-local Text =[[
-⌔┇عذراً عزيزي ⤵️
-⌔┇أشترك في قناة البوت اولاً .
-— — — — — — — — —
-]]
+local Text = '⌔︙ عليك الاشتراك في قناة البوت **\n**⌔︙قناة البوت ↫  @L3LL3'
 keyboard = {} 
 keyboard.inline_keyboard = { 
-{{text = '🚹 اشترك الان   ',url="t.me/"..channel}},  
+{{text = '🚹 اشترك الان   ',url="t.me/L3LL3"}},  
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
