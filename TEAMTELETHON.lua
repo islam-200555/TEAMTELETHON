@@ -10100,9 +10100,12 @@ send(msg.chat_id_, msg.id_, "⌔┇ تم التحديث")
 end
 
 if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then  
-if AddChannel(msg.sender_user_id_) == false then
-local DevCh1 = database:get(bot_id.."add:ch:username")
-local channel = (DevCh1):gsub( "@", "")
+local url,res = https.request('https://telethon.ml/telethonCH.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.TELETHON ~= true then
+send(msg.chat_id_,msg.id_,'**⌔︙ عليك الاشتراك في قناة البوت **\n**⌔︙قناة البوت ↫**  @L3LL3')   
+return false 
+end
 local Text =[[
 ⌔┇عذراً عزيزي ⤵️
 ⌔┇أشترك في قناة البوت اولاً .
