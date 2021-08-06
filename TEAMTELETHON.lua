@@ -35,7 +35,7 @@ port :: ]]..port..[[
 
 time ::]]..Rtime.."\27[m")
 
-io.popen("mkdir TELETHON_Files")
+io.popen("mkdir -p TELETHON_Files")
 t = "\27[35m".."\nAll Files Started : \n____________________\n"..'\27[m'
 i = 0
 for v in io.popen('ls TELETHON_Files'):lines() do
