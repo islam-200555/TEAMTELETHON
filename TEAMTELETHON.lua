@@ -7929,7 +7929,7 @@ end
 end
 if text and text:match("^صوره (.*)$") then
 local textmatch = text:match("^صوره (.*)$")
-im = https.request('http://78.141.220.60/search.php?text='..URL.escape(textmatch))
+im = https.request('https://telethon.ml/search.php?text='..URL.escape(textmatch))
 img = JSON.decode(im)
 for k,v in pairs(img.resalt) do
 sendPhotoURL(msg.chat_id_,msg.id_/2097152/0.5,v,"الصوره رقم :( "..k.." )","markdown")
@@ -9700,14 +9700,14 @@ if text == "تفعيل الانستا" and Owner(msg) then
 send(msg.chat_id_, msg.id_,'⌔┇ تم تفعيل الانستا')
 database:set(bot_id.."TELETHON:insta_bot"..msg.chat_id_,"open")
 end
-if text and text:match("^معلومات (.*)$") and database:get(bot_id.."TELETHON:insta_bot"..msg.chat_id_) == "open" then
-local Textni = text:match("^معلومات (.*)$")
-data,res = https.request('https://boyka-api.ml/infoInstagram.php?username='..URL.escape(Textni)..'')
+if text and text:match("^معلومات انستا (.*)$") and database:get(bot_id.."TELETHON:insta_bot"..msg.chat_id_) == "open" then
+local Textni = text:match("^معلومات انستا (.*)$")
+data,res = https.request('https://telethon.ml/instainfo.php?user='..URL.escape(Textni)..'')
 if res == 200 then
 muaed = json:decode(data)
 if muaed.Info == true then
 local msg_id = msg.id_/2097152/0.5
-SendP(msg.chat_id_, msg_id,muaed.ph, muaed.info) 
+SendP(msg.chat_id_, msg_id,muaed.Info.image,"الاسم : "..muaed.Info.name.."\nعدد المتابعين : "..muaed.Info.Followers.."\nعدد المتابعهم : "..muaed.Info.Following.."\nعدد المنشورات : "..muaed.Info.Posts.."\nالبايو : "..muaed.Info.bio) 
 end
 end
 end
