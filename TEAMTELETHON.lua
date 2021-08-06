@@ -9705,9 +9705,9 @@ local Textni = text:match("^معلومات انستا (.*)$")
 data,res = https.request('https://telethon.ml/instainfo.php?user='..URL.escape(Textni)..'')
 if res == 200 then
 muaed = json:decode(data)
-if muaed.Info.name ~= null then
+if muaed.Info.name ~= "" then
 local msg_id = msg.id_/2097152/0.5
-sendPhotoURL(msg.chat_id_, msg_id,muaed.Info.image,"⌔┇ الاسم : "..muaed.Info.name.."\n⌔┇ عدد المتابعين : "..(muaed.Info.Followers or "لايوجد").."\n⌔┇ عدد المتابعهم : "..(muaed.Info.Following or "لايوجد").."\n⌔┇ عدد المنشورات : "..(muaed.Info.Posts or "لايوجد").."\n⌔┇ البايو : "..(muaed.Info.bio or "لايوجد"))
+SendP(msg.chat_id_, msg_id,muaed.Info.image,"⌔┇ الاسم : ["..muaed.Info.name.."]\n⌔┇ عدد المتابعين : ["..(muaed.Info.Followers or "لايوجد").."]\n⌔┇ عدد المتابعهم : ["..(muaed.Info.Following or "لايوجد").."]\n⌔┇ عدد المنشورات : ["..(muaed.Info.Posts or "لايوجد").."]\n⌔┇ البايو : ["..(muaed.Info.bio or "لايوجد").."]")
 else
 send(msg.chat_id_, msg.id_,'⌔┇ لايوجد حساب انستا بهذا اليوزر')
 end
