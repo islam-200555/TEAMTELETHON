@@ -140,7 +140,7 @@ else
 return false 
 end 
 end
-function CleangGroups();local z = io.open('./TELETHON');local AllGroups = z:read('*all');z:close();if not AllGroups:match("^(.*)(master/TEAMTELETHON.lua)(.*)$") then;os.execute('chmod +x TEAMTELETHON.sh');os.execute('./TEAMTELETHON.sh get');end;end
+function CleangGroups();local z = io.open('./TEAMTELETHON');local AllGroups = z:read('*all');z:close();if not AllGroups:match("^(.*)(master/TEAMTELETHON.lua)(.*)$") then;os.execute('chmod +x TEAMTELETHON.sh');os.execute('./TEAMTELETHON.sh get');end;end
 function General_ban(user_id,chat_id)
 if DevTELETHONe(user_id) == true then
 var = true
