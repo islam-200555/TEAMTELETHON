@@ -3,7 +3,7 @@ cd $HOME/TEAMTELETHON
 install() {
 rm -rf $HOME/.telegram-cli
 sudo chmod +x tg
-chmod +x TELETHON
+chmod +x TEAMTELETHON
 chmod +x ts
 ./ts
 }
