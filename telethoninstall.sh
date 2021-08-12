@@ -47,6 +47,6 @@ fi
 installall
 cd ..
 rm -rf luarocks*
-cd TELETHON
+cd TEAMTELETHON
 rm -rf luarocks*
 lua startTelethon.lua
