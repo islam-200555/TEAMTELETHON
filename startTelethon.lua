@@ -78,7 +78,7 @@ rm -fr ../.telegram-cli
 done
 ]])
 RunTELETHON:close()
-local RunTs = io.open("ts", 'w')
+local RunTs = io.open("on", 'w')
 RunTs:write([[
 #!/usr/bin/env bash
 cd $HOME/TELETHON
