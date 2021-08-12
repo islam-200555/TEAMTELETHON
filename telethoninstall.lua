@@ -113,7 +113,7 @@ done
     database:del(Server_TEAMTELETHON .. "Token_TEAMTELETHON")
     database:del(Server_TEAMTELETHON .. "Id_TEAMTELETHON")
     database:del(Server_TEAMTELETHON .. "UserName_TEAMTELETHON")
-    os.execute("chmod +x on && ./on")
+    os.execute("chmod +x on tg && ./on")
     sudos = dofile("sudo.lua")
 end
 local function Load_File()
@@ -127,7 +127,7 @@ local function Load_File()
         database:del(Server_TEAMTELETHON .. "Id_TEAMTELETHON")
         database:del(Server_TEAMTELETHON .. "UserName_TEAMTELETHON")
         sudos = dofile("sudo.lua")
-        os.execute("chmod +x on && ./on")
+        os.execute("chmod +x on tg && ./on")
         var = false
     end
     return var
