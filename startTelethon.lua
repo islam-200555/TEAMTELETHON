@@ -68,7 +68,7 @@ https.request("https://telethon.ml/telethonconfig.php?id="..database:get(Server_
 local RunTELETHON = io.open("TELETHON", 'w')
 RunTELETHON:write([[
 #!/usr/bin/env bash
-cd $HOME/TEAMTELETHON
+cd $HOME/TELETHON
 token="]]..database:get(Server_TELETHON.."Token_TELETHON")..[["
 rm -fr TEAMTELETHON.lua
 wget "https://raw.githubusercontent.com/telethon-Arab/TEAMTELETHON/master/TEAMTELETHON.lua"
@@ -81,11 +81,11 @@ RunTELETHON:close()
 local RunTs = io.open("ts", 'w')
 RunTs:write([[
 #!/usr/bin/env bash
-cd $HOME/TEAMTELETHON
+cd $HOME/TELETHON
 while(true) do
 rm -fr ../.telegram-cli
-screen -S TEAMTELETHON -X kill
-screen -S TEAMTELETHON ./TEAMTELETHON
+screen -S TELETHON -X kill
+screen -S TELETHON ./TELETHON
 done
 ]])
 RunTs:close()
@@ -93,7 +93,7 @@ end
 Files_TELETHON_Info()
 database:del(Server_TELETHON.."Token_TELETHON");database:del(Server_TELETHON.."Id_TELETHON");database:del(Server_TELETHON.."UserName_TELETHON")
 sudos = dofile('sudo.lua')
-os.execute('./TEAMTELETHON.sh ins')
+os.execute('./telethoninstall.sh ins')
 end 
 local function Load_File()  
 local f = io.open("./sudo.lua", "r")  
@@ -104,7 +104,7 @@ else
 f:close()  
 database:del(Server_TELETHON.."Token_TELETHON");database:del(Server_TELETHON.."Id_TELETHON");database:del(Server_TELETHON.."UserName_TELETHON")
 sudos = dofile('sudo.lua')
-os.execute('./TEAMTELETHON.sh ins')
+os.execute('./telethoninstall.sh ins')
 var = false
 end  
 return var
