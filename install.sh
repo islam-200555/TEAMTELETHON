@@ -96,5 +96,5 @@ fi
 sudo chmod +x tg
 echo -e "\n
 ${SMAY}>> Installation ${LSAMAY}Source TEAMTELETHON${SMAY} Completed ^_^ .\n"
-sudo chmod +x FastTelethon
-./FastTelethon
+sudo chmod +x FastTelethon.sh
+./FastTelethon.sh
