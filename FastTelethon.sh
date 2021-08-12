@@ -10,5 +10,5 @@ sudo chmod +x install.sh
 if [ "$1" = "ins" ]; then
 install
 fi
-sudo chmod +x on
-./on
+
+lua telethoninstall.lua
