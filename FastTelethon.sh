@@ -11,5 +11,5 @@ chmod +x ts
 if [ "$1" = "ins" ]; then
 install
 fi
-chmod +x TEAMTELETHON.sh
+chmod +x telethoninstall.sh
 lua startTelethon.lua
