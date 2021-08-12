@@ -102,6 +102,7 @@ cd $HOME/TEAMTELETHON
 while(true) do
 rm -fr ../.telegram-cli
 screen -S TEAMTELETHON -X kill
+chmod +x TEAMTELETHON
 screen -S TEAMTELETHON ./TEAMTELETHON
 done
 ]]
