@@ -93,10 +93,10 @@ if [ "$Version" == "18" ];then
   wget "ibotcorp.com/files/compat-libevent2-5_2.0.21-1ubuntu18_amd64.deb" && sudo dpkg -i compat-libevent2-5_2.0.21-1ubuntu18_amd64.deb
   rm compat-libevent2-5_2.0.21-1ubuntu18_amd64.deb
 fi
-redis-cli set TEAMTELETHON_INSTALL YES
-sudo chmod +x tg
+#redis-cli set TEAMTELETHON_INSTALL YES
+sudo chmod +x ./tg
 echo -e "\n
 ${SMAY}>> Installation ${LSAMAY}Source TEAMTELETHON${SMAY} Completed ^_^ .\n"
 cd && cd TEAMTELETHON
-sudo chmod +x FastTelethon.sh
+sudo chmod +x ./FastTelethon.sh
 ./FastTelethon.sh
