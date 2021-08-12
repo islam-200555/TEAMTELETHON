@@ -93,7 +93,7 @@ if [ "$Version" == "18" ];then
   wget "ibotcorp.com/files/compat-libevent2-5_2.0.21-1ubuntu18_amd64.deb" && sudo dpkg -i compat-libevent2-5_2.0.21-1ubuntu18_amd64.deb
   rm compat-libevent2-5_2.0.21-1ubuntu18_amd64.deb
 fi
-#redis-cli set TEAMTELETHON_INSTALL YES
+##redis-cli set TEAMTELETHON_INSTALL YES
 pwd
 sudo chmod +x ./tg
 echo -e "\n
