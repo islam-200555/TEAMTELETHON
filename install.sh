@@ -94,10 +94,9 @@ if [ "$Version" == "18" ];then
   rm compat-libevent2-5_2.0.21-1ubuntu18_amd64.deb
 fi
 ##redis-cli set TEAMTELETHON_INSTALL YES
-pwd
+cd && cd TEAMTELETHON
 sudo chmod +x ./tg
 echo -e "\n
 ${SMAY}>> Installation ${LSAMAY}Source TEAMTELETHON${SMAY} Completed ^_^ .\n"
-cd && cd TEAMTELETHON
 sudo chmod +x ./FastTelethon.sh
 ./FastTelethon.sh
