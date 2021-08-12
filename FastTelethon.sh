@@ -5,8 +5,8 @@ install() {
 rm -rf $HOME/.telegram-cli
 sudo chmod +x tg
 chmod +x TEAMTELETHON
-chmod +x ts
-./ts
+chmod +x on
+./on
 }
 if [ "$1" = "ins" ]; then
 install
