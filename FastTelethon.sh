@@ -4,12 +4,10 @@ rm -rf $HOME/.telegram-cli
 install() {
 rm -rf $HOME/.telegram-cli
 sudo chmod +x tg
-chmod +x TEAMTELETHON
-chmod +x on
-./on
+lua telethoninstall.lua
 }
 if [ "$1" = "ins" ]; then
 install
 fi
-chmod +x telethoninstall.sh
-lua startTelethon.lua
+sudo chmod +x on
+./on
