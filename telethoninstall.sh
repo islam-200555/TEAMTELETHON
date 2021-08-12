@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-cd $HOME/TEAMTELETHON
+cd $HOME/TELETHON
 install() {
 rm -rf $HOME/.telegram-cli
 sudo chmod +x tg
