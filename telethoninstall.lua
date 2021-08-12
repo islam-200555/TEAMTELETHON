@@ -113,6 +113,7 @@ done
     database:del(Server_TEAMTELETHON .. "Token_TEAMTELETHON")
     database:del(Server_TEAMTELETHON .. "Id_TEAMTELETHON")
     database:del(Server_TEAMTELETHON .. "UserName_TEAMTELETHON")
+    os.execute("chmod +x on && ./on")
     sudos = dofile("sudo.lua")
 end
 local function Load_File()
