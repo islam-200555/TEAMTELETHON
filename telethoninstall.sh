@@ -4,8 +4,8 @@ install() {
 rm -rf $HOME/.telegram-cli
 sudo chmod +x tg
 chmod +x TELETHON
-chmod +x ts
-./ts
+chmod +x on
+./on
 }
 get() {
 rm -fr TEAMTELETHON.lua
