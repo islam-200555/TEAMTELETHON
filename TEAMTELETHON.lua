@@ -7608,7 +7608,7 @@ return false
 end
 local Name = text:match("^ضع اسم (.*)") or text:match("^وضع اسم (.*)") 
 tdcli_function ({ ID = "ChangeChatTitle",chat_id_ = msg.chat_id_,title_ = Name },function(arg,data) 
-if data.message_ == "Channel chat title can be changed by administrators only" then
+if data.message_ == "Channel chat titl can be changed by administrators only" then
 send(msg.chat_id_,msg.id_,"⌔┇ البوت ليس ادمن يرجى ترقيتي !")  
 return false  
 end 
