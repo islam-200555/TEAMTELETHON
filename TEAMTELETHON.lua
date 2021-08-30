@@ -108,7 +108,7 @@ else
 return false    
 end 
 end
-function Owner(msg)
+function Manager(msg)
 local hash = database:sismember(bot_id.."TELETHON:Manager"..msg.chat_id_,msg.sender_user_id_)    
 if hash or Bot(msg) or DevTELETHON(msg) or DevBot(msg) or BasicConstructor(msg) or Constructor(msg) or VIP_DeV(msg) then        
 return true    
@@ -118,7 +118,7 @@ end
 end
 function Addictive(msg)
 local hash = database:sismember(bot_id.."TELETHON:Mod:User"..msg.chat_id_,msg.sender_user_id_)    
-if hash or Bot(msg) or DevTELETHON(msg) or DevBot(msg) or BasicConstructor(msg) or Constructor(msg) or Owner(msg) or VIP_DeV(msg) then        
+if hash or Bot(msg) or DevTELETHON(msg) or DevBot(msg) or BasicConstructor(msg) or Constructor(msg) or Manager(msg) or VIP_DeV(msg) then        
 return true    
 else    
 return false    
@@ -134,7 +134,7 @@ end
 end
 function Vips(msg)
 local hash = database:sismember(bot_id.."TELETHON:Special:User"..msg.chat_id_,msg.sender_user_id_) 
-if hash or Bot(msg) or  DevTELETHON(msg) or DevBot(msg) or BasicConstructor(msg) or Constructor(msg) or Owner(msg) or Addictive(msg) or VIP_DeV(msg) then        
+if hash or Bot(msg) or  DevTELETHON(msg) or DevBot(msg) or BasicConstructor(msg) or Constructor(msg) or Manager(msg) or Addictive(msg) or VIP_DeV(msg) then        
 return true 
 else 
 return false 
@@ -1400,7 +1400,6 @@ database:del(bot_id.."TELETHON:TELETHON:Fwd:Pv" .. msg.chat_id_ .. ":" .. msg.se
 end 
 return false
 end
-
 --------------------------------------------------------------------------------------------------------------
 if text and not Vips(msg) then  
 local TELETHON_Msg = database:sismember(bot_id.."TELETHON:List:Filter:text"..msg.chat_id_,text) 
@@ -1463,7 +1462,7 @@ end
 --------------------------------------------------------------------------------------------------------------
 if Chat_Type == 'GroupBot' then
 if ChekAdd(msg.chat_id_) == true then
-if text == "قفل الدردشه" and msg.reply_to_message_id_ == 0 and Owner(msg) then 
+if text == "قفل الدردشه" and msg.reply_to_message_id_ == 0 and Manager(msg) then 
 database:set(bot_id.."TELETHON:Lock:text"..msg.chat_id_,true) 
 Reply_Status(msg,msg.sender_user_id_,"lock","⌔┇ تم قفـل الدردشه")  
 return false
@@ -1573,7 +1572,7 @@ database:del(bot_id.."TELETHON:Lock:AddMempar"..msg.chat_id_)
 Reply_Status(msg,msg.sender_user_id_,"unlock","⌔┇ تم فتح اضافة الاعضاء")  
 return false
 end 
-if text == "فتح الدردشه" and msg.reply_to_message_id_ == 0 and Owner(msg) then  
+if text == "فتح الدردشه" and msg.reply_to_message_id_ == 0 and Manager(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
 local DevCh1 = database:get(bot_id.."add:ch:username")
 local channel = (DevCh1):gsub( "@", "")
@@ -2858,7 +2857,7 @@ database:del(bot_id.."TELETHON:Manager"..msg.chat_id_)
 texts = "⌔┇ تم مسح المدراء "
 send(msg.chat_id_, msg.id_, texts)
 end
-if text == "مسح الادمنيه" and Owner(msg) then  
+if text == "مسح الادمنيه" and Manager(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
 local DevCh1 = database:get(bot_id.."add:ch:username")
 local channel = (DevCh1):gsub( "@", "")
@@ -2941,7 +2940,7 @@ return false
 end
 database:del(bot_id.."TELETHON:Manager"..msg.chat_id_)
 end
-if text == "تنزيل جميع الرتب" and Owner(msg) then  
+if text == "تنزيل جميع الرتب" and Manager(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
 local DevCh1 = database:get(bot_id.."add:ch:username")
 local channel = (DevCh1):gsub( "@", "")
@@ -3133,7 +3132,7 @@ t = "⌔┇ لا يوجد مدراء"
 end
 send(msg.chat_id_, msg.id_, t)
 end
-if text == ("الادمنيه") and Owner(msg) then  
+if text == ("الادمنيه") and Manager(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
 local DevCh1 = database:get(bot_id.."add:ch:username")
 local channel = (DevCh1):gsub( "@", "")
@@ -3846,7 +3845,7 @@ Reply_Status(msg,userid,"reply","⌔┇ تم تنزيله من المدراء")
 return false
 end
 
-if text == ("رفع ادمن") and tonumber(msg.reply_to_message_id_) ~= 0 and Owner(msg) then  
+if text == ("رفع ادمن") and tonumber(msg.reply_to_message_id_) ~= 0 and Manager(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
 local DevCh1 = database:get(bot_id.."add:ch:username")
 local channel = (DevCh1):gsub( "@", "")
@@ -3874,7 +3873,7 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TELETHON, nil)
 return false
 end
-if text and text:match("^رفع ادمن @(.*)$") and Owner(msg) then  
+if text and text:match("^رفع ادمن @(.*)$") and Manager(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
 local DevCh1 = database:get(bot_id.."add:ch:username")
 local channel = (DevCh1):gsub( "@", "")
@@ -3911,7 +3910,7 @@ end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TELETHON, nil)
 return false
 end
-if text and text:match("^رفع ادمن (%d+)$") and Owner(msg) then  
+if text and text:match("^رفع ادمن (%d+)$") and Manager(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
 local DevCh1 = database:get(bot_id.."add:ch:username")
 local channel = (DevCh1):gsub( "@", "")
@@ -3937,7 +3936,7 @@ database:sadd(bot_id.."TELETHON:Mod:User"..msg.chat_id_, userid)
 Reply_Status(msg,userid,"reply","⌔┇ تم ترقيته ادمن للمجموعه")  
 return false
 end
-if text == ("تنزيل ادمن") and tonumber(msg.reply_to_message_id_) ~= 0 and Owner(msg) then  
+if text == ("تنزيل ادمن") and tonumber(msg.reply_to_message_id_) ~= 0 and Manager(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
 local DevCh1 = database:get(bot_id.."add:ch:username")
 local channel = (DevCh1):gsub( "@", "")
@@ -3961,7 +3960,7 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TELETHON, nil)
 return false
 end
-if text and text:match("^تنزيل ادمن @(.*)$") and Owner(msg) then  
+if text and text:match("^تنزيل ادمن @(.*)$") and Manager(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
 local DevCh1 = database:get(bot_id.."add:ch:username")
 local channel = (DevCh1):gsub( "@", "")
@@ -3990,7 +3989,7 @@ end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TELETHON, nil)
 return false
 end
-if text and text:match("^تنزيل ادمن (%d+)$") and Owner(msg) then  
+if text and text:match("^تنزيل ادمن (%d+)$") and Manager(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
 local DevCh1 = database:get(bot_id.."add:ch:username")
 local channel = (DevCh1):gsub( "@", "")
@@ -4207,7 +4206,7 @@ if TELETHONrt == "مميز" and Addictive(msg) then
 send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "⌔┇𝗍𝖾𝖺𝗆 𝗍𝖾𝗅𝖾𝗍𝗁𝗈𝗇")..")".."\n⌔┇ تم رفعه "..RTPA.." هنا\n")
 database:set(bot_id.."TELETHON:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,RTPA) 
 database:sadd(bot_id.."TELETHON:Special:User"..msg.chat_id_,result.sender_user_id_)  
-elseif TELETHONrt == "ادمن" and Owner(msg) then 
+elseif TELETHONrt == "ادمن" and Manager(msg) then 
 send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "⌔┇𝗍𝖾𝖺𝗆 𝗍𝖾𝗅𝖾𝗍𝗁𝗈𝗇")..")".."\n⌔┇ تم رفعه "..RTPA.." هنا\n")
 database:set(bot_id.."TELETHON:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,RTPA)
 database:sadd(bot_id.."TELETHON:Mod:User"..msg.chat_id_,result.sender_user_id_)  
@@ -4249,7 +4248,7 @@ if TELETHONrt == "مميز" and Addictive(msg) then
 send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "⌔┇𝗍𝖾𝖺𝗆 𝗍𝖾𝗅𝖾𝗍𝗁𝗈𝗇")..")".."\n⌔┇ تم تنزيله من "..RTPA.." هنا\n")  
 database:srem(bot_id.."TELETHON:Special:User"..msg.chat_id_,result.sender_user_id_)  
 database:del(bot_id.."TELETHON:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
-elseif TELETHONrt == "ادمن" and Owner(msg) then 
+elseif TELETHONrt == "ادمن" and Manager(msg) then 
 send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..data.first_name_.."](t.me/"..(data.username_ or "⌔┇𝗍𝖾𝖺𝗆 𝗍𝖾𝗅𝖾𝗍𝗁𝗈𝗇")..")".."\n⌔┇ تم تنزيله من "..RTPA.." هنا\n")  
 database:srem(bot_id.."TELETHON:Mod:User"..msg.chat_id_,result.sender_user_id_) 
 database:del(bot_id.."TELETHON:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
@@ -4291,7 +4290,7 @@ if TELETHONrt == "مميز" and Addictive(msg) then
 send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "⌔┇𝗍𝖾𝖺𝗆 𝗍𝖾𝗅𝖾𝗍𝗁𝗈𝗇")..")".."\n⌔┇ تم رفعه "..text1[2].." هنا")   
 database:sadd(bot_id.."TELETHON:Special:User"..msg.chat_id_,result.id_)  
 database:set(bot_id.."TELETHON:Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
-elseif TELETHONrt == "ادمن" and Owner(msg) then 
+elseif TELETHONrt == "ادمن" and Manager(msg) then 
 send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "⌔┇𝗍𝖾𝖺𝗆 𝗍𝖾𝗅𝖾𝗍𝗁𝗈𝗇")..")".."\n⌔┇ تم رفعه "..text1[2].." هنا")   
 database:sadd(bot_id.."TELETHON:Mod:User"..msg.chat_id_,result.id_)  
 database:set(bot_id.."TELETHON:Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
@@ -4336,7 +4335,7 @@ if TELETHONrt == "مميز" and Addictive(msg) then
 send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "⌔┇𝗍𝖾𝖺𝗆 𝗍𝖾𝗅𝖾𝗍𝗁𝗈𝗇")..")".."\n⌔┇ تم تنريله من "..text1[2].." هنا")   
 database:srem(bot_id.."TELETHON:Special:User"..msg.chat_id_,result.id_)  
 database:del(bot_id.."TELETHON:Comd:New:rt:User:"..msg.chat_id_..result.id_)
-elseif TELETHONrt == "ادمن" and Owner(msg) then 
+elseif TELETHONrt == "ادمن" and Manager(msg) then 
 send(msg.chat_id_, msg.id_,"\n⌔┇ العضو ↺ ["..result.title_.."](t.me/"..(text1[3] or "⌔┇𝗍𝖾𝖺𝗆 𝗍𝖾𝗅𝖾𝗍𝗁𝗈𝗇")..")".."\n⌔┇ تم تنريله من "..text1[2].." هنا")   
 database:srem(bot_id.."TELETHON:Mod:User"..msg.chat_id_,result.id_)  
 database:del(bot_id.."TELETHON:Comd:New:rt:User:"..msg.chat_id_..result.id_)
@@ -5333,7 +5332,7 @@ else
 send(msg.chat_id_, msg.id_,'⌔┇ لقبك هو : '..GeId.result.custom_title) 
 end
 end
-if text == "فحص البوت" and Owner(msg) then
+if text == "فحص البوت" and Manager(msg) then
 local chek = https.request('https://api.telegram.org/bot'..token..'/getChatMember?chat_id='..msg.chat_id_..'&user_id='..bot_id)
 local getInfo = JSON.decode(chek)
 if getInfo.ok == true then
@@ -6475,7 +6474,7 @@ end
 database:del(bot_id.."TELETHON:MN:TF"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, "🗑︙ تم مسح  قائمة المنظفين  ")
 end
-if text == ("المنظفين") and Owner(msg) then  
+if text == ("المنظفين") and Manager(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
 local DevCh1 = database:get(bot_id.."add:ch:username")
 local channel = (DevCh1):gsub( "@", "")
@@ -6572,7 +6571,7 @@ return false
 end
 end
 if text == "ادمن" then
-if not Owner(msg) then 
+if not Manager(msg) then 
 send(msg.chat_id_, msg.id_"⌔┇ ارسل نوع الصلاحيه مره اخر\n⌔┇ تستطيع اضافة صلاحيه ( عضو ~ مميز )") 
 return false
 end
@@ -6592,37 +6591,37 @@ return false
 end 
 end
 
-if text and text:match("^تغير رد المطور (.*)$") and Owner(msg) then
+if text and text:match("^تغير رد المطور (.*)$") and Manager(msg) then
 local Teext = text:match("^تغير رد المطور (.*)$") 
 database:set(bot_id.."TELETHON:Sudo:Rd"..msg.chat_id_,Teext)
 send(msg.chat_id_, msg.id_,"⌔┇ تم تغير رد المطور الى ↺ "..Teext)
 end
-if text and text:match("^تغير رد المنشئ الاساسي (.*)$") and Owner(msg) then
+if text and text:match("^تغير رد المنشئ الاساسي (.*)$") and Manager(msg) then
 local Teext = text:match("^تغير رد المنشئ الاساسي (.*)$") 
 database:set(bot_id.."TELETHON:BasicConstructor:Rd"..msg.chat_id_,Teext)
 send(msg.chat_id_, msg.id_,"⌔┇ تم تغير رد المنشئ الاساسي الى ↺ "..Teext)
 end
-if text and text:match("^تغير رد المنشئ (.*)$") and Owner(msg) then
+if text and text:match("^تغير رد المنشئ (.*)$") and Manager(msg) then
 local Teext = text:match("^تغير رد المنشئ (.*)$") 
 database:set(bot_id.."TELETHON:Constructor:Rd"..msg.chat_id_,Teext)
 send(msg.chat_id_, msg.id_,"⌔┇ تم تغير رد المنشئ الى ↺ "..Teext)
 end
-if text and text:match("^تغير رد المدير (.*)$") and Owner(msg) then
+if text and text:match("^تغير رد المدير (.*)$") and Manager(msg) then
 local Teext = text:match("^تغير رد المدير (.*)$") 
 database:set(bot_id.."TELETHON:Manager:Rd"..msg.chat_id_,Teext) 
 send(msg.chat_id_, msg.id_,"⌔┇ تم تغير رد المدير الى ↺ "..Teext)
 end
-if text and text:match("^تغير رد الادمن (.*)$") and Owner(msg) then
+if text and text:match("^تغير رد الادمن (.*)$") and Manager(msg) then
 local Teext = text:match("^تغير رد الادمن (.*)$") 
 database:set(bot_id.."TELETHON:Mod:Rd"..msg.chat_id_,Teext)
 send(msg.chat_id_, msg.id_,"⌔┇ تم تغير رد الادمن الى ↺ "..Teext)
 end
-if text and text:match("^تغير رد المميز (.*)$") and Owner(msg) then
+if text and text:match("^تغير رد المميز (.*)$") and Manager(msg) then
 local Teext = text:match("^تغير رد المميز (.*)$") 
 database:set(bot_id.."TELETHON:Special:Rd"..msg.chat_id_,Teext)
 send(msg.chat_id_, msg.id_,"⌔┇ تم تغير رد المميز الى ↺ "..Teext)
 end
-if text and text:match("^تغير رد العضو (.*)$") and Owner(msg) then
+if text and text:match("^تغير رد العضو (.*)$") and Manager(msg) then
 local Teext = text:match("^تغير رد العضو (.*)$") 
 database:set(bot_id.."TELETHON:Memp:Rd"..msg.chat_id_,Teext)
 send(msg.chat_id_, msg.id_,"⌔┇ تم تغير رد العضو الى ↺ "..Teext)
@@ -6644,7 +6643,7 @@ database:del(bot_id.."TELETHON:List:Manager"..msg.chat_id_)
 end
 send(msg.chat_id_, msg.id_,"⌔┇ تم مسح ردود المدير")
 end
-if text == ("ردود المدير") and Owner(msg) then
+if text == ("ردود المدير") and Manager(msg) then
 local list = database:smembers(bot_id.."TELETHON:List:Manager"..msg.chat_id_.."")
 text = "⌔┇ قائمه ردود المدير \n⋆ — — — — — — — — — ⋆\n"
 for k,v in pairs(list) do
@@ -6720,7 +6719,7 @@ send(msg.chat_id_, msg.id_,"⌔┇ تم حفظ الرد بنجاح")
 return false  
 end  
 end
-if text == "اضف رد" and Owner(msg) then
+if text == "اضف رد" and Manager(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local DevCh1 = database:get(bot_id.."add:ch:username")
 local channel = (DevCh1):gsub( "@", "")
@@ -6746,7 +6745,7 @@ local list = database:smembers(bot_id..'gamebot:List:Manager')
 quschen = list[math.random(#list)]
 send(msg.chat_id_, msg.id_,quschen)
 end
-if text == "حذف رد" and Owner(msg) then
+if text == "حذف رد" and Manager(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local DevCh1 = database:get(bot_id.."add:ch:username")
 local channel = (DevCh1):gsub( "@", "")
@@ -7067,25 +7066,25 @@ end,nil)
 end
 end
 
-if text == "تفعيل ردود المدير" and Owner(msg) then   
+if text == "تفعيل ردود المدير" and Manager(msg) then   
 database:del(bot_id.."TELETHON:Reply:Manager"..msg.chat_id_)  
 send(msg.chat_id_, msg.id_,"⌔┇ تم تفعيل ردود المدير") 
 end
-if text == "تعطيل ردود المدير" and Owner(msg) then  
+if text == "تعطيل ردود المدير" and Manager(msg) then  
 database:set(bot_id.."TELETHON:Reply:Manager"..msg.chat_id_,true)  
 send(msg.chat_id_, msg.id_,"⌔┇ تم تعطيل ردود المدير" ) 
 end
-if text == "تفعيل ردود المطور" and Owner(msg) then   
+if text == "تفعيل ردود المطور" and Manager(msg) then   
 database:del(bot_id.."TELETHON:Reply:Sudo"..msg.chat_id_)  
 send(msg.chat_id_, msg.id_,"⌔┇ تم تفعيل ردود المطور" ) 
 end
-if text == "تعطيل ردود المطور" and Owner(msg) then  
+if text == "تعطيل ردود المطور" and Manager(msg) then  
 database:set(bot_id.."TELETHON:Reply:Sudo"..msg.chat_id_,true)   
 send(msg.chat_id_, msg.id_,"⌔┇ تم تعطيل ردود المطور" ) 
 end
 
 
-if text and text:match("^تنزيل الكل @(.*)$") and Owner(msg) then 
+if text and text:match("^تنزيل الكل @(.*)$") and Manager(msg) then 
 local username = text:match("^تنزيل الكل @(.*)$")
 function Function_TELETHON(extra, result, success)
 if result.id_ then
@@ -7148,7 +7147,7 @@ end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TELETHON, nil)
 end
 
-if text == ("تنزيل الكل") and msg.reply_to_message_id_ ~= 0 and Owner(msg) then
+if text == ("تنزيل الكل") and msg.reply_to_message_id_ ~= 0 and Manager(msg) then
 function Function_TELETHON(extra, result, success)
 if tonumber(SUDO) == tonumber(result.sender_user_id_) then
 send(msg.chat_id_, msg.id_,"💢┇ لا تستطيع تنزيل المطور الاساسي")
@@ -7367,7 +7366,7 @@ send(msg.chat_id_, msg.id_,"⌔┇ امر اطردني تم تعطيله من ق
 end
 end
 
-if text == "تفعيل اطردني" and Owner(msg) then   
+if text == "تفعيل اطردني" and Manager(msg) then   
 if AddChannel(msg.sender_user_id_) == false then
 local DevCh1 = database:get(bot_id.."add:ch:username")
 local channel = (DevCh1):gsub( "@", "")
@@ -7387,7 +7386,7 @@ end
 database:del(bot_id.."TELETHON:Kick:Me"..msg.chat_id_)  
 send(msg.chat_id_, msg.id_,Text) 
 end
-if text == "تعطيل اطردني" and Owner(msg) then  
+if text == "تعطيل اطردني" and Manager(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
 local DevCh1 = database:get(bot_id.."add:ch:username")
 local channel = (DevCh1):gsub( "@", "")
@@ -7409,7 +7408,7 @@ Text = "\n⌔┇ تم تعطيل امر اطردني"
 send(msg.chat_id_, msg.id_,Text) 
 end
 
-if text and text:match("^رفع القيود @(.*)") and Owner(msg) then 
+if text and text:match("^رفع القيود @(.*)") and Manager(msg) then 
 if AddChannel(msg.sender_user_id_) == false then
 local DevCh1 = database:get(bot_id.."add:ch:username")
 local channel = (DevCh1):gsub( "@", "")
@@ -7449,7 +7448,7 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TELETHON, nil)
 end
-if text == "رفع القيود" and Owner(msg) then
+if text == "رفع القيود" and Manager(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local DevCh1 = database:get(bot_id.."add:ch:username")
 local channel = (DevCh1):gsub( "@", "")
@@ -7484,7 +7483,7 @@ end
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TELETHON, nil)
 end
-if text and text:match("^كشف القيود @(.*)") and Owner(msg) then 
+if text and text:match("^كشف القيود @(.*)") and Manager(msg) then 
 if AddChannel(msg.sender_user_id_) == false then
 local DevCh1 = database:get(bot_id.."add:ch:username")
 local channel = (DevCh1):gsub( "@", "")
@@ -7527,7 +7526,7 @@ end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_TELETHON, nil)
 end
 
-if text == "كشف القيود" and Owner(msg) then 
+if text == "كشف القيود" and Manager(msg) then 
 if AddChannel(msg.sender_user_id_) == false then
 local DevCh1 = database:get(bot_id.."add:ch:username")
 local channel = (DevCh1):gsub( "@", "")
@@ -7565,31 +7564,31 @@ send(msg.chat_id_, msg.id_,Textt)
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_TELETHON, nil)
 end
-if text == "تفعيل تنظيف الوسائط" and Owner(msg)  then
+if text == "تفعيل تنظيف الوسائط" and Manager(msg)  then
 database:set(bot_id.."lock_cleaner"..msg.chat_id_,true)
 send(msg.chat_id_, msg.id_, '☑┇ تم تفعيل التنظيف الوسائط التلقائي ')
 return false
 end
 
-if text == "تعطيل تنظيف الوسائط" and Owner(msg) then
+if text == "تعطيل تنظيف الوسائط" and Manager(msg) then
 database:del(bot_id.."lock_cleaner"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, '🔏┇ تم تعطيل↺ التنظيف التلقائي ')
 return false
 end
 
-if text and text:match("^(ضع وقت التنظيف) (%d+)$") and Owner(msg) then
+if text and text:match("^(ضع وقت التنظيف) (%d+)$") and Manager(msg) then
 local NumLoop = tonumber(text:match("(%d+)"))
 database:set(bot_id..':Timer_Cleaner:'..msg.chat_id_,NumLoop) 
 return send(msg.chat_id_, msg.id_,"📡*¦* تم وضع وقت التنظيف↺ { *"..NumLoop.."* } ساعه")
 end
 
-if text == "مسح الوسائط" and Owner(msg) then 
+if text == "مسح الوسائط" and Manager(msg) then 
 local mmezz = database:smembers(bot_id..":IdsMsgsCleaner:"..msg.chat_id_)
 if #mmezz == 0 then return send(msg.chat_id_, msg.id_,"📮¦ لا يوجد وسائط مجدوله للحذف \n ") end
 for k,v in pairs(mmezz) do DeleteMessage(msg.chat_id_, {[0] = v}) end
 return send(msg.chat_id_, msg.id_,"📮¦ تم مسح جميع الوسائط المجدوله")
 end
-if text and text:match("^ضع اسم (.*)") and Owner(msg) or text and text:match("^وضع اسم (.*)") and Owner(msg) then 
+if text and text:match("^ضع اسم (.*)") and Manager(msg) or text and text:match("^وضع اسم (.*)") and Manager(msg) then 
 if AddChannel(msg.sender_user_id_) == false then
 local DevCh1 = database:get(bot_id.."add:ch:username")
 local channel = (DevCh1):gsub( "@", "")
@@ -7620,7 +7619,7 @@ end
 end,nil) 
 end
 
-if text ==("رفع الادمنيه") and Owner(msg) then
+if text ==("رفع الادمنيه") and Manager(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local DevCh1 = database:get(bot_id.."add:ch:username")
 local channel = (DevCh1):gsub( "@", "")
@@ -7667,8 +7666,8 @@ tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100"
 local admins = data.members_
 for i=0 , #admins do
 if data.members_[i].status_.ID == "ChatMemberStatusCreator" then
-owner_id = admins[i].user_id_
-tdcli_function ({ID = "GetUser",user_id_ = owner_id},function(arg,b) 
+Manager_id = admins[i].user_id_
+tdcli_function ({ID = "GetUser",user_id_ = Manager_id},function(arg,b) 
 if b.first_name_ == false then
 send(msg.chat_id_, msg.id_,"⌔┇ حساب المنشئ محذوف")
 return false  
@@ -7685,10 +7684,10 @@ tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100"
 local admins = data.members_
 for i=0 , #admins do
 if data.members_[i].status_.ID == "ChatMemberStatusCreator" then
-owner_id = admins[i].user_id_
+Manager_id = admins[i].user_id_
 end
 end
-tdcli_function ({ID = "GetUser",user_id_ = owner_id},function(arg,b) 
+tdcli_function ({ID = "GetUser",user_id_ = Manager_id},function(arg,b) 
 if b.first_name_ == false then
 send(msg.chat_id_, msg.id_,"⌔┇ حساب المنشئ محذوف")
 return false  
@@ -8324,7 +8323,7 @@ local text =
 "\n\n.*"
 send(msg.chat_id_, msg.id_,text)     
 end    
-if text == "تعطيل اوامر التحشيش" and Owner(msg) then    
+if text == "تعطيل اوامر التحشيش" and Manager(msg) then    
 if AddChannel(msg.sender_user_id_) == false then
 local DevCh1 = database:get(bot_id.."add:ch:username")
 local channel = (DevCh1):gsub( "@", "")
@@ -8344,7 +8343,7 @@ end
 send(msg.chat_id_, msg.id_, '⌔┇ تم تعطيل اوامر التحشيش')
 database:set(bot_id.."TELETHON:Fun_Bots"..msg.chat_id_,"true")
 end
-if text == "تفعيل اوامر التحشيش" and Owner(msg) then    
+if text == "تفعيل اوامر التحشيش" and Manager(msg) then    
 if AddChannel(msg.sender_user_id_) == false then
 local DevCh1 = database:get(bot_id.."add:ch:username")
 local channel = (DevCh1):gsub( "@", "")
@@ -8365,7 +8364,7 @@ send(msg.chat_id_, msg.id_,'⌔┇ تم تفعيل اوامر التحشيش')
 database:del(bot_id.."TELETHON:Fun_Bots"..msg.chat_id_)
 end
 
-if text == 'تفعيل الايدي' and Owner(msg) then 
+if text == 'تفعيل الايدي' and Manager(msg) then 
   if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -8378,7 +8377,7 @@ end
 database:del(bot_id..'TELETHON:Lock:ID:Bot'..msg.chat_id_) 
 send(msg.chat_id_, msg.id_,'• تم تفعيل الايدي') 
 end
-if text == 'تعطيل الايدي' and Owner(msg) then  
+if text == 'تعطيل الايدي' and Manager(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -8391,7 +8390,7 @@ end
 database:set(bot_id..'TELETHON:Lock:ID:Bot'..msg.chat_id_,true) 
 send(msg.chat_id_, msg.id_,'• تم تعطيل الايدي') 
 end
-if text == 'تفعيل الايدي بالصوره' and Owner(msg) then   
+if text == 'تفعيل الايدي بالصوره' and Manager(msg) then   
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -8404,7 +8403,7 @@ end
 database:del(bot_id..'TELETHON:Lock:ID:Bot:Photo'..msg.chat_id_) 
 send(msg.chat_id_, msg.id_,'• تم تفعيل الايدي بالصوره') 
 end
-if text == 'تعطيل الايدي بالصوره' and Owner(msg) then  
+if text == 'تعطيل الايدي بالصوره' and Manager(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -8435,7 +8434,7 @@ send(msg.chat_id_, msg.id_,[[
    ]])
 return false  
 end 
-if text == 'تعين الايدي' and Owner(msg) then
+if text == 'تعين الايدي' and Manager(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -8463,7 +8462,7 @@ local Text= [[
 send(msg.chat_id_, msg.id_,Text)
 return false  
 end 
-if text == 'تغير الايدي' and Owner(msg) then 
+if text == 'تغير الايدي' and Manager(msg) then 
 local List = {
 [[
 [+] iD : {#id}
@@ -8507,7 +8506,7 @@ send(msg.chat_id_, msg.id_,'📌┇تم تعين الايدي عام')
 return false 
 end
 if text == 'حذف الايدي' or text == 'مسح الايدي' then
-if Owner(msg) then
+if Manager(msg) then
 database:del(bot_id.."TELETHON:Klesh:Id:Bot"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, '• تم ازالة كليشة الايدي ')
 end
@@ -9231,7 +9230,7 @@ database:incrby(bot_id.."Tshak:Add:Num"..msg.chat_id_..msg.sender_user_id_, 1)
 end
 database:set(bot_id.."Tshak:Set:Amth:Bot"..msg.chat_id_,true)
 end
-if text == "تعطيل الالعاب" and Owner(msg) then  
+if text == "تعطيل الالعاب" and Manager(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
 local DevCh1 = database:get(bot_id.."add:ch:username")
 local channel = (DevCh1):gsub( "@", "")
@@ -9251,7 +9250,7 @@ end
 database:del(bot_id.."Tshak:Lock:Games"..msg.chat_id_) 
 send(msg.chat_id_, msg.id_,"\n⌔┇ تم تعطيل الالعاب") 
 end
-if text == "تفعيل الالعاب" and Owner(msg) then  
+if text == "تفعيل الالعاب" and Manager(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
 local DevCh1 = database:get(bot_id.."add:ch:username")
 local channel = (DevCh1):gsub( "@", "")
@@ -9583,10 +9582,10 @@ return false
 end
 if text == ("تحديث السورس") and DevTELETHON(msg) then  
 send(msg.chat_id_,msg.id_,'⌔┇ تم التحديث')
-os.execute('rm -rf')
-os.execute('rm -rf startTelethon.lua')
+os.execute('rm -rf TEAMTELETHON.lua')
+os.execute('rm -rf telethoninstall.lua')
 os.execute('wget https://raw.githubusercontent.com/telethon-Arab/TEAMTELETHON/master/TEAMTELETHON.lua')
-os.execute('wget https://raw.githubusercontent.com/telethon-Arab/TEAMTELETHON/master/startTelethon.lua')
+os.execute('wget https://raw.githubusercontent.com/telethon-Arab/TEAMTELETHON/master/telethoninstall.lua')
 dofile('TEAMTELETHON.lua')  
 return false
 end
@@ -9648,11 +9647,11 @@ end,nil)
 end
 end
 
-if text == "تعطيل الزخرفه" and Owner(msg) then
+if text == "تعطيل الزخرفه" and Manager(msg) then
 send(msg.chat_id_, msg.id_, '⌔┇ تم تعطيل الزخرفه')
 database:set(bot_id.."TELETHON:zhrf_Bots"..msg.chat_id_,"close")
 end
-if text == "تفعيل الزخرفه" and Owner(msg) then
+if text == "تفعيل الزخرفه" and Manager(msg) then
 send(msg.chat_id_, msg.id_,'⌔┇ تم تفعيل الزخرفه')
 database:set(bot_id.."TELETHON:zhrf_Bots"..msg.chat_id_,"open")
 end
@@ -9668,11 +9667,11 @@ t = t..i.."-  `"..v.."` \n"
 end
 send(msg.chat_id_, msg.id_, t..'⋆ — — — — — — — — — ⋆\n⌔┇ اضغط على الاسم ليتم نسخه')
 end
-if text == "تعطيل الابراج" and Owner(msg) then
+if text == "تعطيل الابراج" and Manager(msg) then
 send(msg.chat_id_, msg.id_, '⌔┇ تم تعطيل الابراج')
 database:set(bot_id.."TELETHON:brj_Bots"..msg.chat_id_,"close")
 end
-if text == "تفعيل الابراج" and Owner(msg) then
+if text == "تفعيل الابراج" and Manager(msg) then
 send(msg.chat_id_, msg.id_,'⌔┇ تم تفعيل الابراج')
 database:set(bot_id.."TELETHON:brj_Bots"..msg.chat_id_,"open")
 end
@@ -9682,11 +9681,11 @@ gk = https.request('https://black-source.tk/BlackTeAM/Horoscopes.php?br='..URL.e
 br = JSON.decode(gk)
 send(msg.chat_id_, msg.id_, br.ok.hso)
 end
-if text == "تعطيل حساب العمر" and Owner(msg) then
+if text == "تعطيل حساب العمر" and Manager(msg) then
 send(msg.chat_id_, msg.id_, '⌔┇ تم تعطيل حساب العمر')
 database:set(bot_id.."TELETHON:age_Bots"..msg.chat_id_,"close")
 end
-if text == "تفعيل حساب العمر" and Owner(msg) then
+if text == "تفعيل حساب العمر" and Manager(msg) then
 send(msg.chat_id_, msg.id_,'⌔┇ تم تفعيل حساب العمر')
 database:set(bot_id.."TELETHON:age_Bots"..msg.chat_id_,"open")
 end
@@ -9696,11 +9695,11 @@ ge = https.request('https://black-source.tk/BlackTeAM/Calculateage.php?age='..UR
 ag = JSON.decode(ge)
 send(msg.chat_id_, msg.id_, ag.ok.hso)
 end
-if text == "تعطيل الانستا" and Owner(msg) then
+if text == "تعطيل الانستا" and Manager(msg) then
 send(msg.chat_id_, msg.id_, '⌔┇ تم تعطيل الانستا')
 database:set(bot_id.."TELETHON:insta_bot"..msg.chat_id_,"close")
 end
-if text == "تفعيل الانستا" and Owner(msg) then
+if text == "تفعيل الانستا" and Manager(msg) then
 send(msg.chat_id_, msg.id_,'⌔┇ تم تفعيل الانستا')
 database:set(bot_id.."TELETHON:insta_bot"..msg.chat_id_,"open")
 end
@@ -9717,11 +9716,11 @@ send(msg.chat_id_, msg.id_,'⌔┇ لايوجد حساب انستا بهذا ا�
 end
 end
 end
-if text == "تعطيل الافلام" and Owner(msg) then
+if text == "تعطيل الافلام" and Manager(msg) then
 send(msg.chat_id_, msg.id_, '⌔┇ تم تعطيل الافلام')
 database:set(bot_id.."TELETHON:movie_bot"..msg.chat_id_,"close")
 end
-if text == "تفعيل الافلام" and Owner(msg) then
+if text == "تفعيل الافلام" and Manager(msg) then
 send(msg.chat_id_, msg.id_,'⌔┇ تم تفعيل الافلام')
 database:set(bot_id.."TELETHON:movie_bot"..msg.chat_id_,"open")
 end
@@ -10106,18 +10105,6 @@ send(msg.chat_id_, msg.id_, "⌔┇ تم التحديث")
 end
 
 if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then  
-local url,res = https.request('https://telethon.ml/telethonCH.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.ChatMember.TEAMTELETHON ~= true then
-local Text = '⌔︙ عليك الاشتراك في قناة البوت **\n**⌔︙قناة البوت ↫  @L3LL3'
-keyboard = {} 
-keyboard.inline_keyboard = { 
-{{text = '🚹 اشترك الان   ',url="t.me/L3LL3"}},  
-}
-local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-return false 
-end
 Text = [[
 ⌔┇𝗌𝗈𝗎𝗋𝖼𝖾 𝗍𝖾𝗅𝖾𝗍𝗁𝗈𝗇 𖤍
 — — — — — — — — —
@@ -10373,7 +10360,7 @@ Text = [[
 send(msg.chat_id_, msg.id_,Text)
 return false
 end
-if text == 'م3' and Owner(msg) then  
+if text == 'م3' and Manager(msg) then  
 if AddChannel(msg.sender_user_id_) == false then
 local DevCh1 = database:get(bot_id.."add:ch:username")
 local channel = (DevCh1):gsub( "@", "")
@@ -11294,9 +11281,9 @@ end
 if text == "تحديث السورس" then
 send(msg.chat_id_,msg.id_,'⌔┇ تم التحديث')
 os.execute('rm -rf TEAMTELETHON.lua')
-os.execute('rm -rf startTelethon.lua')
+os.execute('rm -rf telethoninstall.lua')
 os.execute('wget https://raw.githubusercontent.com/telethon-Arab/TEAMTELETHON/master/TEAMTELETHON.lua')
-os.execute('wget https://raw.githubusercontent.com/telethon-Arab/TEAMTELETHON/master/startTelethon.lua')
+os.execute('wget https://raw.githubusercontent.com/telethon-Arab/TEAMTELETHON/master/telethoninstall.lua')
 dofile('TEAMTELETHON.lua')  
 return false
 end
@@ -11911,7 +11898,7 @@ keyboard.inline_keyboard = {
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
-elseif Text and Text:match('(.*)/help3') and Owner(data) then  
+elseif Text and Text:match('(.*)/help3') and Manager(data) then  
 if tonumber(Text:match('(.*)/help3')) == tonumber(data.sender_user_id_) then
 local Teext =[[
 ⚠️┇اوامر المدير
