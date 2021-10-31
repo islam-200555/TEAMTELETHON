@@ -10119,20 +10119,20 @@ https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. 
 return false 
 end
 Text = [[
-⎈ ⦙ 𝗌𝗈𝗎𝗋𝖼𝖾 𝗍𝖾𝗅𝖾𝗍𝗁𝗈𝗇 𖤍
+⎈ ⦙  𝗌𝗈𝗎𝗋𝖼𝖾 𝗍𝖾𝗅𝖾𝗍𝗁𝗈𝗇 𖤍
 — — — — — — — — —
 ⚙️ | 𝗐𝖾𝗅𝖼𝗈𝗆𝖾 𝗍𝗈 𝗋𝗂𝗀𝗁𝗍𝗌 𝗍𝖾𝗅𝖾𝗍𝗁𝗈𝗇 𝄮 
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '⎈ ⦙  SOURCE TELETHON ',url="https://t.me/IQTHON"},
+{text = '⎈ ⦙ 𝖼𝗁 𝗍𝖾𝗅𝖾𝗍𝗁𝗈𝗇 ',url="https://t.me/IQTHON"},
 },
 {
-{text = '⎈ ⦙  HELP⁦ TELETHON ',url="https://t.me/YZZZY"},
+{text = '⎈ ⦙ help 𝗍𝖾𝗅𝖾𝗍𝗁𝗈𝗇 ',url="https://t.me/YZZZY"},
 },
 {
-{text = '⎈ ⦙  CH DEV',url="t.me/LLL5L"},
+{text = '⎈ ⦙ 𝖽𝖾𝗏',url="t.me/LLL5L"},
 },
 }
 local msg_id = msg.id_/2097152/0.5
