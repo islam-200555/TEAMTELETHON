@@ -10109,10 +10109,10 @@ if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or tex
 local url,res = https.request('https://telethon.ml/telethonCH.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.ChatMember.TEAMTELETHON ~= true then
-local Text = '⌔︙ عليك الاشتراك في قناة البوت **\n**⌔︙قناة البوت ↫  @L3LL3'
+local Text = '⌔︙ عليك الاشتراك في قناة البوت **\n**⌔︙قناة البوت ↫  @IQTHON'
 keyboard = {} 
 keyboard.inline_keyboard = { 
-{{text = '🚹 اشترك الان   ',url="t.me/L3LL3"}},  
+{{text = '🚹 اشترك الان   ',url="t.me/IQTHON"}},  
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -10126,13 +10126,13 @@ Text = [[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '⌔┇ 𝗍𝖾𝖺𝗆 𝗍𝖾𝗅𝖾𝗍𝗁𝗈𝗇 ',url="https://t.me/L3LL3"},
+{text = '⎈ ⦙ SOURCE TELETHON ',url="https://t.me/IQTHON"},
 },
 {
-{text = '⌔┇ 𝖼𝗁⁦ 𝗍𝖾𝗅𝖾𝗍𝗁𝗈𝗇 ',url="https://t.me/P5PP5"},
+{text = '⎈ ⦙ HELP⁦ TELETHON ',url="https://t.me/YZZZY"},
 },
 {
-{text = '⌔┇ 𝖼𝗁 𝖽𝖾𝗏',url="t.me/klanr"},
+{text = '⎈ ⦙ CH DEV',url="t.me/LLL5L"},
 },
 }
 local msg_id = msg.id_/2097152/0.5
